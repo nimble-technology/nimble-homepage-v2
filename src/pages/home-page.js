@@ -1,11 +1,12 @@
 import React from 'react';
 import Box from '@mui/material/Box';
+import LandingSection from '../components/landing-section-component';
 
 const HomePage = () => {
   return (
     <Box>
-      <Box id="section1" sx={{ height: '500px', background: 'lightblue' }}>
-        Section 1 Content
+      <Box id="landing-section">
+        <LandingSection />
       </Box>
       <Box id="section2" sx={{ height: '500px', background: 'lightgreen' }}>
         Section 2 Content
