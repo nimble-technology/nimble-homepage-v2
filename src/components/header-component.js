@@ -1,5 +1,7 @@
 import React from 'react';
 import { AppBar, Toolbar, Typography, Button, Box, useTheme } from '@mui/material';
+import PixelButton from './pixel-button-component';
+import { LINKS } from '../constants'; 
 
 const Header = () => {
 
@@ -9,7 +11,6 @@ const Header = () => {
     };
 
     return (
-
         <AppBar position="fixed" color="secondary" elevation={0}>
             <Toolbar>
                 <Typography
@@ -43,18 +44,12 @@ const Header = () => {
                     <Button onClick={() => scrollToSection('section6')}>Careers</Button>
                   
                 </Box>
-                <Button
-                    sx={{
-                        fontFamily: "'Press Start 2P', cursive",
-                        fontSize: '12px',
-                        fontWeight: 400,
-                        color: theme.palette.text.primary,
-                        backgroundColor: theme.palette.primary.main,
-                    }}
-                    onClick={() => scrollToSection('vision')}
+                <PixelButton
+                    onClick={() => { window.location.href = LINKS.DISCORD; }}
+                    sx={{height: '50px', width: '200px'}}
                 >
                     Our Vision
-                </Button>
+                </PixelButton>
             </Toolbar>
         </AppBar>
     );
