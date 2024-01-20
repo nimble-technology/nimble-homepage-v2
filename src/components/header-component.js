@@ -11,7 +11,15 @@ const Header = () => {
     };
 
     return (
-        <AppBar position="fixed" color="secondary" elevation={0}>
+        <AppBar 
+            position="fixed" 
+            color="secondary" 
+            elevation={0}
+            sx={{
+                height: '72px',
+                justifyContent: 'center'
+            }} 
+        >
             <Toolbar>
                 <Typography
                     sx={{ 
@@ -46,7 +54,14 @@ const Header = () => {
                 </Box>
                 <PixelButton
                     onClick={() => { window.location.href = LINKS.DISCORD; }}
-                    sx={{height: '50px', width: '200px'}}
+                    sx={{
+                        backgroundColor: theme.palette.primary.main, 
+                        color: 'black', 
+                        fontSize: '12px',
+                        fontWeight: 400
+                    }}
+                    width='190px'
+                    height='49px'
                 >
                     Our Vision
                 </PixelButton>
