@@ -1,13 +1,12 @@
 import React from 'react';
 import Box from '@mui/material/Box';
+import Header from './header-component'; 
 
 const Layout = (props) => {
 
     return (
-        <Box sx={{ 
-            padding: 2,
-          }}>
-            This is header!
+        <Box>
+            <Header />
             {props.children}
         </Box>
     );
