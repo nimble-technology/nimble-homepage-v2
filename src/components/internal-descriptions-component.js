@@ -14,7 +14,7 @@ const InternalDescriptions = () => {
         color: 'white',
         position: 'relative',
         overflow: 'hidden',
-        marginTop: '72px',
+        marginTop: '55px',
     };
 
     const textContainerStyle = {

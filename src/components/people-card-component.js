@@ -55,7 +55,7 @@ const PeopleCard = () => {
         alignItems: 'center',
         color: 'white',
         position: 'relative',
-        marginTop: '72px',
+        marginTop: '55px',
     };
 
     return (
