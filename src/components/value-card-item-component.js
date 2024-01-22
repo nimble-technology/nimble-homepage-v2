@@ -1,5 +1,5 @@
 import React from 'react';
-import { Typography, Button, Box, useTheme } from '@mui/material';
+import { Typography, Box, useTheme } from '@mui/material';
 
 const ValueCardItem = ({ imageSrc, title, description }) => {
     const theme = useTheme();
