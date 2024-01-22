@@ -9,20 +9,23 @@ import ValueCardBottom from '../components/value-card-bottom-component';
 const HomePage = () => {
   return (
     <Box>
-      <Box id="landing-section">
-        <LandingSection />
-      </Box>
-      <Box>
-        <InternalDescriptions />
-      <Box id="people-card">
-        <PeopleCard />
-      <Box id="value-card">
-        <ValueCardTop />
-        <ValueCardBottom />
-      </Box>
-      <Box id="section2" sx={{ height: '500px', background: 'lightgreen' }}>
-        Section 2 Content
-      </Box>
+        <Box id="landing-section">
+            <LandingSection />
+        </Box>
+        <Box>
+            <InternalDescriptions />
+        </Box>
+        <Box id="value-card">
+            <ValueCardTop />
+            <ValueCardBottom />
+        </Box>
+        <Box id="people-card">
+            <PeopleCard />
+        </Box>
+       
+        <Box id="section2" sx={{ height: '500px', background: 'lightgreen' }}>
+            Section 2 Content
+        </Box>
     </Box>
   );
 };

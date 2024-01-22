@@ -1,5 +1,5 @@
 export const LINKS = {
-    DISCORD: 'https://discord.com/invite/P8UhBKqAse',
+    DISCORD: 'https://discord.gg/nimble',
     NIMBLE_APP: 'https://app.nimble.technology/login',
     
 };
