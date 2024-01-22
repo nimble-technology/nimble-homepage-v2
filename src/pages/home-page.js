@@ -9,15 +9,11 @@ const HomePage = () => {
       <Box id="landing-section">
         <LandingSection />
       </Box>
-      <Box id="section2">
+      <Box>
+        <InternalDescriptions />
       </Box>
-      <Box id="section3">
-        <InternalDescriptions/>
-      </Box>
-      <Box id="section4">
-      </Box>
-      <Box id="section5" sx={{ height: '500px', background: 'lightgreen' }}>
-        Section 5 Content
+      <Box id="section2" sx={{ height: '500px', background: 'lightgreen' }}>
+        Section 2 Content
       </Box>
     </Box>
   );
