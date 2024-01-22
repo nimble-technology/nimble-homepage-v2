@@ -1,6 +1,7 @@
 import React from 'react';
 import Box from '@mui/material/Box';
 import LandingSection from '../components/landing-section-component';
+import PeopleCard from '../components/people-card-component';
 import ValueCardTop from '../components/value-card-top-component';
 import ValueCardBottom from '../components/value-card-bottom-component';
 
@@ -10,6 +11,8 @@ const HomePage = () => {
       <Box id="landing-section">
         <LandingSection />
       </Box>
+      <Box id="people-card">
+        <PeopleCard />
       <Box id="value-card">
         <ValueCardTop />
         <ValueCardBottom />
