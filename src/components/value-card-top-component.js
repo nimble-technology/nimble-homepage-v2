@@ -30,7 +30,6 @@ const ValueCardTop = () => {
         color: 'white',
         position: 'relative',
         overflow: 'hidden',
-        marginTop: '72px',
     };
 
     return (
