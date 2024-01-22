@@ -8,7 +8,7 @@ const PageTitle = ({ title }) => {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        marginTop: '72px',
+        marginTop: '55px',
     };
 
     return (

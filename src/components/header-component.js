@@ -16,7 +16,7 @@ const Header = () => {
             color="secondary"
             elevation={0}
             sx={{
-                height: '72px',
+                height: '55px',
                 justifyContent: 'center'
             }}
         >
@@ -53,7 +53,7 @@ const Header = () => {
 
                 </Box>
                 <PixelButton
-                    onClick={() => { window.location.href = LINKS.DISCORD; }}
+                    onClick={() => { window.open(LINKS.DISCORD, '_blank'); }}
                     sx={{
                         backgroundColor: theme.palette.primary.main,
                         color: 'black',
@@ -61,7 +61,7 @@ const Header = () => {
                         fontWeight: 400
                     }}
                     width='190px'
-                    height='49px'
+                    height='40px'
                 >
                     Our Vision
                 </PixelButton>
