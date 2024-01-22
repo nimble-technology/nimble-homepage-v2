@@ -2,13 +2,13 @@ import React from 'react';
 import { Box, IconButton } from '@mui/material';
 import { LINKS } from '../constants';
 
-function SocialIcons() {
+function SocialIcons({isMobile}) {
 
     const iconStyle = {
-        width: '24px',
-        height: '22px',
-        marginLeft: '8px',
-        marginRight: '8px',
+        width: isMobile? '18px' : '24px',
+        height: isMobile? '17px' : '22px',
+        marginLeft: isMobile? '3px' : '8px',
+        marginRight: isMobile? '3px' : '8px',
     };
 
     const iconButtonStyle = {
@@ -23,7 +23,7 @@ function SocialIcons() {
       };
 
     return (
-        <Box>
+        <Box width='100%' sx={{ display: 'flex', flexWrap: 'nowrap' }}> 
             <IconButton sx={iconButtonStyle} onClick={() => openLinkInNewTab(LINKS.TELEGRAM)}>
                 <img src="/assets/telegram.png" alt="Telegram" style={iconStyle} />
             </IconButton>
@@ -35,6 +35,9 @@ function SocialIcons() {
             </IconButton>
             <IconButton sx={iconButtonStyle} onClick={() => openLinkInNewTab(LINKS.GITHUB)}>
                 <img src="/assets/github.png" alt="GitHub" style={iconStyle} />
+            </IconButton>
+            <IconButton sx={iconButtonStyle} onClick={() => openLinkInNewTab(LINKS.NIMBLE_APP)}>
+                <img src="/assets/nimble-app.png" alt="NimbleApp" style={iconStyle} />
             </IconButton>
         </Box>
     );

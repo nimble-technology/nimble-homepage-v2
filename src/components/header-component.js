@@ -1,13 +1,19 @@
-import React from 'react';
-import { AppBar, Toolbar, Typography, Button, Box, useTheme } from '@mui/material';
+import React, { useState, useEffect } from 'react';
+import { AppBar, Toolbar, Typography, Button, Box, useTheme, IconButton, Menu, MenuItem, Select } from '@mui/material';
 import PixelButton from './pixel-button-component';
-import { LINKS } from '../constants';
+import { LINKS, SECTIONS } from '../constants';
+import { useMobileContext } from '../mobileContext';
 
 const Header = () => {
 
     const theme = useTheme();
+    const isMobile = useMobileContext();
     const scrollToSection = (sectionId) => {
         document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+    };
+
+    const handleMenuItemClick = (value) => {
+        scrollToSection(value)
     };
 
     return (
@@ -24,44 +30,66 @@ const Header = () => {
                 <Typography
                     sx={{
                         fontFamily: "'Press Start 2P', cursive",
-                        fontSize: '18px',
+                        fontSize: isMobile? '14px' : '18px',
                         fontWeight: 400,
                         lineHeight: '18px',
                         letterSpacing: '0.03em',
                         textAlign: 'left',
-                        marginRight: '30px'
+                        marginRight: isMobile? '10px' : '30px'
                     }}
                 >
                     Nimbus
                 </Typography>
-                <Box
-                    sx={{
-                        flexGrow: 1,
-                        '& .MuiButton-root': {
-                            color: theme.palette.text.primary,
-                            fontWeight: 600,
-                            fontSize: '16px'
-                        }
-                    }}
-                >
-                    <Button onClick={() => scrollToSection('section1')}>About</Button>
-                    <Button onClick={() => scrollToSection('value-card')}>Values</Button>
-                    <Button onClick={() => scrollToSection('section3')}>Partners</Button>
-                    <Button onClick={() => scrollToSection('people-card')}>People</Button>
-                    <Button onClick={() => scrollToSection('section5')}>News</Button>
-                    <Button onClick={() => scrollToSection('section6')}>Careers</Button>
 
-                </Box>
+
+                {isMobile ? (
+
+                    <Box sx={{flexGrow: 1}}>
+                        <Select 
+                            defaultValue={SECTIONS.ABOUT} 
+                            onChange={(e) => handleMenuItemClick(e.target.value)}
+                            sx={{
+                                height: '30px',
+                                width: '110px',
+                            }}
+                        >
+                            <MenuItem value= {SECTIONS.ABOUT} >{SECTIONS.ABOUT}</MenuItem>
+                            <MenuItem value= {SECTIONS.VALUES} >{SECTIONS.VALUES}</MenuItem>
+                            <MenuItem value= {SECTIONS.PARTNERS} >{SECTIONS.PARTNERS}</MenuItem>
+                            <MenuItem value= {SECTIONS.PEOPLE} >{SECTIONS.PEOPLE}</MenuItem>
+                            <MenuItem value= {SECTIONS.NEWS} >{SECTIONS.NEWS}</MenuItem>
+                            <MenuItem value= {SECTIONS.CAREERS} >{SECTIONS.CAREERS}</MenuItem>
+                        </Select>
+                    </Box>
+                ) : (
+                    <Box
+                        sx={{
+                            flexGrow: 1,
+                            '& .MuiButton-root': {
+                                color: theme.palette.text.primary,
+                                fontWeight: 600,
+                                fontSize: '16px'
+                            }
+                        }}
+                    >
+                        <Button onClick={() => scrollToSection(SECTIONS.ABOUT)}>{SECTIONS.ABOUT}</Button>
+                        <Button onClick={() => scrollToSection(SECTIONS.VALUES)}>{SECTIONS.VALUES}</Button>
+                        <Button onClick={() => scrollToSection(SECTIONS.PARTNERS)}>{SECTIONS.PARTNERS}</Button>
+                        <Button onClick={() => scrollToSection(SECTIONS.PEOPLE)}>{SECTIONS.PEOPLE}</Button>
+                        <Button onClick={() => scrollToSection(SECTIONS.NEWS)}>{SECTIONS.NEWS}</Button>
+                        <Button onClick={() => scrollToSection(SECTIONS.CAREERS)}>{SECTIONS.CAREERS}</Button>
+                    </Box>
+                )}
                 <PixelButton
                     onClick={() => { window.open(LINKS.DISCORD, '_blank'); }}
                     sx={{
                         backgroundColor: theme.palette.primary.main,
                         color: 'black',
-                        fontSize: '12px',
+                        fontSize: isMobile? '10px' : '12px',
                         fontWeight: 400
                     }}
-                    width='190px'
-                    height='40px'
+                    width= {isMobile? '120px' : '190px'}
+                    height='30px'
                 >
                     Our Vision
                 </PixelButton>
