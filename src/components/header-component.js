@@ -72,11 +72,6 @@ const Header = () => {
                             }}
                         >
                             <MenuItem value= {SECTIONS.ABOUT} >{SECTIONS.ABOUT}</MenuItem>
-                            <MenuItem value= {SECTIONS.VALUES} >{SECTIONS.VALUES}</MenuItem>
-                            <MenuItem value= {SECTIONS.PARTNERS} >{SECTIONS.PARTNERS}</MenuItem>
-                            <MenuItem value= {SECTIONS.PEOPLE} >{SECTIONS.PEOPLE}</MenuItem>
-                            <MenuItem value= {SECTIONS.NEWS} >{SECTIONS.NEWS}</MenuItem>
-                            <MenuItem value= {SECTIONS.CAREERS} >{SECTIONS.CAREERS}</MenuItem>
                         </Select>
                     </Box>
                 ) : (
