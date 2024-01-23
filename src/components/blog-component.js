@@ -1,20 +1,41 @@
 import React, { useState, useEffect } from 'react';
 import Box from '@mui/material/Box';
-import ValueCardItem from './value-card-item-component';
 import PageTitle from './page-title-component';
+import axios from "axios";
 
 const Blog = () => {
 
     const [blogs, setBlogs] = useState([]);
 
     useEffect(() => {
-        fetch('/api/blogs') 
-            .then(response => response.json())
-            .then(data => {
-                const sortedBlogs = data.sort((a, b) => new Date(b.createDate) - new Date(a.createDate));
-                setBlogs(sortedBlogs.slice(0, 3));
+        axios
+            .get('./blogs/index.json')
+            .then(res => {
+                const indexData = res.data;
+                const filesToFetch = indexData.map(blog => ({
+                    fileName: blog.fileName,
+                    createDate: blog.createDate
+                }));
+
+                filesToFetch.sort((a, b) => new Date(b.createDate) - new Date(a.createDate));
+
+                const latestFiles = filesToFetch.slice(0, 3);
+
+                const fetchPromises = latestFiles.map(fileData => {
+                    const fileName = fileData.fileName;
+                    return axios.get(`./blogs/${fileName}`)
+                        .then(response => {
+                            return response.data;
+                        });
+                });
+
+                Promise.all(fetchPromises)
+                    .then(blogDataArray => {
+                        setBlogs(blogDataArray);
+                    })
+                    .catch(error => console.error('Error fetching JSON files:', error));
             })
-            .catch(error => console.error('Error fetching blogs:', error));
+            .catch(error => console.error('Error fetching blog index:', error));
     }, []);
 
     const sideStyle = {
@@ -30,10 +51,10 @@ const Blog = () => {
 
     return (
         <Box sx={{ ...sideStyle }} >
-            <PageTitle title='Values' />
+            <PageTitle title='Our Media' />
             <Box sx={{ display: 'flex', gap: 2, marginTop: '60px', }}>
-                {valuesList.map((valuesItem, index) => (
-                    <ValueCardItem key={index} imageSrc={valuesItem.imageSrc} title={valuesItem.title} description={valuesItem.description} />
+                {blogs.map((blog, index) => (
+                    <Box sx={{ color: 'black' }}> {blog.title}</Box>
                 ))}
             </Box>
         </Box>
