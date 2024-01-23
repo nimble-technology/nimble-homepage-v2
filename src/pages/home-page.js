@@ -15,7 +15,7 @@ const HomePage = () => {
             <Box id={SECTIONS.ABOUT}>
                 <LandingSection />
             </Box>
-            <Box>
+            <Box id={SECTIONS.PARTNERS}>
                 <EcosystemPartners />
             </Box>
             <Box>
