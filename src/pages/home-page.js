@@ -7,6 +7,7 @@ import LandingSection from '../components/landing-section-component';
 import PeopleCard from '../components/people-card-component';
 import ValueCardTop from '../components/value-card-top-component';
 import ValueCardBottom from '../components/value-card-bottom-component';
+import Blog from '../components/blog-component';
 import { SECTIONS } from '../constants';
 
 const HomePage = () => {
@@ -28,6 +29,9 @@ const HomePage = () => {
             </Box>
             <Box id={SECTIONS.PEOPLE}>
                 <PeopleCard />
+            </Box>
+            <Box>
+                <Blog />
             </Box>
             <Box id={SECTIONS.CAREERS}>
                 <CareersCard />
