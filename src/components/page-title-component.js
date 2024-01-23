@@ -12,7 +12,7 @@ const PageTitle = ({ title }) => {
         justifyContent: 'center',
         alignItems: 'center',
         marginTop: 6,
-        marginBottom: 4,
+        marginBottom: isMobile ? 2 : 4,
     };
 
     return (

@@ -5,7 +5,8 @@ export const LINKS = {
     TWITTER: 'https://twitter.com/Nimble_Network',
     GITHUB: 'https://github.com/nimble-technology',
     WHITEPAPER: 'https://docs.nimble.technology/ai-digest/whitepaper',
-    LITEPAPER:'https://github.com/nimble-technology/nimble-papers/blob/main/Nimble-Litepaper.pdf'
+    LITEPAPER:'https://github.com/nimble-technology/nimble-papers/blob/main/Nimble-Litepaper.pdf',
+    CAREERS: 'CAREERS link'
 };
 
 export const SECTIONS = {
