@@ -20,7 +20,7 @@ const LandingSection = () => {
 
     const imageStyle = {
       maxWidth: 800,
-      width: '80%',
+      width: '90%',
       height: 'auto',
     };
     
