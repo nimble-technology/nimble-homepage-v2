@@ -1,8 +1,11 @@
 import React from 'react';
 import { Typography, Box, useTheme } from '@mui/material';
+import { useMobileContext } from '../mobileContext';
 
 const InternalDescriptions = () => {
+
     const theme = useTheme();
+    const isMobile = useMobileContext();
 
     const containerStyle = {
         width: '100vw',
@@ -21,8 +24,16 @@ const InternalDescriptions = () => {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
-        marginRight: '80px',
-        width: '597px',
+        textAlign: 'center',
+        color: theme.palette.text.secondary,
+        width: isMobile ? '344px' : '597px',
+    };
+
+    const textContentContainerStyle = {
+        marginTop: isMobile ? '10px' : '30px',
+        marginBottom: isMobile ? '20px' : '30px',
+        width: isMobile ? '100%' : '75%',
+        alignItems: 'center'
     };
 
     return (
@@ -31,31 +42,32 @@ const InternalDescriptions = () => {
                 <Typography
                     sx={{
                         fontFamily: "'Press Start 2P', cursive",
-                        fontSize: '26px',
+                        fontSize: isMobile ? '14px' : '26px',
                         fontWeight: 400,
                         letterSpacing: '0.03em',
-                        lineHeight: '61px',
-                        textAlign: 'left',
+                        lineHeight: isMobile ? '22px' : '61px',
+                        textAlign: isMobile ? 'center' : 'left',
                         color: theme.palette.text.secondary,
                     }}>
                     Where intention comes to life
                 </Typography>
-                <Typography
-                    sx={{
-                        fontFamily: "'Titillium Web', cursive",
-                        fontSize: '16px',
-                        fontWeight: 400,
-                        letterSpacing: '0.03em',
-                        textAlign: 'left',
-                        color: theme.palette.text.secondary,
-                        marginTop: '30px',
-                        width: '75%',
-                    }}>
-                    Good technology is invisible. Nimble Protocol hides the complexity of Web3 systems by translating user’s desired outcomes into action.
-                </Typography>
+                <Box sx={{ ...textContentContainerStyle }}>
+                    <Typography
+                        sx={{
+                            fontFamily: "'Titillium Web', cursive",
+                            fontSize: isMobile ? '14px' : '16px',
+                            fontWeight: 400,
+                            letterSpacing: '0.03em',
+                            lineHeight: isMobile ? '21px' : '24px',
+                            color: theme.palette.text.secondary,
+                            textAlign: isMobile ? 'center' : 'left',
+                        }}>
+                        Good technology is invisible. Nimble Protocol hides the complexity of Web3 systems by translating user’s desired outcomes into action.
+                    </Typography>
+                </Box>
             </Box>
-            <Box >
-                <Box component="img" src='/assets/internal-descriptions.png' sx={{ width: 538, height: 307 }} />
+            <Box>
+                <Box component="img" src='/assets/internal-descriptions.png' sx={{ width: isMobile ? 281 : 538, height: isMobile ? 160 : 307, }} />
             </Box>
         </Box>
     );
