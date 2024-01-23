@@ -28,12 +28,11 @@ const HomePage = () => {
             <Box id={SECTIONS.CAREERS}>
                 <CareersCard />
             </Box>
-       
             <Box id="section2" sx={{ height: '500px', background: 'lightgreen' }}>
                 Section 2 Content
             </Box>
         </Box>
-  );
+    );
 };
 
 export default HomePage;
