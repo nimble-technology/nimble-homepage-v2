@@ -19,15 +19,17 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 #root {
   width: 100%;
+  display: flex;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  monospace;
 }
 
 * {

@@ -4,8 +4,8 @@ export const LINKS = {
     TELEGRAM: 'https://t.me/nimble_network',
     TWITTER: 'https://twitter.com/Nimble_Network',
     GITHUB: 'https://github.com/nimble-technology',
-    WHITEPAPER: 'https://docs.nimble.technology/ai-digest/whitepaper',
-    LITEPAPER:'https://github.com/nimble-technology/nimble-papers/blob/main/Nimble-Litepaper.pdf',
+    WHITEPAPER: '/whitepaper',
+    LITEPAPER:'/litepaper',
     CAREERS: 'CAREERS link'
 };
 
