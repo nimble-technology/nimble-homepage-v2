@@ -72,7 +72,7 @@ const LandingSection = () => {
                     fontWeight: 400,
                     textAlign: 'center',
                     color: theme.palette.text.secondary,
-                    marginTop: '70px'
+                    marginTop: '130px'
                 }}>
                 The Composable AI Protocol
             </Typography>
