@@ -26,7 +26,7 @@ const HomePage = () => {
                 <ValueCardTop />
                 <ValueCardBottom />
             </Box>
-            <Box id="people-card">
+            <Box id={SECTIONS.PEOPLE}>
                 <PeopleCard />
             </Box>
             <Box id={SECTIONS.CAREERS}>
