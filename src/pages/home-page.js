@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Box from '@mui/material/Box';
+import CareersCard from '../components/careers-card-component';
 import InternalDescriptions from '../components/internal-descriptions-component';
 import LandingSection from '../components/landing-section-component';
 import PeopleCard from '../components/people-card-component';
@@ -24,12 +25,14 @@ const HomePage = () => {
             <Box id="people-card">
                 <PeopleCard />
             </Box>
-       
+            <Box id={SECTIONS.CAREERS}>
+                <CareersCard />
+            </Box>
             <Box id="section2" sx={{ height: '500px', background: 'lightgreen' }}>
                 Section 2 Content
             </Box>
         </Box>
-  );
+    );
 };
 
 export default HomePage;
