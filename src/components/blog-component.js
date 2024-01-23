@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Box from '@mui/material/Box';
 import PageTitle from './page-title-component';
 import axios from "axios";
+import BlogCard from './blog-card-component';
 
 const Blog = () => {
 
@@ -54,7 +55,7 @@ const Blog = () => {
             <PageTitle title='Our Media' />
             <Box sx={{ display: 'flex', gap: 2, marginTop: '60px', }}>
                 {blogs.map((blog, index) => (
-                    <Box sx={{ color: 'black' }}> {blog.title}</Box>
+                    <BlogCard title={blog.title} date={blog.createDate}></BlogCard>
                 ))}
             </Box>
         </Box>
