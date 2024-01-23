@@ -38,7 +38,7 @@ const Header = () => {
                         marginRight: isMobile? '10px' : '30px'
                     }}
                 >
-                    Nimbus
+                    Nimble
                 </Typography>
 
 
