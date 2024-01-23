@@ -3,13 +3,19 @@ import { AppBar, Toolbar, Typography, Button, Box, useTheme, IconButton, Menu, M
 import PixelButton from './pixel-button-component';
 import { LINKS, SECTIONS } from '../constants';
 import { useMobileContext } from '../mobileContext';
+import {Navigate, useNavigate} from 'react-router-dom';
 
 const Header = () => {
+
+    const navigate = useNavigate();
 
     const theme = useTheme();
     const isMobile = useMobileContext();
     const scrollToSection = (sectionId) => {
-        document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+        const section = document.getElementById(sectionId);
+        if (section) {
+            section.scrollIntoView({behavior: 'smooth'});
+        }
     };
 
     const handleMenuItemClick = (value) => {
@@ -27,26 +33,28 @@ const Header = () => {
             }}
         >
             <Toolbar>
-                <Typography
-                    sx={{
-                        fontFamily: "'Press Start 2P', cursive",
-                        fontSize: isMobile? '14px' : '18px',
-                        fontWeight: 400,
-                        lineHeight: '18px',
-                        letterSpacing: '0.03em',
-                        textAlign: 'left',
-                        marginRight: isMobile? '10px' : '30px'
-                    }}
-                >
-                    Nimble
-                </Typography>
+                    <Typography
+                        sx={{
+                            fontFamily: "'Press Start 2P', cursive",
+                            fontSize: isMobile? '14px' : '18px',
+                            fontWeight: 400,
+                            lineHeight: '18px',
+                            letterSpacing: '0.03em',
+                            textAlign: 'left',
+                            marginRight: isMobile? '10px' : '30px',
+                            cursor: 'pointer'
+                        }}
+                        onClick={() => navigate('/')}
+                    >
+                        Nimble
+                    </Typography>
 
 
                 {isMobile ? (
 
                     <Box sx={{flexGrow: 1}}>
-                        <Select 
-                            defaultValue={SECTIONS.ABOUT} 
+                        <Select
+                            defaultValue={SECTIONS.ABOUT}
                             onChange={(e) => handleMenuItemClick(e.target.value)}
                             sx={{
                                 height: '30px',
