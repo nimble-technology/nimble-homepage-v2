@@ -9,33 +9,39 @@ const ValueCardTop = () => {
         {
             imageSrc: '/assets/values1.png',
             title: "Borderless Ecosystem",
-            description: 'An open system of applications spanning across the entire Web3 ecosystem',
+            description: 'An open system of developers & applications spanning across the entire AI ecosystem',
         },
         {
             imageSrc: '/assets/values2.png',
             title: "Inclusive by Design",
-            description: 'Designed for accessibility first, so people from every background can participate without requiring specialized knowledge',
+            description: 'Designed for accessibility first, so everyone can contribute their knowledge & resources',
         }, {
             imageSrc: '/assets/values3.png',
-            title: "Free Market",
-            description: 'A permissionless protocol that is extensible at every layer'
+            title: "Open Protocol",
+            description: 'A permissionless protocol that is extensible at every layer of AI with network rewards'
         }];
 
     const sideStyle = {
-        height: 'calc(100vh - 72px)',
         width: '100vw',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
         color: 'white',
         position: 'relative',
-        overflow: 'hidden',
+    };
+
+    const itemContainerStyle = {
+        display: 'flex',
+        columnGap: 2,
+        rowGap: 2,
+        flexFlow: 'wrap',
+        justifyContent: 'center',
     };
 
     return (
         <Box sx={{ ...sideStyle }} >
             <PageTitle title='Values' />
-            <Box sx={{ display: 'flex', gap: 2, marginTop: '60px', }}>
+            <Box sx={{ ...itemContainerStyle }}>
                 {valuesList.map((valuesItem, index) => (
                     <ValueCardItem key={index} imageSrc={valuesItem.imageSrc} title={valuesItem.title} description={valuesItem.description} />
                 ))}
