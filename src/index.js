@@ -5,6 +5,7 @@ import { ThemeProvider } from "@mui/material/styles";
 import { AppRoutes } from "./routes";
 import { theme } from "./styles/custom-theme-style.js";
 import { createTheme } from "@mui/material/styles";
+import { MobileProvider } from "./mobileContext.js";
 import "./index.css";
 
 const customTheme = createTheme(theme);
@@ -14,7 +15,9 @@ const root = createRoot(rootElement);
 root.render(
   <div className="App">
     <ThemeProvider theme={customTheme}>
-      <AppRoutes />
+      <MobileProvider>
+        <AppRoutes />
+      </MobileProvider>
     </ThemeProvider>
   </div>
 );

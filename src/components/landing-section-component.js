@@ -3,16 +3,25 @@ import { Typography, Button, Box, useTheme, IconButton } from '@mui/material';
 import PixelButton from './pixel-button-component';
 import { LINKS } from '../constants'; 
 import SocialIcons from './social-icons-component';
+import { useMobileContext } from '../mobileContext';
 
 
 const LandingSection = () => {
 
     const theme = useTheme();
+    const isMobile = useMobileContext();
+
+    const imageContainerStyle = {
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      marginTop: isMobile ? '80px' : '20px',
+    };
 
     const imageStyle = {
-      width: 800,
+      maxWidth: 800,
+      width: '90%',
       height: 'auto',
-      position: 'relative',
     };
     
     const buttonContainerStyle = {
@@ -22,6 +31,7 @@ const LandingSection = () => {
       transform: 'translate(-50%)',
       display: 'flex',
       alignItems: 'center',
+      marginTop: isMobile ? '-60px' : '0',
     };
 
     return (
@@ -42,58 +52,58 @@ const LandingSection = () => {
             <Typography 
                 sx={{ 
                     fontFamily: "'Press Start 2P', cursive",
-                    fontSize: '34px',
+                    fontSize: isMobile ? '26px' : '34px',
                     fontWeight: 400,
                     textAlign: 'center',
                     color: theme.palette.text.secondary,
-                    marginTop: '50px'
+                    marginTop: '70px'
                 }}>
-                Your Everything Marketplace Infrastructure
+                The Composable AI Protocol
             </Typography>
             <Typography 
                 sx={{ 
                   mt: 1, 
                   mb: 2, 
-                  fontSize: '14px',
+                  fontSize: isMobile ? '12px' : '14px',
                   fontWeight: 400, 
                   textAlign: 'center',
                   color: 'rgba(0, 0, 0, 0.5)',
                 }}
             >
-                Nimble is building the first-ever everything marketplace for intents.
+                Nimble is building the first-ever decentralized AI framework.
             </Typography>
-            <Box sx={{ display: 'flex', gap: 2 }}>
+            <Box sx={{ display: 'flex', gap: 2, marginTop: isMobile ? '50px' : '20px' }}>
                 <PixelButton
-                    onClick={() => { window.open(LINKS.NIMBLE_APP, '_blank'); }}
+                    onClick={() => { window.open(LINKS.WHITEPAPER, '_blank'); }}
                     sx={{
                         backgroundColor: 'black', 
                         color: 'white',
-                        fontSize: '16px',
-                        fontWeight: 400
+                        fontSize: isMobile ? '14px' : '16px',
+                        fontWeight: isMobile ? 300 : 400,
                     }}
-                    width='200px'
-                    height='55px'
+                    width= {isMobile ? '150px' : '200px'}
+                    height={isMobile ? '45px' : '55px'}
                 >
-                    Nimbus App
+                    Whitepaper
                 </PixelButton>
                 <PixelButton
-                    onClick={() => { window.open(LINKS.DISCORD, '_blank'); }}
+                    onClick={() => { window.open(LINKS.LITEPAPER, '_blank'); }}
                     sx={{
                         backgroundColor: 'rgba(0, 0, 0, 0.1)', 
                         color: 'black', 
-                        fontSize: '16px',
-                        fontWeight: 400
+                        fontSize: isMobile ? '14px' : '16px',
+                        fontWeight: isMobile ? 300 : 400,
                     }}
-                    width='200px'
-                    height='55px'
+                    width= {isMobile ? '150px' : '200px'}
+                    height={isMobile ? '45px' : '55px'}
                 >
-                    Get Updates
+                    Litepaper
                 </PixelButton>
             </Box>
-            <Box position="relative" sx={{marginTop: '20px' }} >
+            <Box position="relative" sx={imageContainerStyle} >
                 <Box component="img" src="/assets/landing.png" alt="Landing" sx={imageStyle} />
                 <Box style={buttonContainerStyle}>
-                    <SocialIcons />
+                    <SocialIcons isMobile={isMobile} />
                 </Box>
                 
          
