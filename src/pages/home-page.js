@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Box from '@mui/material/Box';
+import EcosystemPartners from '../components/ecosystem-partners-component';
 import CareersCard from '../components/careers-card-component';
 import InternalDescriptions from '../components/internal-descriptions-component';
 import LandingSection from '../components/landing-section-component';
@@ -14,6 +15,9 @@ const HomePage = () => {
         <Box>
             <Box id={SECTIONS.ABOUT}>
                 <LandingSection />
+            </Box>
+            <Box id={SECTIONS.PARTNERS}>
+                <EcosystemPartners />
             </Box>
             <Box>
                 <InternalDescriptions />
