@@ -61,7 +61,7 @@ const ValueCardBottom = () => {
                 </Box>
             </Box>
             <Box >
-                <Box component="img" src='/assets/values4.png' sx={{ width: isMobile ? 281 : 538, height: isMobile ? 160 : 307 }} />
+                <Box component="img" src='/assets/values4.png' sx={{ width: isMobile ? '296px' : '538px', height: isMobile ? '169px' : '307px' }} />
             </Box>
         </Box>
     );
