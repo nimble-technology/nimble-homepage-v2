@@ -54,11 +54,6 @@ const Header = () => {
                             }}
                         >
                             <MenuItem value= {SECTIONS.ABOUT} >{SECTIONS.ABOUT}</MenuItem>
-                            <MenuItem value= {SECTIONS.VALUES} >{SECTIONS.VALUES}</MenuItem>
-                            <MenuItem value= {SECTIONS.PARTNERS} >{SECTIONS.PARTNERS}</MenuItem>
-                            <MenuItem value= {SECTIONS.PEOPLE} >{SECTIONS.PEOPLE}</MenuItem>
-                            <MenuItem value= {SECTIONS.NEWS} >{SECTIONS.NEWS}</MenuItem>
-                            <MenuItem value= {SECTIONS.CAREERS} >{SECTIONS.CAREERS}</MenuItem>
                         </Select>
                     </Box>
                 ) : (
@@ -73,11 +68,6 @@ const Header = () => {
                         }}
                     >
                         <Button onClick={() => scrollToSection(SECTIONS.ABOUT)}>{SECTIONS.ABOUT}</Button>
-                        <Button onClick={() => scrollToSection(SECTIONS.VALUES)}>{SECTIONS.VALUES}</Button>
-                        <Button onClick={() => scrollToSection(SECTIONS.PARTNERS)}>{SECTIONS.PARTNERS}</Button>
-                        <Button onClick={() => scrollToSection(SECTIONS.PEOPLE)}>{SECTIONS.PEOPLE}</Button>
-                        <Button onClick={() => scrollToSection(SECTIONS.NEWS)}>{SECTIONS.NEWS}</Button>
-                        <Button onClick={() => scrollToSection(SECTIONS.CAREERS)}>{SECTIONS.CAREERS}</Button>
                     </Box>
                 )}
                 <PixelButton
