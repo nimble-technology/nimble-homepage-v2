@@ -3,10 +3,13 @@ import Box from '@mui/material/Box';
 import PageTitle from './page-title-component';
 import axios from "axios";
 import BlogCard from './blog-card-component';
+import { useMobileContext } from '../mobileContext';
 
 const Blog = () => {
 
     const [blogs, setBlogs] = useState([]);
+
+    const isMobile = useMobileContext();
 
     useEffect(() => {
         axios
@@ -40,7 +43,6 @@ const Blog = () => {
     }, []);
 
     const sideStyle = {
-        height: 'calc(100vh - 72px)',
         width: '100vw',
         display: 'flex',
         flexDirection: 'column',
@@ -48,12 +50,23 @@ const Blog = () => {
         color: 'white',
         position: 'relative',
         overflow: 'hidden',
+        background: '#F8F8F8',
+        paddingTop: '50px',
+        paddingBottom: '100px'
+
     };
 
     return (
         <Box sx={{ ...sideStyle }} >
             <PageTitle title='Our Media' />
-            <Box sx={{ display: 'flex', gap: 2, marginTop: '60px', }}>
+            <Box 
+                sx={{ 
+                    display: 'flex', 
+                    gap: 2, 
+                    marginTop: isMobile ? '40px' : '60px',
+                    flexWrap: 'wrap',
+                    justifyContent: 'center',
+                }}>
                 {blogs.map((blog, index) => (
                     <BlogCard title={blog.title} date={blog.createDate}></BlogCard>
                 ))}
