@@ -15,7 +15,7 @@ const LandingSection = () => {
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
-      marginTop: '20px',
+      marginTop: isMobile ? '80px' : '20px',
     };
 
     const imageStyle = {
@@ -31,7 +31,7 @@ const LandingSection = () => {
       transform: 'translate(-50%)',
       display: 'flex',
       alignItems: 'center',
-      marginTop: isMobile ? '-10px' : '0',
+      marginTop: isMobile ? '-60px' : '0',
     };
 
     return (
@@ -72,7 +72,7 @@ const LandingSection = () => {
             >
                 Nimble is building the first-ever decentralized AI framework.
             </Typography>
-            <Box sx={{ display: 'flex', gap: 2, marginTop: '20px' }}>
+            <Box sx={{ display: 'flex', gap: 2, marginTop: isMobile ? '50px' : '20px' }}>
                 <PixelButton
                     onClick={() => { window.open(LINKS.WHITEPAPER, '_blank'); }}
                     sx={{
