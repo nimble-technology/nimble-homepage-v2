@@ -12,6 +12,7 @@ export const LINKS = {
 export const SECTIONS = {
     ABOUT: 'About',
     VALUES: 'Values',
+    APPLICATIONS: 'Applications',
     PARTNERS: 'Partners',
     PEOPLE: 'People',
     NEWS: 'News',

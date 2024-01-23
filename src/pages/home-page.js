@@ -24,8 +24,11 @@ const HomePage = () => {
                 <InternalDescriptions />
             </Box>
             <Box id={SECTIONS.VALUES}>
-                <ValueCardTop />
+                <ValueCardTop content={'values'} />
                 <ValueCardBottom />
+            </Box>
+            <Box id={SECTIONS.APPLICATIONS}>
+                <ValueCardTop content={'applications'} />
             </Box>
             <Box id={SECTIONS.PEOPLE}>
                 <PeopleCard />
