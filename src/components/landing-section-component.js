@@ -37,7 +37,7 @@ const LandingSection = () => {
     return (
         <Box
             sx={{
-                height: '730px',
+                height: '1000px',
                 background: 'linear-gradient(180deg, #1DF98F 60%, rgba(29, 249, 143, 0) 130%)',
                 width: '100vw',
                 display: 'flex',
