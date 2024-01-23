@@ -99,8 +99,6 @@ const PeopleCard = () => {
                     }} />
                 </Box>
             )}
-
-
             <Box sx={{
                 display: 'flex',
                 columnGap: 25,
