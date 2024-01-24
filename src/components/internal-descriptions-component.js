@@ -49,7 +49,7 @@ const InternalDescriptions = () => {
                         textAlign: isMobile ? 'center' : 'left',
                         color: theme.palette.text.secondary,
                     }}>
-                    Where intention comes to life
+                    Where decentralized AI meets blockchain
                 </Typography>
                 <Box sx={{ ...textContentContainerStyle }}>
                     <Typography
@@ -62,7 +62,7 @@ const InternalDescriptions = () => {
                             color: theme.palette.text.secondary,
                             textAlign: isMobile ? 'center' : 'left',
                         }}>
-                        Good technology is invisible. Nimble Protocol hides the complexity of Web3 systems by translating user’s desired outcomes into action.
+                        Nimble provides a decentralized framework that enables AI models and data to be combined and reused. A network of interconnected AI agents, data providers, and compute resources replaces centralized platforms.
                     </Typography>
                 </Box>
             </Box>
