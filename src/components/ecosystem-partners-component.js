@@ -24,8 +24,8 @@ const EcosystemPartners = () => {
         color: 'white',
         position: 'relative',
         background: '#F8F8F8',
-        paddingTop: isMobile ? '20px' : '140px',
-        paddingBottom: isMobile ? '20px' : '140px'
+        paddingTop: isMobile ? '20px' : '80px',
+        paddingBottom: isMobile ? '20px' : '80px'
     };
 
     const imageContainerStyle = {
