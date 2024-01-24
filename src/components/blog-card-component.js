@@ -16,6 +16,8 @@ const BlogCard = ({ title, date }) => {
         <Box sx={{
             width: isMobile ? '300px' : '375px',
             overflow: 'hidden',
+            marginLeft: '10px',
+            marginRight: '10px'
         }}>
             <Box sx={{
                 width: '100%',

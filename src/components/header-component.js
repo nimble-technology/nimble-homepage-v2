@@ -19,7 +19,11 @@ const Header = () => {
     };
 
     const handleMenuItemClick = (value) => {
-        scrollToSection(value)
+        if (value === SECTIONS.NEWS) {
+            navigate('/news/list');
+        } else {
+            scrollToSection(value);
+        }
     };
 
     return (
@@ -84,7 +88,7 @@ const Header = () => {
                         <Button onClick={() => scrollToSection(SECTIONS.VALUES)}>{SECTIONS.VALUES}</Button>
                         <Button onClick={() => scrollToSection(SECTIONS.PARTNERS)}>{SECTIONS.PARTNERS}</Button>
                         <Button onClick={() => scrollToSection(SECTIONS.PEOPLE)}>{SECTIONS.PEOPLE}</Button>
-                        <Button onClick={() => scrollToSection(SECTIONS.NEWS)}>{SECTIONS.NEWS}</Button>
+                        <Button onClick={() => navigate('/news/list')}>{SECTIONS.NEWS}</Button>
                         <Button onClick={() => scrollToSection(SECTIONS.CAREERS)}>{SECTIONS.CAREERS}</Button>
                     </Box>
                 )}
