@@ -3,7 +3,7 @@ import { Box, Button, Typography, useTheme } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import { useMobileContext } from '../mobileContext';
 
-const BlogHeader = () => {
+const BlogHeader = ({title = "News & Blog"}) => {
 
     const theme = useTheme();
     const navigate = useNavigate();
@@ -12,6 +12,22 @@ const BlogHeader = () => {
     const handleBack = () => {
         navigate(-1);
     };
+
+    const calculateFontSize = (title, isMobile) => {
+        const maxFontSize = 30;
+        const minFontSize = 10;
+        const maxLength = isMobile ? 15 : 25;
+        const avgCharWidth = maxFontSize / 1.5;
+        const requiredWidth = title.length * avgCharWidth;
+        const availableWidth = window.innerWidth - (isMobile ? theme.spacing(8) : theme.spacing(20));
+        if (requiredWidth > availableWidth || title.length > maxLength) {
+            return Math.max(minFontSize, (availableWidth / title.length) * 1.5);
+        } else {
+            return maxFontSize;
+        }
+    };
+
+    const adjustedFontSize = calculateFontSize(title, isMobile);
 
     const headerStyle = {
         position: 'fixed',
@@ -34,30 +50,26 @@ const BlogHeader = () => {
 
     const backButtonStyle = {
         fontFamily: "'Press Start 2P', cursive",
-        fontSize: isMobile ? '14px' : '18px',
+        fontSize: isMobile ? '12px' : '14px',
         color: '#161818',
         position: 'absolute',
-        top: theme.spacing(3),
-        left: isMobile ? theme.spacing(4) : theme.spacing(10),
+        top: theme.spacing(1),
+        left: theme.spacing(1),
     };
 
     const textStyle = {
         fontFamily: "'Press Start 2P', cursive",
-        fontSize: isMobile ? '24px' : '30px',
+        fontSize: adjustedFontSize + 'px',
         fontWeight: 400,
-        lineHeight: '61px',
-        letterSpacing: '0.03em',
         textAlign: 'center',
     };
 
     return (
         <Box sx={headerStyle}>
-            
             <Button sx={backButtonStyle} onClick={handleBack}>
                 {"< Back"}
             </Button>
-            
-            <Typography sx={textStyle}>News & Blog</Typography>
+            <Typography sx={textStyle}>{title}</Typography>
         </Box>
         
     );
