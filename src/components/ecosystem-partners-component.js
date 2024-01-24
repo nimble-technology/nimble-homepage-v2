@@ -43,7 +43,8 @@ const EcosystemPartners = () => {
     const imageStyle = {
         width: isMobile ? '52px' : '134px',
         height: isMobile ? '52px' : '134px',
-        borderRadius: '50%'
+        borderRadius: '50%',
+        objectFit: 'cover'
     };
 
     return (
