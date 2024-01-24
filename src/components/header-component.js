@@ -13,12 +13,6 @@ const Header = () => {
 
     const theme = useTheme();
     const isMobile = useMobileContext();
-    // const scrollToSection = (sectionId) => {
-    //     const section = document.getElementById(sectionId);
-    //     if (section) {
-    //         section.scrollIntoView({behavior: 'smooth'});
-    //     }
-    // };
 
     const navigateAndScroll = (sectionId, targetPath = '/') => {
 

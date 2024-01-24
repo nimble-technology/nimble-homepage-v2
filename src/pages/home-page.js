@@ -33,7 +33,7 @@ const HomePage = () => {
             <Box id={SECTIONS.PEOPLE}>
                 <PeopleCard />
             </Box>
-            <Box>
+            <Box id={SECTIONS.NEWS}>
                 <Blog />
             </Box>
             <Box id={SECTIONS.CAREERS}>
