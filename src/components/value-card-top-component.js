@@ -1,10 +1,11 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import Box from '@mui/material/Box';
 import ValueCardItem from './value-card-item-component';
 import PageTitle from './page-title-component';
 
-const ValueCardTop = ({content}) => {
+const ValueCardTop = ({ content }) => {
 
+    let useTitle = content === 'applications' ? 'Applications' : 'Values';
     let useList = [];
 
     const valuesList = [
@@ -66,7 +67,7 @@ const ValueCardTop = ({content}) => {
 
     return (
         <Box sx={{ ...sideStyle }} >
-            <PageTitle title='Values' />
+            <PageTitle title={useTitle} />
             <Box sx={{ ...itemContainerStyle }}>
                 {useList.map((valuesItem, index) => (
                     <ValueCardItem key={index} imageSrc={valuesItem.imageSrc} title={valuesItem.title} description={valuesItem.description} />
