@@ -7,6 +7,7 @@ const BlogCard = ({ title, date, fileName, thumb }) => {
 
     const isMobile = useMobileContext();
     const navigate = useNavigate();
+    const baseUrl = process.env.REACT_APP_BLOGS_URL;
 
     const handleClick = () => {
         const fileNameWithoutExtension = fileName.replace(/\.json$/, "");
@@ -24,7 +25,7 @@ const BlogCard = ({ title, date, fileName, thumb }) => {
                 width: '100%',
             }}>
                 <Button onClick={handleClick} sx={{ padding: 0 }}>
-                    <img src={`/assets/blog-images/${thumb}`} alt="Icon" style={{ width: '100%' }} />
+                    <img src={`${baseUrl}/assets/blog-images/${thumb}`} alt="Icon" style={{ width: '100%' }} />
                 </Button>
             </Box>
             <Box>

@@ -8,6 +8,7 @@ const NewsPage = () => {
 
     const [news, setNews] = useState({});
     const params = useParams();
+    const baseUrl = process.env.REACT_APP_BLOGS_URL;
 
     const markdownContainerStyle = {
         img: {
@@ -19,7 +20,7 @@ const NewsPage = () => {
     };
 
     useEffect(() => {
-        fetch(`/blogs/${params.fileName}.json`)
+        fetch(`${baseUrl}/blogs/${params.fileName}.json`)
             .then(response => response.json())
             .then(data => setNews(data))
     }, [params.fileName]);
