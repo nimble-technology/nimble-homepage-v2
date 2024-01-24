@@ -1,15 +1,16 @@
 import React from 'react';
 import { Typography, Box, Button } from '@mui/material';
 import { useMobileContext } from '../mobileContext';
+import {Navigate, useNavigate} from 'react-router-dom';
 
-const BlogCard = ({ title, date }) => {
+const BlogCard = ({ title, date, fileName }) => {
 
     const isMobile = useMobileContext();
+    const navigate = useNavigate();
 
     const handleClick = () => {
-
-        // Todo: add the redirect page link here
-        console.log('Button clicked!');
+        const fileNameWithoutExtension = fileName.replace(/\.json$/, "");
+        navigate('/news/' + fileNameWithoutExtension);
     };
 
     return (

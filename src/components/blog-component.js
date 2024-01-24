@@ -29,7 +29,11 @@ const Blog = () => {
                     const fileName = fileData.fileName;
                     return axios.get(`./blogs/${fileName}`)
                         .then(response => {
-                            return response.data;
+                            return {
+                                title: response.data.title,
+                                createDate: response.data.createDate,
+                                fileName: fileName
+                            };
                         });
                 });
 
@@ -68,7 +72,7 @@ const Blog = () => {
                     justifyContent: 'center',
                 }}>
                 {blogs.map((blog, index) => (
-                    <BlogCard title={blog.title} date={blog.createDate}></BlogCard>
+                    <BlogCard title={blog.title} date={blog.createDate} fileName={blog.fileName}> </BlogCard>
                 ))}
             </Box>
         </Box>

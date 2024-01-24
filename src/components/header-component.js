@@ -93,7 +93,7 @@ const Header = () => {
                     </Box>
                 )}
                 <PixelButton
-                    onClick={() => { window.open(LINKS.DISCORD, '_blank'); }}
+                    onClick={() => { navigate('/news/vision') }}
                     sx={{
                         backgroundColor: theme.palette.primary.main,
                         color: 'black',
