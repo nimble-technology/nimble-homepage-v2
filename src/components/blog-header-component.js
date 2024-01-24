@@ -18,17 +18,18 @@ const BlogHeader = () => {
         left:0,
         top:'55px',
         backgroundColor: '#ffffff', 
-        background: `linear-gradient(180deg, #1DF98F 60%, rgba(29, 249, 143, 0) 150%), url("/assets/blog-header.png")`,
+        background: `linear-gradient(180deg, rgba(29, 249, 143, 1), rgba(29, 249, 143, 1)), url("/assets/blog-header.png")`,
         backgroundBlendMode: 'overlay',
         backgroundSize: 'cover', 
         color: '#161818',
         fontFamily: "'Press Start 2P', cursive",
-        height: '150px',
+        height: '130px',
         width: '100%',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
         padding: theme.spacing(2),
+        zIndex: 1
     };
 
     const backButtonStyle = {
