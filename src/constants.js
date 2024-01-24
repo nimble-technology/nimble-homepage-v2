@@ -6,7 +6,7 @@ export const LINKS = {
     GITHUB: 'https://github.com/nimble-technology',
     WHITEPAPER: '/whitepaper',
     LITEPAPER:'/litepaper',
-    CAREERS: 'CAREERS link'
+    CAREERS: 'https://www.linkedin.com/company/nimble-network'
 };
 
 export const SECTIONS = {

@@ -13,7 +13,7 @@ export const AppRoutes = () => {
                 <Routes>
                     <Route path="/" element={<HomePage />} />
                     <Route path="/news/list" element={<NewsList />} />
-                    <Route path="/news/:newsId" element={<NewsPage />} />
+                    <Route path="/news/:fileName" element={<NewsPage />} />
                     <Route path="/litepaper" element={<FramePage />} />
                     <Route path="/whitepaper" element={<FramePage />} />
                     <Route path="/everything-marketplace-case-study" element={<FramePage />} />
