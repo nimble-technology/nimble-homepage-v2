@@ -14,7 +14,7 @@ const NewsPage = () => {
             maxWidth: '100%',
             height: 'auto',
         },
-        padding: '0 50px 50px 50px'
+        padding: '0 50px 50px 50px',
     };
 
     useEffect(() => {
@@ -29,7 +29,7 @@ const NewsPage = () => {
 
     return (
 
-        <Box sx={{width: '100vw', marginTop: '55px'}}>
+        <Box sx={{width: '100%', marginTop: '55px'}}>
             <BlogHeader title={news.title} />
             <Box 
                 sx={{ 
