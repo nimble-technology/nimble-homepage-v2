@@ -43,18 +43,6 @@ const NewsPage = () => {
                 <Box sx={markdownContainerStyle} dangerouslySetInnerHTML={renderMarkdown(news.content || '')} />
             </Box>
         </Box>
-
-
-        // <Box sx={{ 
-        //     marginTop: 20,
-        //     padding: 2,
-        //     width: '100vw'
-        //   }}>
-        //     <h1>{news.title}</h1>
-        //     <h4>Author: {news.author}</h4>
-        //     <p>Date: {news.createDate}</p>
-        //     <Box sx={markdownContainerStyle} dangerouslySetInnerHTML={renderMarkdown(news.content || '')} />
-        // </Box>
     );
 };
 

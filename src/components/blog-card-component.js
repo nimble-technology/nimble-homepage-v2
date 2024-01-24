@@ -3,7 +3,7 @@ import { Typography, Box, Button } from '@mui/material';
 import { useMobileContext } from '../mobileContext';
 import {Navigate, useNavigate} from 'react-router-dom';
 
-const BlogCard = ({ title, date, fileName }) => {
+const BlogCard = ({ title, date, fileName, thumb }) => {
 
     const isMobile = useMobileContext();
     const navigate = useNavigate();
@@ -24,7 +24,7 @@ const BlogCard = ({ title, date, fileName }) => {
                 width: '100%',
             }}>
                 <Button onClick={handleClick} sx={{ padding: 0 }}>
-                    <img src={"/assets/blog-card.png"} alt="Icon" style={{ width: '100%' }} />
+                    <img src={`/assets/blog-images/${thumb}`} alt="Icon" style={{ width: '100%' }} />
                 </Button>
             </Box>
             <Box>

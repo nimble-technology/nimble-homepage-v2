@@ -27,6 +27,7 @@ const HomePage = () => {
                 <ValueCardTop content={'values'} />
                 <ValueCardBottom />
             </Box>
+
             <Box id={SECTIONS.APPLICATIONS}>
                 <ValueCardTop content={'applications'} />
             </Box>
