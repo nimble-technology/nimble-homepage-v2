@@ -2,15 +2,11 @@ import React from 'react';
 import { Box, Typography, useTheme } from '@mui/material';
 import SocialIcons from './social-icons-component';
 import { useMobileContext } from '../mobileContext';
-import { useLocation } from 'react-router-dom';
 
 const Footer = () => {
 
     const theme = useTheme();
     const isMobile = useMobileContext();
-    const location = useLocation();
-
-    const isFixed = location.pathname !== '/';
 
     const footerStyle = {
         backgroundColor: '#f8f8f8',
