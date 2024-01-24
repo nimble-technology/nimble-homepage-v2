@@ -12,8 +12,9 @@ const NewsList = () => {
     const isMobile = useMobileContext();
 
     useEffect(() => {
+        const baseUrl = process.env.REACT_APP_BLOGS_URL;
         axios
-            .get('/blogs/index.json')
+            .get(`${baseUrl}/blogs/index.json`)
             .then(res => {
                 const indexData = res.data;
                 const filesToFetch = indexData.map(blog => ({
@@ -25,7 +26,8 @@ const NewsList = () => {
                 const fetchPromises = filesToFetch.map(fileData => {
                     const fileName = fileData.fileName;
                     const thumb = fileData.thumb;
-                    return axios.get(`/blogs/${fileName}`)
+                    
+                    return axios.get(`${baseUrl}/blogs/${fileName}`)
                         .then(response => {
                             return {
                                 title: response.data.title,
