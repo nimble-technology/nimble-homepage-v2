@@ -18,6 +18,8 @@ const InternalDescriptions = () => {
         position: 'relative',
         overflow: 'hidden',
         marginTop: '55px',
+        paddingTop: isMobile ? '20px' : '140px',
+        paddingBottom: isMobile ? '10px' : '100px'
     };
 
     const textContainerStyle = {

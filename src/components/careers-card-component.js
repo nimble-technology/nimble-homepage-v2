@@ -18,6 +18,7 @@ const CareersCard = () => {
         alignItems: 'center',
         color: 'white',
         position: 'relative',
+        paddingBottom: isMobile ? '20px' : '140px'
     };
 
     const imageStyle = {

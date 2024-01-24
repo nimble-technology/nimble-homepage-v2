@@ -2,8 +2,10 @@ import React, { useEffect } from 'react';
 import Box from '@mui/material/Box';
 import ValueCardItem from './value-card-item-component';
 import PageTitle from './page-title-component';
+import { useMobileContext } from '../mobileContext';
 
 const ValueCardTop = ({ content }) => {
+    const isMobile = useMobileContext();
 
     let useTitle = content === 'applications' ? 'Applications' : 'Values';
     let useList = [];
@@ -47,6 +49,8 @@ const ValueCardTop = ({ content }) => {
         alignItems: 'center',
         color: 'white',
         position: 'relative',
+        paddingTop: isMobile ? '10px' : '40px',
+        paddingBottom: isMobile ? '10px' : '100px'
     };
 
     const itemContainerStyle = {
