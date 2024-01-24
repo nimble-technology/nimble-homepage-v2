@@ -9,10 +9,10 @@ const EcosystemPartners = () => {
     const isMobile = useMobileContext();
 
     const ecosystemPartnersList = [
-        '/assets/ecosystem-partners/corner-market.jpeg',
+        '/assets/ecosystem-partners/corner-market.png',
         '/assets/ecosystem-partners/hyper-oracle.png',
-        '/assets/ecosystem-partners/sei-network.jpeg',
-        '/assets/ecosystem-partners/zkme.jpeg'
+        '/assets/ecosystem-partners/sei-network.png',
+        '/assets/ecosystem-partners/zkme.png'
     ];
 
     const containerStyle = {
