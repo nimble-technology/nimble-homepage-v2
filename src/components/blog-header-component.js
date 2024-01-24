@@ -39,7 +39,7 @@ const BlogHeader = ({title = "News & Blog"}) => {
         backgroundSize: 'cover', 
         color: '#161818',
         fontFamily: "'Press Start 2P', cursive",
-        height: '150px',
+        height: '130px',
         width: '100%',
         display: 'flex',
         alignItems: 'center',
