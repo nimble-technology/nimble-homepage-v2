@@ -21,7 +21,7 @@ const NewsList = () => {
                     createDate: blog.createDate
                 }));
 
-                filesToFetch.sort((a, b) => new Date(b.createDate) - new Date(a.createDate));
+                //filesToFetch.sort((a, b) => new Date(b.createDate) - new Date(a.createDate));
 
                 const fetchPromises = filesToFetch.map(fileData => {
                     const fileName = fileData.fileName;

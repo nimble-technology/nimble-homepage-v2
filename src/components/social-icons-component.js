@@ -6,7 +6,7 @@ function SocialIcons({isMobile}) {
 
     const iconStyle = {
         width: isMobile? '18px' : '24px',
-        height: isMobile? '17px' : '22px',
+        height: isMobile? '18px' : '24px',
         marginLeft: isMobile? '3px' : '8px',
         marginRight: isMobile? '3px' : '8px',
     };
@@ -35,9 +35,6 @@ function SocialIcons({isMobile}) {
             </IconButton>
             <IconButton sx={iconButtonStyle} onClick={() => openLinkInNewTab(LINKS.GITHUB)}>
                 <img src="/assets/github.png" alt="GitHub" style={iconStyle} />
-            </IconButton>
-            <IconButton sx={iconButtonStyle} onClick={() => openLinkInNewTab(LINKS.NIMBLE_APP)}>
-                <img src="/assets/nimble-app.png" alt="NimbleApp" style={iconStyle} />
             </IconButton>
         </Box>
     );
