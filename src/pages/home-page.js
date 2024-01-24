@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import Box from '@mui/material/Box';
-<<<<<<< HEAD
-import LandingSection from '../components/landing-section-component';
-=======
 import EcosystemPartners from '../components/ecosystem-partners-component';
 import CareersCard from '../components/careers-card-component';
 import InternalDescriptions from '../components/internal-descriptions-component';
@@ -11,7 +8,6 @@ import PeopleCard from '../components/people-card-component';
 import ValueCardTop from '../components/value-card-top-component';
 import ValueCardBottom from '../components/value-card-bottom-component';
 import Blog from '../components/blog-component';
->>>>>>> main
 import { SECTIONS } from '../constants';
 
 const HomePage = () => {
