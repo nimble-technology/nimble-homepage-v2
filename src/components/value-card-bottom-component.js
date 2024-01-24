@@ -15,7 +15,8 @@ const ValueCardBottom = () => {
         alignItems: 'center',
         color: 'white',
         position: 'relative',
-        marginTop: '55px',
+        paddingTop: isMobile ? '40px' : '80px',
+        paddingBottom: isMobile ? '10px' : '100px'
     };
 
     const textContainerStyle = {

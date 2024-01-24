@@ -58,6 +58,8 @@ const PeopleCard = () => {
         alignItems: 'center',
         color: 'white',
         position: 'relative',
+        paddingTop: isMobile ? '10px' : '40px',
+        paddingBottom: isMobile ? '10px' : '100px'
     };
 
     return (
