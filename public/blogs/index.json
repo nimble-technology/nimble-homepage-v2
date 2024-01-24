@@ -1,0 +1,42 @@
+[
+    {
+        "fileName": "computation-composability.json",
+        "createDate": "2023-01-18"
+    },
+    {
+        "fileName": "data-composability.json",
+        "createDate": "2023-01-17"
+    },
+    {
+        "fileName": "faq.json",
+        "createDate": "2024-01-12"
+    },
+    {
+        "fileName": "large-language-models.json",
+        "createDate": "2024-01-20"
+    },
+    {
+        "fileName": "model-composability.json",
+        "createDate": "2024-01-16"
+    },
+    {
+        "fileName": "multi-task-learning.json",
+        "createDate": "2024-01-20"
+    },
+    {
+        "fileName": "ranking-system.json",
+        "createDate": "2024-01-19"
+    },
+    {
+        "fileName": "six-innovations.json",
+        "createDate": "2024-01-15"
+    },
+    {
+        "fileName": "transfer-learning.json",
+        "createDate": "2024-01-21"
+    },
+    {
+        "fileName": "vision.json",
+        "createDate": "2024-01-13"
+    }
+]

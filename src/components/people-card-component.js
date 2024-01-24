@@ -1,9 +1,12 @@
 import React from 'react';
 import { Box, useTheme, Typography } from '@mui/material';
 import PeopleCardItem from './people-card-item-component';
+import { useMobileContext } from '../mobileContext';
+import PageTitle from './page-title-component';
 
 const PeopleCard = () => {
     const theme = useTheme();
+    const isMobile = useMobileContext();
 
     const peopleInfoList = [
         {
@@ -55,50 +58,53 @@ const PeopleCard = () => {
         alignItems: 'center',
         color: 'white',
         position: 'relative',
-        marginTop: '55px',
+        paddingTop: isMobile ? '10px' : '40px',
+        paddingBottom: isMobile ? '10px' : '100px'
     };
 
     return (
         <Box sx={{ ...sideStyle }}>
-
-            <Box sx={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-            }}>
+            {isMobile ? (
+                <PageTitle title='people' />
+            ) : (
                 <Box sx={{
-                    width: 50,
-                    height: 50,
-                    backgroundColor: '#1DFA90',
-                    marginBottom: 7,
-                    opacity: 0.2,
-                    angle: '-180 deg',
-                }} />
-                <Typography
-                    sx={{
-                        fontFamily: "'Press Start 2P', cursive",
-                        fontSize: '138px',
-                        fontWeight: 400,
-                        letterSpacing: '0.03em',
-                        textAlign: 'center',
-                        color: theme.palette.text.secondary,
-                        marginTop: '60px',
-                    }}>
-                    people
-                </Typography>
-                <Box sx={{
-                    width: 50,
-                    height: 50,
-                    backgroundColor: '#1DFA90',
-                    opacity: 0.2,
-                    angle: '-180 deg',
-                }} />
-            </Box>
-
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                }}>
+                    <Box sx={{
+                        width: 50,
+                        height: 50,
+                        backgroundColor: '#1DFA90',
+                        marginBottom: 7,
+                        opacity: 0.2,
+                        angle: '-180 deg',
+                    }} />
+                    <Typography
+                        sx={{
+                            fontFamily: "'Press Start 2P', cursive",
+                            fontSize: '138px',
+                            fontWeight: 400,
+                            letterSpacing: '0.03em',
+                            textAlign: 'center',
+                            color: theme.palette.text.secondary,
+                            marginTop: '60px',
+                        }}>
+                        people
+                    </Typography>
+                    <Box sx={{
+                        width: 50,
+                        height: 50,
+                        backgroundColor: '#1DFA90',
+                        opacity: 0.2,
+                        angle: '-180 deg',
+                    }} />
+                </Box>
+            )}
             <Box sx={{
                 display: 'flex',
                 columnGap: 25,
-                rowGap: 5,
+                rowGap: 3,
                 flexFlow: 'wrap',
                 justifyContent: 'center',
             }} >

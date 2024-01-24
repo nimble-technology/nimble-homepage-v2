@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import Box from '@mui/material/Box';
-import BlogHeader from '../components/blog-header-component';
+import PageTitle from './page-title-component';
 import axios from "axios";
-import BlogCard from '../components/blog-card-component';
+import BlogCard from './blog-card-component';
 import { useMobileContext } from '../mobileContext';
 
-const NewsList = () => {
+const Blog = () => {
 
     const [blogs, setBlogs] = useState([]);
 
@@ -13,7 +13,7 @@ const NewsList = () => {
 
     useEffect(() => {
         axios
-            .get('/blogs/index.json')
+            .get('./blogs/index.json')
             .then(res => {
                 const indexData = res.data;
                 const filesToFetch = indexData.map(blog => ({
@@ -23,9 +23,11 @@ const NewsList = () => {
 
                 filesToFetch.sort((a, b) => new Date(b.createDate) - new Date(a.createDate));
 
-                const fetchPromises = filesToFetch.map(fileData => {
+                const latestFiles = filesToFetch.slice(0, 3);
+
+                const fetchPromises = latestFiles.map(fileData => {
                     const fileName = fileData.fileName;
-                    return axios.get(`/blogs/${fileName}`)
+                    return axios.get(`./blogs/${fileName}`)
                         .then(response => {
                             return {
                                 title: response.data.title,
@@ -44,24 +46,37 @@ const NewsList = () => {
             .catch(error => console.error('Error fetching blog index:', error));
     }, []);
 
+    const sideStyle = {
+        width: '100vw',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        color: 'white',
+        position: 'relative',
+        overflow: 'hidden',
+        background: '#F8F8F8',
+        paddingTop: '50px',
+        paddingBottom: '100px'
+
+    };
+
     return (
-        <Box sx={{width: '100vw', marginTop: '55px'}}>
-            <BlogHeader />
+        <Box sx={{ ...sideStyle }} >
+            <PageTitle title='Our Media' />
             <Box 
                 sx={{ 
                     display: 'flex', 
                     gap: 2, 
-                    marginTop: '250px',
+                    marginTop: isMobile ? '40px' : '60px',
                     flexWrap: 'wrap',
                     justifyContent: 'center',
                 }}>
                 {blogs.map((blog, index) => (
-                    <BlogCard title={blog.title} date={blog.createDate} fileName={blog.fileName}></BlogCard>
+                    <BlogCard title={blog.title} date={blog.createDate} fileName={blog.fileName}> </BlogCard>
                 ))}
             </Box>
         </Box>
-        
     );
 };
 
-export default NewsList;
+export default Blog;
