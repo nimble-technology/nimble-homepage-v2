@@ -11,13 +11,13 @@ export const AppRoutes = () => {
         <Router>
             <Layout>
                 <Routes>
-                    <Route path="/homepage" element={<HomePage />} />
+                    <Route path="/" element={<HomePage />} />
                     <Route path="/news/list" element={<NewsList />} />
                     <Route path="/news/:newsId" element={<NewsPage />} />
                     <Route path="/litepaper" element={<FramePage />} />
                     <Route path="/whitepaper" element={<FramePage />} />
                     <Route path="/everything-marketplace-case-study" element={<FramePage />} />
-                    <Route path="*" element={<Navigate to="/homepage" replace />} />
+                    <Route path="*" element={<Navigate to="/" replace />} />
                 </Routes>
             </Layout>
         </Router>

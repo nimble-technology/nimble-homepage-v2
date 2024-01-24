@@ -3,7 +3,7 @@ import { Box, Typography, useTheme } from '@mui/material';
 import SocialIcons from './social-icons-component';
 import { useMobileContext } from '../mobileContext';
 
-const Footer = ({isFixed = false}) => {
+const Footer = () => {
 
     const theme = useTheme();
     const isMobile = useMobileContext();
@@ -11,16 +11,15 @@ const Footer = ({isFixed = false}) => {
     const footerStyle = {
         backgroundColor: '#f8f8f8',
         width: '100%',
-        height: '320px',
+        height: '150px',
         color: theme.palette.text.primary,
         display: 'flex',
         flexDirection: isMobile ? 'column' : 'row', 
         alignItems: isMobile ? 'center' : 'flex-start',
         justifyContent: isMobile ? 'center' : 'space-between',
-        paddingTop: isMobile? '0px' : '100px',
+        paddingTop: isMobile? '0px' : '40px',
         paddingLeft: isMobile? '20px' : '70px',
         paddingRight: isMobile? '20px' : '70px',
-        ...(isFixed && { position: 'fixed', bottom: 0 }), 
     };
 
     return (
