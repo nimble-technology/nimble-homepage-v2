@@ -27,6 +27,8 @@ const Header = () => {
     const handleMenuItemClick = (value) => {
         if (value === SECTIONS.NEWS) {
             navigate('/media');
+        } else if (value === SECTIONS.TOKENOMICS) {
+            navigate('/tokenomics');
         } else {
             navigateAndScroll(value);
         }
