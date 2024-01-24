@@ -36,9 +36,6 @@ function SocialIcons({isMobile}) {
             <IconButton sx={iconButtonStyle} onClick={() => openLinkInNewTab(LINKS.GITHUB)}>
                 <img src="/assets/github.png" alt="GitHub" style={iconStyle} />
             </IconButton>
-            <IconButton sx={iconButtonStyle} onClick={() => openLinkInNewTab(LINKS.NIMBLE_APP)}>
-                <img src="/assets/nimble-app.png" alt="NimbleApp" style={iconStyle} />
-            </IconButton>
         </Box>
     );
 }
