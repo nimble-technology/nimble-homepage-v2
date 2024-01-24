@@ -11,7 +11,7 @@ const BlogCard = ({ title, date, fileName, thumb }) => {
 
     const handleClick = () => {
         const fileNameWithoutExtension = fileName.replace(/\.json$/, "");
-        navigate('/news/' + fileNameWithoutExtension);
+        navigate('/media/' + fileNameWithoutExtension);
     };
 
     return (

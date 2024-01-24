@@ -17,4 +17,10 @@ export const SECTIONS = {
     PEOPLE: 'People',
     NEWS: 'News',
     CAREERS: 'Careers',
+    TOKENOMICS: 'Tokenomics'
+};
+
+export const SPECIAL_BLOGS = {
+    VISION: 'vision',
+    TOKENOMICS: 'tokenomics',
 };

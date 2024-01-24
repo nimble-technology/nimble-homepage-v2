@@ -12,8 +12,10 @@ export const AppRoutes = () => {
             <Layout>
                 <Routes>
                     <Route path="/" element={<HomePage />} />
-                    <Route path="/news" element={<NewsList />} />
-                    <Route path="/news/:fileName" element={<NewsPage />} />
+                    <Route path="/media" element={<NewsList />} />
+                    <Route path="/vision" element={<NewsPage />} />
+                    <Route path="/tokenomics" element={<NewsPage />} />
+                    <Route path="/media/:fileName" element={<NewsPage />} />
                     <Route path="/litepaper" element={<FramePage />} />
                     <Route path="/whitepaper" element={<FramePage />} />
                     <Route path="/everything-marketplace-case-study" element={<FramePage />} />
