@@ -34,7 +34,7 @@ const CareersCard = () => {
             <Box component="img" src='/assets/careers1.png' sx={{ ...imageStyle }} />
             <Typography
                 sx={{
-                    fontFamily: "'HarmonyOS Sans', cursive",
+                    fontFamily: "'Titillium Web', sans-serif",
                     fontSize: isMobile ? '14px' : '32px',
                     fontWeight: 400,
                     lineHeight: '22px',

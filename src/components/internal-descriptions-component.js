@@ -56,7 +56,7 @@ const InternalDescriptions = () => {
                 <Box sx={{ ...textContentContainerStyle }}>
                     <Typography
                         sx={{
-                            fontFamily: "'Titillium Web', cursive",
+                            fontFamily: "'Titillium Web', sans-serif",
                             fontSize: isMobile ? '14px' : '16px',
                             fontWeight: 400,
                             letterSpacing: '0.03em',

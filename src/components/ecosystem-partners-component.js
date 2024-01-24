@@ -51,7 +51,7 @@ const EcosystemPartners = () => {
             <PageTitle title='Ecosystem Partners' />
             <Typography
                 sx={{
-                    fontFamily: "'Titillium Web', cursive",
+                    fontFamily: "'Titillium Web', sans-serif",
                     fontSize: isMobile ? '14px' : '16px',
                     fontWeight: 400,
                     lineHeight: '21px',

@@ -11,7 +11,7 @@ const NewsPage = () => {
 
     const markdownContainerStyle = {
         img: {
-            maxWidth: '100%',
+            maxWidth: '600px',
             height: 'auto',
         },
         padding: '0 50px 50px 50px',
@@ -29,7 +29,7 @@ const NewsPage = () => {
 
     return (
 
-        <Box sx={{width: '100%', marginTop: '55px'}}>
+        <Box sx={{width: '100%', marginTop: '55px', maxWidth: '1200px'}}>
             <BlogHeader title={news.title} />
             <Box 
                 sx={{ 

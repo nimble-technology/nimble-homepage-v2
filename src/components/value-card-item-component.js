@@ -45,7 +45,7 @@ const ValueCardItem = ({ imageSrc, title, description }) => {
                 <Box sx={{ ...textDescriptionContainerStyle }}>
                     <Typography
                         sx={{
-                            fontFamily: "'Titillium Web', cursive",
+                            fontFamily: "'Titillium Web', sans-serif",
                             fontSize: isMobile ? '14px' : '16px',
                             fontWeight: 400,
                             lineHeight: '21px',
