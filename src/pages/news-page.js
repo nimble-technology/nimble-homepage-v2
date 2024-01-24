@@ -12,6 +12,7 @@ const NewsPage = () => {
     const markdownContainerStyle = {
         img: {
             maxWidth: '600px',
+            width: '100%',
             height: 'auto',
         },
         padding: '0 50px 50px 50px',
