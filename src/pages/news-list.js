@@ -12,25 +12,28 @@ const NewsList = () => {
     const isMobile = useMobileContext();
 
     useEffect(() => {
+        const baseUrl = process.env.REACT_APP_BLOGS_URL;
         axios
-            .get('/blogs/index.json')
+            .get(`${baseUrl}/blogs/index.json`)
             .then(res => {
                 const indexData = res.data;
                 const filesToFetch = indexData.map(blog => ({
                     fileName: blog.fileName,
-                    createDate: blog.createDate
+                    createDate: blog.createDate,
+                    thumb: blog.thumb
                 }));
-
-                filesToFetch.sort((a, b) => new Date(b.createDate) - new Date(a.createDate));
 
                 const fetchPromises = filesToFetch.map(fileData => {
                     const fileName = fileData.fileName;
-                    return axios.get(`/blogs/${fileName}`)
+                    const thumb = fileData.thumb;
+                    
+                    return axios.get(`${baseUrl}/blogs/${fileName}`)
                         .then(response => {
                             return {
                                 title: response.data.title,
                                 createDate: response.data.createDate,
-                                fileName: fileName
+                                fileName: fileName,
+                                thumb: thumb
                             };
                         });
                 });
@@ -56,7 +59,7 @@ const NewsList = () => {
                     justifyContent: 'center',
                 }}>
                 {blogs.map((blog, index) => (
-                    <BlogCard title={blog.title} date={blog.createDate} fileName={blog.fileName}></BlogCard>
+                    <BlogCard title={blog.title} date={blog.createDate} fileName={blog.fileName} thumb={blog.thumb}></BlogCard>
                 ))}
             </Box>
         </Box>

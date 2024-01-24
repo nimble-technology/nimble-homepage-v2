@@ -66,7 +66,7 @@ const BlogHeader = ({title = "News & Blog"}) => {
 
     return (
         <Box sx={headerStyle}>
-            <Button sx={backButtonStyle} onClick={handleBack}>
+            <Button sx={backButtonStyle} onClick={handleBack} style={{marginBottom: '12px'}}>
                 {"< Back"}
             </Button>
             <Typography sx={textStyle}>{title}</Typography>

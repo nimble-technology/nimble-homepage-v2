@@ -34,13 +34,15 @@ const ValueCardTop = ({ content }) => {
         },
         {
             imageSrc: '/assets/values2.png',
-            title: "SocialFi",
-            description: 'Social dApps can use models for content recommendation, ad placement, and powerful in-app search',
-        }, {
+            title: "DePIN",
+            description: 'DePIN protocols can use models for marketplace functions like matching, dispatching, and optimization',
+        },
+        {
             imageSrc: '/assets/applications1.png',
             title: "GameFi",
             description: 'On-chain games can use on-chain models for procedural generation, in-game NPC chat, and path finding'
-        }];
+        },
+    ];
 
     const sideStyle = {
         width: '100vw',

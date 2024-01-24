@@ -26,7 +26,7 @@ const Header = () => {
 
     const handleMenuItemClick = (value) => {
         if (value === SECTIONS.NEWS) {
-            navigate('/news/list');
+            navigate('/news');
         } else {
             navigateAndScroll(value);
         }
@@ -72,11 +72,11 @@ const Header = () => {
                             }}
                         >
                             <MenuItem value= {SECTIONS.ABOUT} >{SECTIONS.ABOUT}</MenuItem>
-                            <MenuItem value= {SECTIONS.VALUES} >{SECTIONS.VALUES}</MenuItem>
-                            <MenuItem value= {SECTIONS.PARTNERS} >{SECTIONS.PARTNERS}</MenuItem>
-                            <MenuItem value= {SECTIONS.PEOPLE} >{SECTIONS.PEOPLE}</MenuItem>
-                            <MenuItem value= {SECTIONS.NEWS} >{SECTIONS.NEWS}</MenuItem>
-                            <MenuItem value= {SECTIONS.CAREERS} >{SECTIONS.CAREERS}</MenuItem>
+                            <MenuItem value= {SECTIONS.VALUES}>{SECTIONS.VALUES}</MenuItem>
+                            <MenuItem value= {SECTIONS.PARTNERS}>{SECTIONS.PARTNERS}</MenuItem>
+                            <MenuItem value= {SECTIONS.PEOPLE}>{SECTIONS.PEOPLE}</MenuItem>
+                            <MenuItem value= {SECTIONS.NEWS}>{SECTIONS.NEWS}</MenuItem>
+                            <MenuItem value= {SECTIONS.CAREERS}>{SECTIONS.CAREERS}</MenuItem>
                         </Select>
                     </Box>
                 ) : (
@@ -91,10 +91,10 @@ const Header = () => {
                         }}
                     >
                         <Button onClick={() => navigateAndScroll(SECTIONS.ABOUT)}>{SECTIONS.ABOUT}</Button>
-                        <Button onClick={() => navigateAndScroll(SECTIONS.VALUES)}>{SECTIONS.VALUES}</Button>
                         <Button onClick={() => navigateAndScroll(SECTIONS.PARTNERS)}>{SECTIONS.PARTNERS}</Button>
+                        <Button onClick={() => navigateAndScroll(SECTIONS.VALUES)}>{SECTIONS.VALUES}</Button>
                         <Button onClick={() => navigateAndScroll(SECTIONS.PEOPLE)}>{SECTIONS.PEOPLE}</Button>
-                        <Button onClick={() => navigate('/news/list')}>{SECTIONS.NEWS}</Button>
+                        <Button onClick={() => navigate('/news')}>{SECTIONS.NEWS}</Button>
                         <Button onClick={() => navigateAndScroll(SECTIONS.CAREERS)}>{SECTIONS.CAREERS}</Button>
                     </Box>
                 )}

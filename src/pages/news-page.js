@@ -8,17 +8,19 @@ const NewsPage = () => {
 
     const [news, setNews] = useState({});
     const params = useParams();
+    const baseUrl = process.env.REACT_APP_BLOGS_URL;
 
     const markdownContainerStyle = {
         img: {
             maxWidth: '600px',
+            width: '100%',
             height: 'auto',
         },
         padding: '0 50px 50px 50px',
     };
 
     useEffect(() => {
-        fetch(`/blogs/${params.fileName}.json`)
+        fetch(`${baseUrl}/blogs/${params.fileName}.json`)
             .then(response => response.json())
             .then(data => setNews(data))
     }, [params.fileName]);

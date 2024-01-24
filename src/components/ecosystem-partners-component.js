@@ -9,10 +9,10 @@ const EcosystemPartners = () => {
     const isMobile = useMobileContext();
 
     const ecosystemPartnersList = [
-        '/assets/ecosystem-partners/corner-market.jpeg',
+        '/assets/ecosystem-partners/corner-market.png',
         '/assets/ecosystem-partners/hyper-oracle.png',
-        '/assets/ecosystem-partners/sei-network.jpeg',
-        '/assets/ecosystem-partners/zkme.jpeg'
+        '/assets/ecosystem-partners/sei-network.png',
+        '/assets/ecosystem-partners/zkme.png'
     ];
 
     const containerStyle = {
@@ -24,8 +24,8 @@ const EcosystemPartners = () => {
         color: 'white',
         position: 'relative',
         background: '#F8F8F8',
-        paddingTop: isMobile ? '20px' : '140px',
-        paddingBottom: isMobile ? '20px' : '140px'
+        paddingTop: isMobile ? '20px' : '80px',
+        paddingBottom: isMobile ? '20px' : '80px'
     };
 
     const imageContainerStyle = {
@@ -43,7 +43,8 @@ const EcosystemPartners = () => {
     const imageStyle = {
         width: isMobile ? '52px' : '134px',
         height: isMobile ? '52px' : '134px',
-        borderRadius: '50%'
+        borderRadius: '50%',
+        objectFit: 'cover'
     };
 
     return (

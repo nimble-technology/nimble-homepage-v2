@@ -6,7 +6,7 @@ function SocialIcons({isMobile}) {
 
     const iconStyle = {
         width: isMobile? '18px' : '24px',
-        height: isMobile? '17px' : '22px',
+        height: 'auto',
         marginLeft: isMobile? '3px' : '8px',
         marginRight: isMobile? '3px' : '8px',
     };

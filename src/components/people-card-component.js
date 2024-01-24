@@ -26,7 +26,7 @@ const PeopleCard = () => {
             education: "BSc, Computer Science",
             university: "The University of British Columbia"
         }, {
-            imageSrc: '/assets/avatar3.jpeg',
+            imageSrc: '/assets/avatar3.png',
             title: 'Peng',
             career: "AI/ML Infrastructure Expert",
             years_of_experience: "16+ years R&D Experience",

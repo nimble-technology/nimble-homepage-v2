@@ -53,7 +53,7 @@ const LandingSection = () => {
     return (
         <Box
             sx={{
-                height: '730px',
+                maxHeight: '800px',
                 background: 'linear-gradient(180deg, #1DF98F 60%, rgba(29, 249, 143, 0) 130%)',
                 width: '100vw',
                 display: 'flex',
@@ -62,7 +62,8 @@ const LandingSection = () => {
                 color: 'white',
                 position: 'relative',
                 overflow: 'hidden',
-                marginTop: '55px',
+                marginTop: '35px',
+                padding: '40px 0'
             }}
         >
             <Typography
@@ -72,7 +73,7 @@ const LandingSection = () => {
                     fontWeight: 400,
                     textAlign: 'center',
                     color: theme.palette.text.secondary,
-                    marginTop: '70px'
+                    marginTop: '60px'
                 }}>
                 The Composable AI Protocol
             </Typography>
@@ -90,7 +91,7 @@ const LandingSection = () => {
             </Typography>
             <Box sx={{ display: 'flex', gap: 2, marginTop: isMobile ? '50px' : '20px' }}>
                 <PixelButton
-                    onClick={() => { window.open(LINKS.WHITEPAPER, '_blank'); }}
+                    onClick={() => { navigate(LINKS.WHITEPAPER); }}
                     sx={{
                         backgroundColor: 'black',
                         color: 'white',
@@ -103,7 +104,7 @@ const LandingSection = () => {
                     Whitepaper
                 </PixelButton>
                 <PixelButton
-                    onClick={() => { window.open(LINKS.LITEPAPER, '_blank'); }}
+                    onClick={() => { navigate(LINKS.LITEPAPER); }}
                     sx={{
                         backgroundColor: 'rgba(0, 0, 0, 0.1)',
                         color: 'black',
