@@ -23,7 +23,7 @@ const BlogHeader = () => {
         backgroundSize: 'cover', 
         color: '#161818',
         fontFamily: "'Press Start 2P', cursive",
-        height: '130px',
+        height: '150px',
         width: '100%',
         display: 'flex',
         alignItems: 'center',
