@@ -4,16 +4,28 @@ import PixelButton from './pixel-button-component';
 import { LINKS, SECTIONS } from '../constants';
 import { useMobileContext } from '../mobileContext';
 import {Navigate, useNavigate} from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 const Header = () => {
 
     const navigate = useNavigate();
+    const location = useLocation();
 
     const theme = useTheme();
     const isMobile = useMobileContext();
-    const scrollToSection = (sectionId) => {
-        const section = document.getElementById(sectionId);
-        if (section) {
+    // const scrollToSection = (sectionId) => {
+    //     const section = document.getElementById(sectionId);
+    //     if (section) {
+    //         section.scrollIntoView({behavior: 'smooth'});
+    //     }
+    // };
+
+    const navigateAndScroll = (sectionId, targetPath = '/') => {
+
+        if (location.pathname !== targetPath) {
+            navigate(targetPath, { state: { scrollToSection: sectionId } });
+        } else {
+            const section = document.getElementById(sectionId);
             section.scrollIntoView({behavior: 'smooth'});
         }
     };
@@ -22,7 +34,7 @@ const Header = () => {
         if (value === SECTIONS.NEWS) {
             navigate('/news/list');
         } else {
-            scrollToSection(value);
+            navigateAndScroll(value);
         }
     };
 
@@ -84,12 +96,12 @@ const Header = () => {
                             }
                         }}
                     >
-                        <Button onClick={() => scrollToSection(SECTIONS.ABOUT)}>{SECTIONS.ABOUT}</Button>
-                        <Button onClick={() => scrollToSection(SECTIONS.VALUES)}>{SECTIONS.VALUES}</Button>
-                        <Button onClick={() => scrollToSection(SECTIONS.PARTNERS)}>{SECTIONS.PARTNERS}</Button>
-                        <Button onClick={() => scrollToSection(SECTIONS.PEOPLE)}>{SECTIONS.PEOPLE}</Button>
+                        <Button onClick={() => navigateAndScroll(SECTIONS.ABOUT)}>{SECTIONS.ABOUT}</Button>
+                        <Button onClick={() => navigateAndScroll(SECTIONS.VALUES)}>{SECTIONS.VALUES}</Button>
+                        <Button onClick={() => navigateAndScroll(SECTIONS.PARTNERS)}>{SECTIONS.PARTNERS}</Button>
+                        <Button onClick={() => navigateAndScroll(SECTIONS.PEOPLE)}>{SECTIONS.PEOPLE}</Button>
                         <Button onClick={() => navigate('/news/list')}>{SECTIONS.NEWS}</Button>
-                        <Button onClick={() => scrollToSection(SECTIONS.CAREERS)}>{SECTIONS.CAREERS}</Button>
+                        <Button onClick={() => navigateAndScroll(SECTIONS.CAREERS)}>{SECTIONS.CAREERS}</Button>
                     </Box>
                 )}
                 <PixelButton
