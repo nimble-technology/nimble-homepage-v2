@@ -1,15 +1,19 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Typography, Button, Box, useTheme, IconButton } from '@mui/material';
 import PixelButton from './pixel-button-component';
 import { LINKS } from '../constants';
 import SocialIcons from './social-icons-component';
+import {Navigate, useNavigate} from 'react-router-dom';
 import { useMobileContext } from '../mobileContext';
+import { useLocation } from 'react-router-dom';
 
 
 const LandingSection = () => {
 
     const theme = useTheme();
     const isMobile = useMobileContext();
+    const location = useLocation();
+    const navigate = useNavigate();
 
     const imageContainerStyle = {
         display: 'flex',
@@ -33,6 +37,18 @@ const LandingSection = () => {
         alignItems: 'center',
         marginTop: isMobile ? '-60px' : '0',
     };
+
+    useEffect(() => {
+        if (location.state?.scrollToSection) {
+            const sectionId = location.state.scrollToSection;
+            const section = document.getElementById(sectionId);
+            console.log('s',sectionId, section );
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth' });
+                navigate(location.pathname, { replace: true });
+            }
+        }
+    }, [location]);
 
     return (
         <Box
