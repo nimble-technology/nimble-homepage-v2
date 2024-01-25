@@ -20,11 +20,6 @@
         "thumb": "data-composability-thumb.png"
     },
     {
-        "fileName": "ai-matching-and-dispatching.json",
-        "createDate": "2023-01-16",
-        "thumb": "matching-dispatching-thumb.png"
-    },
-    {
         "fileName": "model-composability.json",
         "createDate": "2024-01-16",
         "thumb": "model-composability-thumb.png"
@@ -53,6 +48,16 @@
         "fileName": "transfer-learning.json",
         "createDate": "2024-01-21",
         "thumb": "transfer-learning-thumb.png"
+    },
+    {
+        "fileName": "ai-matching-and-dispatching.json",
+        "createDate": "2023-01-16",
+        "thumb": "matching-dispatching-thumb.png"
+    },
+    {
+        "fileName": "ambassador.json",
+        "createDate": "2024-01-24",
+        "thumb": "ambassador-program-thumb.png"
     },
     {
         "fileName": "faq.json",

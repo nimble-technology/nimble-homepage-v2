@@ -9,10 +9,13 @@ const EcosystemPartners = () => {
     const isMobile = useMobileContext();
 
     const ecosystemPartnersList = [
-        '/assets/ecosystem-partners/corner-market.png',
-        '/assets/ecosystem-partners/hyper-oracle.png',
-        '/assets/ecosystem-partners/sei-network.png',
-        '/assets/ecosystem-partners/zkme.png'
+        { img: '/assets/ecosystem-partners/avalanche.png', url: 'https://www.avax.network/' },
+        { img: '/assets/ecosystem-partners/polygon.png', url: 'https://polygon.technology/' },
+        { img: '/assets/ecosystem-partners/sei-network.png', url: 'https://www.sei.io/' },
+        { img: '/assets/ecosystem-partners/corner-market.png', url: 'https://www.cornermarket.co/' },
+        { img: '/assets/ecosystem-partners/hyper-oracle.png', url: 'https://www.hyperoracle.io/' },
+        { img: '/assets/ecosystem-partners/zkme.png', url: 'https://zk.me/' },
+        { img: '/assets/ecosystem-partners/nimble.png', url: 'https://app.nimble.technology/join?code=glZvl0w7' },
     ];
 
     const containerStyle = {
@@ -64,10 +67,21 @@ const EcosystemPartners = () => {
             </Typography>
             <Box sx={{ ...imageContainerStyle }}>
                 {ecosystemPartnersList.map((partner, index) => (
-                    <Box component="img" key={index} src={partner} sx={{ ...imageStyle }} />
+                    <Button
+                        key={index}
+                        onClick={() => window.open(partner.url, '_blank')}
+                        sx={{
+                            padding: 0,
+                            minWidth: 0,
+                            '&:hover': {
+                                background: 'none',
+                            }
+                        }}
+                    >
+                        <img src={partner.img} alt="Ecosystem Partner" style={{ ...imageStyle }} />
+                    </Button>
                 ))}
             </Box>
-
         </Box>
     );
 };
