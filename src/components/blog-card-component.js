@@ -2,6 +2,7 @@ import React from 'react';
 import { Typography, Box, Button } from '@mui/material';
 import { useMobileContext } from '../mobileContext';
 import {Navigate, useNavigate} from 'react-router-dom';
+import { SPECIAL_BLOGS } from '../constants';
 
 const BlogCard = ({ title, date, fileName, thumb }) => {
 
@@ -11,58 +12,64 @@ const BlogCard = ({ title, date, fileName, thumb }) => {
 
     const handleClick = () => {
         const fileNameWithoutExtension = fileName.replace(/\.json$/, "");
-        navigate('/media/' + fileNameWithoutExtension);
+        let urlPath;
+        if (fileNameWithoutExtension === SPECIAL_BLOGS.TOKENOMICS || fileNameWithoutExtension === SPECIAL_BLOGS.VISION) {
+            urlPath = '/' + fileNameWithoutExtension;
+        } else {
+            urlPath = '/media/' + fileNameWithoutExtension;
+        }
+        window.open(window.location.origin + urlPath, '_blank');
     };
 
     return (
-        <Box sx={{
-            width: isMobile ? '300px' : '375px',
-            overflow: 'hidden',
-            marginLeft: '10px',
-            marginRight: '10px'
-        }}>
+        <Button onClick={handleClick} sx={{ padding: 0, textAlign: 'left' }}>
             <Box sx={{
-                width: '100%',
+                width: isMobile ? '300px' : '375px',
+                overflow: 'hidden',
+                marginLeft: '10px',
+                marginRight: '10px'
             }}>
-                <Button onClick={handleClick} sx={{ padding: 0 }}>
-                    <img src={`${baseUrl}/assets/blog-images/${thumb}`} alt="Icon" style={{ width: '100%' }} />
-                </Button>
-            </Box>
-            <Box>
-                <Box sx={{ display: 'flex', alignItems: 'center', flex: 1 }}>
-                    <Typography  
-                        sx={{
-                        fontFamily: 'Manrope',
-                        fontSize: isMobile ? '20px' : '24px',
-                        color: 'black',
-                        fontWeight: 800,
-                        textAlign: 'left',
-                        overflow: 'hidden',
-                        whiteSpace: 'nowrap',
-                        textOverflow: 'ellipsis',
-                        flex: 1,
-                        marginTop: '10px'
-                    }}>
-                        {title}
-                    </Typography>
-                    <Button onClick={handleClick} sx={{ padding: 0, width: isMobile ? '20px' : '24px', minWidth: 0}}>
-                        <img src={"/assets/arrow.png"} alt="Arrow Icon" style={{ width: '100%' }} />
+                <Box sx={{
+                    width: '100%',
+                }}>
+                    <Button onClick={handleClick} sx={{ padding: 0 }}>
+                        <img src={`${baseUrl}/assets/blog-images/${thumb}`} alt="Icon" style={{ width: '100%' }} />
                     </Button>
                 </Box>
+                <Box>
+                    <Box sx={{ display: 'flex', alignItems: 'center', flex: 1 }}>
+                        <Typography  
+                            sx={{
+                            fontFamily: 'Manrope',
+                            fontSize: isMobile ? '20px' : '24px',
+                            color: 'black',
+                            fontWeight: 800,
+                            textAlign: 'left',
+                            overflow: 'hidden',
+                            whiteSpace: 'nowrap',
+                            textOverflow: 'ellipsis',
+                            flex: 1,
+                            marginTop: '10px'
+                        }}>
+                            {title}
+                        </Typography>
+                            <img src={"/assets/arrow.png"} alt="Arrow Icon" style={{ width: isMobile ? '20px' : '24px' }} />
+                    </Box>
 
-                <Typography 
-                    sx={{
-                        fontFamily: 'Manrope',
-                        fontSize: isMobile ? '12px' : '16px',
-                        fontWeight: 400,
-                        textAlign: 'left',
-                        color: 'rgba(0, 0, 0, 0.5)',
-                        marginTop: isMobile ? '8px' : '15px'
-                    }}>
-                    {date}
-                </Typography>
+                    <Typography 
+                        sx={{
+                            fontFamily: 'Manrope',
+                            fontSize: isMobile ? '12px' : '16px',
+                            fontWeight: 400,
+                            textAlign: 'left',
+                            color: 'rgba(0, 0, 0, 0.5)',
+                            marginTop: isMobile ? '8px' : '15px'
+                        }}>
+                        {date}
+                    </Typography>
+                </Box>
             </Box>
-        </Box>
+        </Button>
     );
 };
 
