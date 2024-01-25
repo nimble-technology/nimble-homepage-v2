@@ -69,8 +69,6 @@ const ValueCardTop = ({ content }) => {
         useList = valuesList;
     }
 
-    console.log('content is ', content);
-
     return (
         <Box sx={{ ...sideStyle }} >
             <PageTitle title={useTitle} />

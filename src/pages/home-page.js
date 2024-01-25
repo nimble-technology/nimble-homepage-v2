@@ -9,6 +9,7 @@ import ValueCardTop from '../components/value-card-top-component';
 import ValueCardBottom from '../components/value-card-bottom-component';
 import Blog from '../components/blog-component';
 import { SECTIONS } from '../constants';
+import FadeInSection from '../components/fade-in-component';
 
 const HomePage = () => {
 
@@ -17,29 +18,42 @@ const HomePage = () => {
             <Box id={SECTIONS.ABOUT}>
                 <LandingSection />
             </Box>
-            <Box id={SECTIONS.PARTNERS}>
-                <EcosystemPartners />
-            </Box>
-            <Box>
-                <InternalDescriptions />
-            </Box>
-            <Box id={SECTIONS.VALUES}>
-                <ValueCardTop content={'values'} />
-                <ValueCardBottom />
-            </Box>
-
-            <Box id={SECTIONS.APPLICATIONS}>
-                <ValueCardTop content={'applications'} />
-            </Box>
-            <Box id={SECTIONS.PEOPLE}>
-                <PeopleCard />
-            </Box>
-            <Box id={SECTIONS.NEWS}>
-                <Blog />
-            </Box>
-            <Box id={SECTIONS.CAREERS}>
-                <CareersCard />
-            </Box>
+            <FadeInSection>
+                <Box id={SECTIONS.PARTNERS}>
+                    <EcosystemPartners />
+                </Box>
+            </FadeInSection>
+            <FadeInSection>
+                <Box>
+                    <InternalDescriptions />
+                </Box>
+            </FadeInSection>
+            <FadeInSection>
+                <Box id={SECTIONS.VALUES}>
+                    <ValueCardTop content={'values'} />
+                    <ValueCardBottom />
+                </Box>
+            </FadeInSection>
+            <FadeInSection>
+                <Box id={SECTIONS.APPLICATIONS}>
+                    <ValueCardTop content={'applications'} />
+                </Box>
+            </FadeInSection>
+            <FadeInSection>
+                <Box id={SECTIONS.PEOPLE}>
+                    <PeopleCard />
+                </Box>
+            </FadeInSection>
+            <FadeInSection>
+                <Box id={SECTIONS.NEWS}>
+                    <Blog />
+                </Box>
+            </FadeInSection>
+            <FadeInSection>
+                <Box id={SECTIONS.CAREERS}>
+                    <CareersCard />
+                </Box>
+            </FadeInSection>
         </Box>
     );
 };
