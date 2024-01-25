@@ -20,6 +20,7 @@ const Footer = () => {
         paddingTop: isMobile? '0px' : '40px',
         paddingLeft: isMobile? '20px' : '70px',
         paddingRight: isMobile? '20px' : '70px',
+        marginTop: '105px'
     };
 
     return (
@@ -40,7 +41,7 @@ const Footer = () => {
                     Nimble
                 </Typography>
                 <Typography sx={{ fontSize: isMobile ? '12px' : '14px', color: '#6C6C6C', mt: 2,}}>
-                    Nimble Labs LTD. All Rights Reserved 2023.
+                    Nimble Labs. All Rights Reserved 2024.
                 </Typography>
             </Box>
             <Box sx={{mt: 2}}>
