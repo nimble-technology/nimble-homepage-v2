@@ -33,10 +33,10 @@ const BlogHeader = ({title = "News & Blog"}) => {
         position: 'fixed',
         left:0,
         top:'55px',
-        backgroundColor: '#ffffff', 
+        backgroundColor: '#ffffff',
         background: `linear-gradient(180deg, rgba(29, 249, 143, 1), rgba(29, 249, 143, 0.7)), url("/assets/blog-header.png")`,
         backgroundBlendMode: 'overlay',
-        backgroundSize: 'cover', 
+        backgroundSize: 'cover',
         color: '#161818',
         fontFamily: "'Press Start 2P', cursive",
         minHeight: (isMobile) ? '180px' : '300px',
@@ -65,13 +65,15 @@ const BlogHeader = ({title = "News & Blog"}) => {
     };
 
     return (
-        <Box sx={headerStyle}>
-            <Button sx={backButtonStyle} onClick={handleBack} style={{marginBottom: '12px'}}>
-                {"< Back"}
-            </Button>
-            <Typography sx={textStyle}>{title}</Typography>
+        <Box sx={headerStyle} style={{backgroundColor: 'white'}}>
+            <Box sx={headerStyle}>
+                <Button sx={backButtonStyle} onClick={handleBack} style={{marginBottom: '12px'}}>
+                    {"< Back"}
+                </Button>
+                <Typography sx={textStyle}>{title}</Typography>
+            </Box>
         </Box>
-        
+
     );
 };
 

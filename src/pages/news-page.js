@@ -4,6 +4,7 @@ import BlogHeader from '../components/blog-header-component';
 import { useParams, useLocation } from 'react-router-dom';
 import { marked } from 'marked';
 import { SPECIAL_BLOGS } from '../constants';
+import {useMobileContext} from "../mobileContext";
 
 const NewsPage = () => {
 
@@ -11,6 +12,7 @@ const NewsPage = () => {
     const params = useParams();
     const location = useLocation();
     const baseUrl = process.env.REACT_APP_BLOGS_URL;
+    const isMobile = useMobileContext();
 
     const markdownContainerStyle = {
         img: {
@@ -57,7 +59,7 @@ const NewsPage = () => {
                 sx={{ 
                     display: 'flex', 
                     gap: 2, 
-                    marginTop: '250px',
+                    marginTop: (isMobile) ? '250px': '400px',
                     flexWrap: 'wrap',
                     justifyContent: 'center',
                 }}>

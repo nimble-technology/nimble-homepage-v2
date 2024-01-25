@@ -53,8 +53,8 @@ const NewsList = () => {
             <Box 
                 sx={{ 
                     display: 'flex', 
-                    gap: 2, 
-                    marginTop: '250px',
+                    gap: 2,
+                    marginTop: (isMobile) ? '250px': '400px',
                     flexWrap: 'wrap',
                     justifyContent: 'center',
                 }}>
