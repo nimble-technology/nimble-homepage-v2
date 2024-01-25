@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { AppBar, Toolbar, Typography, Button, Box, useTheme, IconButton, Menu, MenuItem, Select } from '@mui/material';
 import PixelButton from './pixel-button-component';
-import { LINKS, SECTIONS } from '../constants';
+import { LINKS, SECTIONS, SPECIAL_BLOGS } from '../constants';
 import { useMobileContext } from '../mobileContext';
 import {Navigate, useNavigate} from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
@@ -25,10 +25,10 @@ const Header = () => {
     };
 
     const handleMenuItemClick = (value) => {
-        if (value === SECTIONS.NEWS) {
-            navigate('/media');
-        } else if (value === SECTIONS.TOKENOMICS) {
-            navigate('/tokenomics');
+        if (value === SECTIONS.TOKENOMICS) {
+            window.open("/tokenomics", '_blank')
+        } else if (value === SECTIONS.NEWS) {
+            navigate('/media')
         } else {
             navigateAndScroll(value);
         }
@@ -93,11 +93,11 @@ const Header = () => {
                         <Button onClick={() => navigateAndScroll(SECTIONS.ABOUT)}>{SECTIONS.ABOUT}</Button>
                         <Button onClick={() => navigateAndScroll(SECTIONS.VALUES)}>{SECTIONS.VALUES}</Button>
                         <Button onClick={() => navigate('/media')}>{SECTIONS.NEWS}</Button>
-                        <Button onClick={() => navigate('/tokenomics')}>{SECTIONS.TOKENOMICS}</Button>
+                        <Button onClick={() => window.open("/tokenomics", '_blank')}>{SECTIONS.TOKENOMICS}</Button>
                     </Box>
                 )}
                 <PixelButton
-                    onClick={() => { navigate('/vision') }}
+                    onClick={() => { window.open("/vision", '_blank')}}
                     sx={{
                         backgroundColor: theme.palette.primary.main,
                         color: 'black',
