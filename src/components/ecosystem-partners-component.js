@@ -15,7 +15,7 @@ const EcosystemPartners = () => {
         { img: '/assets/ecosystem-partners/corner-market.png', url: 'https://www.cornermarket.co/' },
         { img: '/assets/ecosystem-partners/hyper-oracle.png', url: 'https://www.hyperoracle.io/' },
         { img: '/assets/ecosystem-partners/zkme.png', url: 'https://zk.me/' },
-        { img: '/assets/ecosystem-partners/nimble.png', url: 'https://app.nimble.technology/join?code=glZvl0w7' },
+        { img: '/assets/ecosystem-partners/nimble.png', url: 'https://twitter.com/TheNimbusApp/' },
     ];
 
     const containerStyle = {
