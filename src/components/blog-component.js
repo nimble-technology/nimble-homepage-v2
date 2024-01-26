@@ -5,7 +5,6 @@ import axios from "axios";
 import BlogCard from './blog-card-component';
 import { useMobileContext } from '../mobileContext';
 import BlogCardWrapper from './blog-card-wrapper-component';
-// Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
@@ -84,7 +83,8 @@ const Blog = () => {
                     flexWrap: 'wrap',
                     justifyContent: 'center',
                     textAlign: 'center',
-                }}>
+                }}
+            >
                 <Swiper
                     effect={'coverflow'}
                     grabCursor={true}
@@ -98,7 +98,7 @@ const Blog = () => {
                         modifier: 1,
                         slideShadows: false
                     }}
-                    pagination={true}
+                    pagination={{ clickable: true }} 
                     initialSlide={1}
                     modules={[EffectCoverflow, Pagination]}
                     className="styles.swiper"

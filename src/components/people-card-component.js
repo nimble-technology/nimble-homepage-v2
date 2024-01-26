@@ -29,7 +29,7 @@ const PeopleCard = () => {
         },
         {
             imageSrc: '/assets/team-avatars/Joshua.png',
-            title: 'Joshua',
+            title: 'Joshua Chen',
             career: "Core Engineer",
             link: LINKEDIN_LINK.JOSHUA
         },
@@ -44,7 +44,14 @@ const PeopleCard = () => {
             title: 'Henry',
             career: "Core Engineer",
             link: LINKEDIN_LINK.HENRY
-        }];
+        },
+        // {
+        //     imageSrc: '/assets/team-avatars/Henry.png',
+        //     title: 'Henry',
+        //     career: "Core Engineer",
+        //     link: LINKEDIN_LINK.HENRY
+        // }
+    ];
 
     const sideStyle = {
         width: '100vw',

@@ -29,5 +29,8 @@ export const LINKEDIN_LINK = {
     XIN: 'https://www.linkedin.com/in/anthony-xin-jin-482638211/',
     ANTHONY: 'https://www.linkedin.com/in/anthony-isaacson-21516274/',
     PENG: 'https://www.linkedin.com/in/pengjia/',
-    SHANPENG: 'https://www.linkedin.com/in/willwang97/'
+    SHANPENG: 'https://www.linkedin.com/in/willwang97/',
+    JOSHUA: 'https://twitter.com/_wecon_',
+    HENRY: 'https://rocketreach.co/aihua-peng-email_66854297',
+    YOUNG: 'https://twitter.com/young_web3'
 };
