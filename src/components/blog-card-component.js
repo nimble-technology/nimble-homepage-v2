@@ -18,7 +18,7 @@ const BlogCard = ({ title, date, fileName, thumb }) => {
         } else {
             urlPath = '/media/' + fileNameWithoutExtension;
         }
-        window.open(window.location.origin + urlPath, '_blank');
+        window.open(window.location.origin + urlPath);
     };
 
     return (

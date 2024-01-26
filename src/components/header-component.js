@@ -26,7 +26,7 @@ const Header = () => {
 
     const handleMenuItemClick = (value) => {
         if (value === SECTIONS.TOKENOMICS) {
-            window.open("/tokenomics", '_blank')
+            window.open("/tokenomics")
         } else if (value === SECTIONS.NEWS) {
             navigate('/media')
         } else {
@@ -93,11 +93,11 @@ const Header = () => {
                         <Button onClick={() => navigateAndScroll(SECTIONS.ABOUT)}>{SECTIONS.ABOUT}</Button>
                         <Button onClick={() => navigateAndScroll(SECTIONS.VALUES)}>{SECTIONS.VALUES}</Button>
                         <Button onClick={() => navigate('/media')}>{SECTIONS.NEWS}</Button>
-                        <Button onClick={() => window.open("/tokenomics", '_blank')}>{SECTIONS.TOKENOMICS}</Button>
+                        <Button onClick={() => window.open("/tokenomics")}>{SECTIONS.TOKENOMICS}</Button>
                     </Box>
                 )}
                 <PixelButton
-                    onClick={() => { window.open("/vision", '_blank')}}
+                    onClick={() => { window.open("/vision")}}
                     sx={{
                         backgroundColor: theme.palette.primary.main,
                         color: 'black',
