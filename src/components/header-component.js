@@ -93,11 +93,11 @@ const Header = () => {
                         <Button onClick={() => navigateAndScroll(SECTIONS.ABOUT)}>{SECTIONS.ABOUT}</Button>
                         <Button onClick={() => navigateAndScroll(SECTIONS.VALUES)}>{SECTIONS.VALUES}</Button>
                         <Button onClick={() => navigate('/media')}>{SECTIONS.NEWS}</Button>
-                        <Button onClick={() => window.open("/tokenomics")}>{SECTIONS.TOKENOMICS}</Button>
+                        <Button onClick={() => window.open("/tokenomics", "_self")}>{SECTIONS.TOKENOMICS}</Button>
                     </Box>
                 )}
                 <PixelButton
-                    onClick={() => { window.open("/vision")}}
+                    onClick={() => { window.open("/vision", "_self")}}
                     sx={{
                         backgroundColor: theme.palette.primary.main,
                         color: 'black',
