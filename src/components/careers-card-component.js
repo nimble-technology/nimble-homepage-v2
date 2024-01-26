@@ -50,7 +50,7 @@ const CareersCard = () => {
             <PixelButton
                 onClick={() => { window.open(LINKS.CAREERS, '_blank'); }}
                 sx={{
-                    backgroundColor: 'black',
+                    backgroundColor: 'black !important',
                     color: 'white',
                     fontSize: isMobile ? '14px' : '16px',
                     fontWeight: isMobile ? 300 : 400,

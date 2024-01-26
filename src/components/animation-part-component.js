@@ -10,6 +10,7 @@ const AnimatedPart = ({ src, alt, customStyle, startX, startY, endX, endY }) => 
         reset: true,
         loop: true,
         config: { duration: 3000 },
+        ...customStyle
     });
 
     const animatedStyle = {

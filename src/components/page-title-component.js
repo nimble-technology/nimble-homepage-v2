@@ -12,8 +12,8 @@ const PageTitle = ({ title }) => {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        marginTop: 6,
-        marginBottom: isMobile ? 2 : 4,
+        marginTop: isMobile ? "16px" : "14px",
+        marginBottom: isMobile ? "20px" : "14px",
     };
 
     return (
