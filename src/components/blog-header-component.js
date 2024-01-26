@@ -24,7 +24,7 @@ const BlogHeader = ({ title = "News & Blog" }) => {
             if (currentScrollY > (isMobile ? 50 : 100)) {
                 setHeaderHeight({ mobile: '30px', desktop: '80px' });
                 setHeaderMargin({ mobile: 9, desktop: 20 });
-                setHeaderFontSize({ mobile: 10, desktop: adjustedFontSize });
+                setHeaderFontSize({ mobile: 10, desktop: 20 });
             } else {
                 setHeaderHeight({ mobile: '180px', desktop: '300px' });
                 setHeaderMargin({ mobile: 0, desktop: 0 });
