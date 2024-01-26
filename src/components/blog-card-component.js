@@ -39,9 +39,9 @@ const BlogCard = ({ title, date, fileName, thumb }) => {
                 <Box sx={{
                     width: '100%',
                 }}>
-                    <Button onClick={handleClick} sx={{ padding: 0 }}>
+                    <span onClick={handleClick} sx={{ padding: 0 }}>
                         <img src={`${baseUrl}/assets/blog-images/${thumb}`} alt="Icon" style={{ width: '100%' }} />
-                    </Button>
+                    </span>
                 </Box>
                 <Box>
                     <Box sx={{ display: 'flex', alignItems: 'center', flex: 1 }}>
