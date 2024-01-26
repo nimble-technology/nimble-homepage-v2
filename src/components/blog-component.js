@@ -4,6 +4,7 @@ import PageTitle from './page-title-component';
 import axios from "axios";
 import BlogCard from './blog-card-component';
 import { useMobileContext } from '../mobileContext';
+import BlogCardWrapper from './blog-card-wrapper-component';
 
 const Blog = () => {
 
@@ -78,7 +79,9 @@ const Blog = () => {
                     justifyContent: 'center',
                 }}>
                 {blogs.map((blog, index) => (
-                    <BlogCard title={blog.title} date={blog.createDate} fileName={blog.fileName} thumb={blog.thumb}> </BlogCard>
+                    <BlogCardWrapper key={index}>
+                        <BlogCard title={blog.title} date={blog.createDate} fileName={blog.fileName} thumb={blog.thumb}> </BlogCard>
+                    </BlogCardWrapper>
                 ))}
             </Box>
         </Box>

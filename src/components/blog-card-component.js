@@ -22,7 +22,14 @@ const BlogCard = ({ title, date, fileName, thumb }) => {
     };
 
     return (
-        <Button onClick={handleClick} sx={{ padding: 0, textAlign: 'left' }}>
+        <Button onClick={handleClick} 
+            sx={{ 
+                padding: 0, 
+                textAlign: 'left',
+                '&:hover': {
+                    backgroundColor: 'white', 
+                }
+            }}>
             <Box sx={{
                 width: isMobile ? '300px' : '375px',
                 overflow: 'hidden',

@@ -4,6 +4,7 @@ import BlogHeader from '../components/blog-header-component';
 import axios from "axios";
 import BlogCard from '../components/blog-card-component';
 import { useMobileContext } from '../mobileContext';
+import BlogCardWrapper from '../components/blog-card-wrapper-component';
 
 const NewsList = () => {
 
@@ -61,7 +62,9 @@ const NewsList = () => {
                     justifyContent: 'center',
                 }}>
                 {blogs.map((blog, index) => (
-                    <BlogCard title={blog.title} date={blog.createDate} fileName={blog.fileName} thumb={blog.thumb}></BlogCard>
+                    <BlogCardWrapper>
+                        <BlogCard title={blog.title} date={blog.createDate} fileName={blog.fileName} thumb={blog.thumb}></BlogCard>
+                    </BlogCardWrapper>
                 ))}
             </Box>
         </Box>
