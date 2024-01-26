@@ -10,13 +10,13 @@ const EcosystemPartners = () => {
     const isMobile = useMobileContext();
 
     const ecosystemPartnersList = [
-        { img: '/assets/ecosystem-partners/avalanche.png', url: 'https://www.avax.network/', bgc: '#d64f49' },
-        { img: '/assets/ecosystem-partners/polygon.png', url: 'https://polygon.technology/', bgc: '#843acc' },
-        { img: '/assets/ecosystem-partners/sei-network.png', url: 'https://www.sei.io/', bgc: '#f0e3cf' },
-        { img: '/assets/ecosystem-partners/corner-market.png', url: 'https://www.cornermarket.co/', bgc: '#6ad4b1' },
-        { img: '/assets/ecosystem-partners/hyper-oracle.png', url: 'https://www.hyperoracle.io/', bgc: '#ffffff' },
-        { img: '/assets/ecosystem-partners/zkme.png', url: 'https://zk.me/', bgc: '#235463' },
-        { img: '/assets/ecosystem-partners/nimble.png', url: 'https://twitter.com/TheNimbusApp/', bgc: '#75f599' },
+        { img: '/assets/ecosystem-partners/avalanche.png', url: 'https://www.avax.network/' },
+        { img: '/assets/ecosystem-partners/polygon.png', url: 'https://polygon.technology/' },
+        { img: '/assets/ecosystem-partners/sei-network.png', url: 'https://www.sei.io/' },
+        { img: '/assets/ecosystem-partners/corner-market.png', url: 'https://www.cornermarket.co/' },
+        { img: '/assets/ecosystem-partners/hyper-oracle.png', url: 'https://www.hyperoracle.io/' },
+        { img: '/assets/ecosystem-partners/zkme.png', url: 'https://zk.me/' },
+        { img: '/assets/ecosystem-partners/nimble.png', url: 'https://twitter.com/TheNimbusApp/' },
     ];
 
     const containerStyle = {
