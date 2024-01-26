@@ -5,6 +5,17 @@ import axios from "axios";
 import BlogCard from './blog-card-component';
 import { useMobileContext } from '../mobileContext';
 import BlogCardWrapper from './blog-card-wrapper-component';
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/effect-coverflow';
+import 'swiper/css/pagination';
+
+import '../styles/swiper-styles.css';
+
+import { EffectCoverflow, Pagination } from 'swiper/modules';
 
 const Blog = () => {
 
@@ -26,11 +37,7 @@ const Blog = () => {
                     thumb: blog.thumb
                 }));
 
-                filesToFetch.sort((a, b) => new Date(b.createDate) - new Date(a.createDate));
-
-                const latestFiles = filesToFetch.slice(0, 3);
-
-                const fetchPromises = latestFiles.map(fileData => {
+                const fetchPromises = filesToFetch.map(fileData => {
                     const fileName = fileData.fileName;
                     const thumb = fileData.thumb;
                     return axios.get(`${baseUrl}/blogs/${fileName}`)
@@ -70,19 +77,43 @@ const Blog = () => {
     return (
         <Box sx={{ ...sideStyle }} >
             <PageTitle title='Our Media' />
-            <Box 
-                sx={{ 
-                    display: 'flex', 
-                    gap: 2, 
+            <Box
+                sx={{
+                    display: 'flex',
                     marginTop: isMobile ? '40px' : '60px',
                     flexWrap: 'wrap',
                     justifyContent: 'center',
+                    textAlign: 'center',
                 }}>
-                {blogs.map((blog, index) => (
-                    <BlogCardWrapper key={index}>
-                        <BlogCard title={blog.title} date={blog.createDate} fileName={blog.fileName} thumb={blog.thumb}> </BlogCard>
-                    </BlogCardWrapper>
-                ))}
+                <Swiper
+                    effect={'coverflow'}
+                    grabCursor={true}
+                    centeredSlides={true}
+                    slidesPerView={'auto'}
+                    spaceBetween={30}
+                    coverflowEffect={{
+                        rotate: 50,
+                        stretch: 0,
+                        depth: 200,
+                        modifier: 1,
+                        slideShadows: false
+                    }}
+                    pagination={true}
+                    initialSlide={1}
+                    modules={[EffectCoverflow, Pagination]}
+                    className={isMobile? "styles.swiper":"styles.swiper"}
+                >
+                    {blogs.map((blog, index) => (
+
+                        <SwiperSlide className={isMobile? "styles.slide-mobile":'styles.slide'}>
+                            <BlogCardWrapper key={index}>
+                                <BlogCard title={blog.title} date={blog.createDate} fileName={blog.fileName} thumb={blog.thumb}> </BlogCard>
+                            </BlogCardWrapper>
+                        </SwiperSlide>
+                    ))}
+
+                </Swiper>
+
             </Box>
         </Box>
     );
