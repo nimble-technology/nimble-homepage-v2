@@ -41,7 +41,7 @@ const PeopleCard = () => {
         },
         {
             imageSrc: '/assets/team-avatars/Henry.png',
-            title: 'Henry',
+            title: 'Henry Peng',
             career: "Core Engineer",
             link: LINKEDIN_LINK.HENRY
         },
