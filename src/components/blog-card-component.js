@@ -27,7 +27,7 @@ const BlogCard = ({ title, date, fileName, thumb }) => {
                 padding: 0, 
                 textAlign: 'left',
                 '&:hover': {
-                    backgroundColor: 'white', 
+                    backgroundColor: 'transparent', 
                 }
             }}>
             <Box sx={{

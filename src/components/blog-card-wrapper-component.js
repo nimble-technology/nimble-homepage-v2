@@ -8,12 +8,8 @@ const BlogCardWrapper = ({ children }) => {
 
     const props = useSpring({
         transform: isVisible ? (isHovered ? 'scale(1.05)' : 'scale(1)') : 'scale(0.7)',
-        boxShadow: isHovered ? '0px 0px 10px rgba(0, 0, 0, 0.3)' : '0px 0px 0px rgba(0, 0, 0, 0.2)',
-        borderRadius: '8px', 
         config: { tension: 150, friction: 40 }
     });
-
-
 
     useEffect(() => {
         const observer = new IntersectionObserver(

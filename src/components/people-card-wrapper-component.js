@@ -12,7 +12,6 @@ const PeopleCardWrapper = ({ children }) => {
     return (
         <HoverContext.Provider value={isHovered}>
             <animated.div
-
                 onMouseEnter={() => 
                     {
                         setIsHovered(true);
