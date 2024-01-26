@@ -28,6 +28,12 @@ const PeopleCard = () => {
             link: LINKEDIN_LINK.PENG
         },
         {
+            imageSrc: '/assets/team-avatars/Henry.png',
+            title: 'Henry Peng',
+            career: "Cofounder",
+            link: LINKEDIN_LINK.HENRY
+        },
+        {
             imageSrc: '/assets/team-avatars/Joshua.png',
             title: 'Joshua Chen',
             career: "Core Engineer",
@@ -38,12 +44,6 @@ const PeopleCard = () => {
             title: 'Shanpeng Wang',
             career: "Core Engineer",
             link: LINKEDIN_LINK.SHANPENG
-        },
-        {
-            imageSrc: '/assets/team-avatars/Henry.png',
-            title: 'Henry Peng',
-            career: "Core Engineer",
-            link: LINKEDIN_LINK.HENRY
         },
         // {
         //     imageSrc: '/assets/team-avatars/Henry.png',
