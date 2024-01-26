@@ -41,7 +41,7 @@ const Footer = () => {
                     Nimble
                 </Typography>
                 <Typography sx={{ fontSize: isMobile ? '12px' : '14px', color: '#6C6C6C', mt: 2,}}>
-                    Nimble Labs. All Rights Reserved 2024.
+                    Nimble Network. All Rights Reserved 2024.
                 </Typography>
             </Box>
             <Box sx={{mt: 2}}>
