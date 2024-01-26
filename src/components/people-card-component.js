@@ -87,6 +87,7 @@ const PeopleCard = () => {
                             fontFamily: "'Press Start 2P', cursive",
                             fontSize: '138px',
                             fontWeight: 400,
+                            lineHeight: '1 !important',
                             letterSpacing: '0.03em',
                             textAlign: 'center',
                             color: theme.palette.text.secondary,
@@ -109,6 +110,7 @@ const PeopleCard = () => {
                 rowGap: 3,
                 flexFlow: 'wrap',
                 justifyContent: 'center',
+                marginTop: isMobile ? 0: '-28px',
             }} >
                 {peopleInfoList.map((people, index) => (
                     <PeopleCardWrapper key={index}>
