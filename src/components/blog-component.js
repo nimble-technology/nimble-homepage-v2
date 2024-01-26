@@ -69,8 +69,8 @@ const Blog = () => {
         position: 'relative',
         overflow: 'hidden',
         background: '#F8F8F8',
-        paddingTop: '50px',
-        paddingBottom: '100px'
+        paddingTop: isMobile ? '10px' : '40px',
+        paddingBottom: isMobile ? '10px' : '90px'
 
     };
 
@@ -101,6 +101,7 @@ const Blog = () => {
                     pagination={true}
                     initialSlide={1}
                     modules={[EffectCoverflow, Pagination]}
+                    className="styles.swiper"
                 >
                     {blogs.map((blog, index) => (
                         <SwiperSlide className="styles.slide" key={index}>
