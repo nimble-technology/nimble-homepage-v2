@@ -7,7 +7,7 @@ import {Navigate, useNavigate} from 'react-router-dom';
 import { useMobileContext } from '../mobileContext';
 import { useLocation } from 'react-router-dom';
 import AnimatedPart from './animation-part-component';
-
+import RotatingPart from './rotating-animation-component';
 
 const LandingSection = () => {
 
@@ -19,7 +19,7 @@ const LandingSection = () => {
     const partStyle1 = { position: 'absolute', top: '10%', left: '10%', width: '110px', height: '125px' };
     const partStyle2 = { position: 'absolute', top: '80%', left: '10%', width: '95px', height: '107px' };
     const partStyle3 = { position: 'absolute', top: '80%', left: '80%',width: '110px', height: '125px'  };
-    const partStyle4 = { position: 'absolute', top: '10%', left: '80%', width: '120px', height: '100px' };
+    const partStyle4 = { position: 'absolute', top: '10%', left: '80%', width: '120px', height: '120px' };
     
 
     const imageContainerStyle = {
@@ -138,7 +138,7 @@ const LandingSection = () => {
                 <AnimatedPart src="/assets/landing-part1.png" alt="Part 1" startX={'0'} startY={'0'} endX={'50'} endY={'20'} customStyle={{ ...partStyle1 }}/>
                 <AnimatedPart src="/assets/landing-part2.png" alt="Part 2" startX={'0'} startY={'0'} endX={'40'} endY={'-20'} customStyle={{...partStyle2}} />
                 <AnimatedPart src="/assets/landing-part3.png" alt="Part 3" startX={'0'} startY={'0'} endX={'-40'} endY={'-20'} customStyle={{...partStyle3}} />
-                <AnimatedPart src="/assets/landing-part4.png" alt="Part 4" startX={'0'} startY={'0'} endX={'-40'} endY={'20'} customStyle={{...partStyle4}} />
+                <RotatingPart src="/assets/landing-part4.png" alt="Part 4" style={{...partStyle4}} />
                 
                 <Box style={buttonContainerStyle}>
                     <SocialIcons isMobile={isMobile} />
