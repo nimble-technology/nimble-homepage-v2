@@ -12,7 +12,7 @@ const BlogHeader = ({ title = "News & Blog" }) => {
     const [scrollY, setScrollY] = useState(0);
     const [headerHeight, setHeaderHeight] = useState({ mobile: '180px', desktop: '300px' });
     const [headerMargin, setHeaderMargin] = useState({ mobile: 0, desktop: 0 });
-    const [headerFontSize, setHeaderFontSize] = useState({ mobile: 25, desktop: 100 });
+    const [headerFontSize, setHeaderFontSize] = useState({ mobile: 20, desktop: 30 });
 
     const handleBack = () => {
         navigate(-1);
@@ -24,11 +24,11 @@ const BlogHeader = ({ title = "News & Blog" }) => {
             if (currentScrollY > (isMobile ? 50 : 100)) {
                 setHeaderHeight({ mobile: '30px', desktop: '80px' });
                 setHeaderMargin({ mobile: 9, desktop: 20 });
-                setHeaderFontSize({ mobile: adjustedFontSize, desktop: 30 });
+                setHeaderFontSize({ mobile: 10, desktop: adjustedFontSize });
             } else {
                 setHeaderHeight({ mobile: '180px', desktop: '300px' });
                 setHeaderMargin({ mobile: 0, desktop: 0 });
-                setHeaderFontSize({ mobile: 25, desktop: 100 });
+                setHeaderFontSize({ mobile: adjustedFontSize, desktop: adjustedFontSize });
             }
             setScrollY(currentScrollY);
         };
@@ -41,12 +41,12 @@ const BlogHeader = ({ title = "News & Blog" }) => {
     }, [isMobile]);
 
     const calculateFontSize = (title, isMobile) => {
-        const maxFontSize = isMobile ? 10 : 30;
+        const maxFontSize = isMobile ? 20 : 30;
         const minFontSize = 10;
         const maxLength = isMobile ? 15 : 25;
         const avgCharWidth = maxFontSize / 1.5;
         const requiredWidth = title.length * avgCharWidth;
-        const availableWidth = window.innerWidth - (isMobile ? 64 : 160) - (isMobile ? headerMargin.mobile * 16 : headerMargin.desktop * 8);
+        const availableWidth = window.innerWidth - (isMobile ? 64 : 160) - (isMobile ? headerMargin.mobile * 24 : headerMargin.desktop * 24);
         if (requiredWidth > availableWidth || title.length > maxLength) {
             return Math.max(minFontSize, (availableWidth / title.length));
         } else {
@@ -86,7 +86,6 @@ const BlogHeader = ({ title = "News & Blog" }) => {
 
     const textStyle = {
         fontFamily: "'Press Start 2P', cursive",
-        // fontSize: adjustedFontSize + 'px',
         fontSize:(isMobile) ? headerFontSize.mobile : headerFontSize.desktop + 'px',
         fontWeight: 400,
         textAlign: 'center',
