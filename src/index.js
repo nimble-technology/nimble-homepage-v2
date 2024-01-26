@@ -7,6 +7,7 @@ import { theme } from "./styles/custom-theme-style.js";
 import { createTheme } from "@mui/material/styles";
 import { MobileProvider } from "./mobileContext.js";
 import "./index.css";
+import "./util/prefetch";
 
 const customTheme = createTheme(theme);
 const rootElement = document.getElementById('root');
