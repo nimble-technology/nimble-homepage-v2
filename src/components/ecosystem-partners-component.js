@@ -47,56 +47,57 @@ const EcosystemPartners = () => {
                 }}>
                 Trusted by
             </Typography>
-            <AppContainer>
-                <Wrapper>
-                    <Marquee>
-                        <MarqueeGroup>
-                            {ecosystemPartnersList.map((el, index) => (
-                                <ImageGroup>
-                                    <Button
-                                        key={index}
-                                        onClick={() => window.open(el.url, '_blank')}
-                                        sx={{
-                                            padding: 0,
-                                            minWidth: 0,
-                                            '&:hover': {
-                                                background: el.bgc,
-                                                transform: 'scale(1.2)',
-                                            },
-                                            backgroundColor: el.bgc,
-                                            transition: 'transform 0.2s ease-in-out',
-                                        }}
-                                    >
-                                        <Image src={el.img} />
-                                    </Button>
-                                </ImageGroup>
-                            ))}
-                        </MarqueeGroup>
-                        <MarqueeGroup>
-                            {ecosystemPartnersList.map((el, index) => (
-                                <ImageGroup>
-                                    <Button
-                                        key={index}
-                                        onClick={() => window.open(el.url, '_blank')}
-                                        sx={{
-                                            padding: 0,
-                                            minWidth: 0,
-                                            '&:hover': {
-                                                background: el.bgc,
-                                                transform: 'scale(1.2)',
-                                            },
-                                            backgroundColor: el.bgc,
-                                            transition: 'transform 0.2s ease-in-out',
-                                        }}
-                                    >
-                                        <Image src={el.img} />
-                                    </Button>
-                                </ImageGroup>
-                            ))}
-                        </MarqueeGroup>
-                    </Marquee>
-                </Wrapper>
-            </AppContainer>
+            <Box sx={{
+                width: '100%',
+                overflow: 'hidden',
+            }}>
+                <AppContainer>
+                    <Wrapper>
+                        <Marquee>
+                            <MarqueeGroup>
+                                {ecosystemPartnersList.map((el, index) => (
+                                    <ImageGroup>
+                                        <Button
+                                            key={index}
+                                            onClick={() => window.open(el.url, '_blank')}
+                                            sx={{
+                                                padding: 0,
+                                                minWidth: 0,
+                                                '&:hover': {
+                                                    transform: 'scale(1.2)',
+                                                },
+                                                transition: 'transform 0.2s ease-in-out',
+                                            }}
+                                        >
+                                            <Image src={el.img} />
+                                        </Button>
+                                    </ImageGroup>
+                                ))}
+                            </MarqueeGroup>
+                            <MarqueeGroup>
+                                {ecosystemPartnersList.map((el, index) => (
+                                    <ImageGroup>
+                                        <Button
+                                            key={index}
+                                            onClick={() => window.open(el.url, '_blank')}
+                                            sx={{
+                                                padding: 0,
+                                                minWidth: 0,
+                                                '&:hover': {
+                                                    transform: 'scale(1.2)',
+                                                },
+                                                transition: 'transform 0.2s ease-in-out',
+                                            }}
+                                        >
+                                            <Image src={el.img} />
+                                        </Button>
+                                    </ImageGroup>
+                                ))}
+                            </MarqueeGroup>
+                        </Marquee>
+                    </Wrapper>
+                </AppContainer>
+            </Box>
         </Box>
     );
 };
@@ -116,7 +117,6 @@ const AppContainer = styled.div`
 const Wrapper = styled.div`
   width: 100%;
   height: fit-content;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -153,7 +153,7 @@ const common = css`
   align-items: center;
   justify-content: space-around;
   white-space: nowrap;
-  width: 200%;
+  width: isMobile ? 100% : 200%;
   animation: ${scrollX} 30s linear infinite;
 `;
 
