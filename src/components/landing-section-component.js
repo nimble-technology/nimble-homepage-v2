@@ -6,6 +6,7 @@ import SocialIcons from './social-icons-component';
 import {Navigate, useNavigate} from 'react-router-dom';
 import { useMobileContext } from '../mobileContext';
 import { useLocation } from 'react-router-dom';
+import AnimatedPart from './animation-part-component';
 
 
 const LandingSection = () => {
@@ -14,6 +15,12 @@ const LandingSection = () => {
     const isMobile = useMobileContext();
     const location = useLocation();
     const navigate = useNavigate();
+
+    const partStyle1 = { position: 'absolute', top: '10%', left: '10%', width: '110px', height: '125px' };
+    const partStyle2 = { position: 'absolute', top: '80%', left: '10%', width: '95px', height: '107px' };
+    const partStyle3 = { position: 'absolute', top: '80%', left: '80%',width: '110px', height: '125px'  };
+    const partStyle4 = { position: 'absolute', top: '10%', left: '80%', width: '120px', height: '100px' };
+    
 
     const imageContainerStyle = {
         display: 'flex',
@@ -26,6 +33,15 @@ const LandingSection = () => {
         maxWidth: 800,
         width: '90%',
         height: 'auto',
+    };
+
+    const centeredImageStyle = {
+      position: 'absolute',
+      top: '60%',
+      left: '50%',
+      transform: 'translate(-50%, -50%)',
+      width: '300px',
+      height: '180px'
     };
 
     const buttonContainerStyle = {
@@ -42,7 +58,6 @@ const LandingSection = () => {
         if (location.state?.scrollToSection) {
             const sectionId = location.state.scrollToSection;
             const section = document.getElementById(sectionId);
-            console.log('s',sectionId, section );
             if (section) {
                 section.scrollIntoView({ behavior: 'smooth' });
                 navigate(location.pathname, { replace: true });
@@ -118,7 +133,13 @@ const LandingSection = () => {
                 </PixelButton>
             </Box>
             <Box position="relative" sx={imageContainerStyle} >
-                <Box component="img" src="/assets/landing.png" alt="Landing" sx={imageStyle} />
+            <Box component="img" src="/assets/landing-base.png" alt="Landing" sx={imageStyle} />
+                <img src="/assets/landing-part5.png" alt="Centered Image" style={centeredImageStyle} />
+                <AnimatedPart src="/assets/landing-part1.png" alt="Part 1" startX={'0'} startY={'0'} endX={'50'} endY={'20'} customStyle={{ ...partStyle1 }}/>
+                <AnimatedPart src="/assets/landing-part2.png" alt="Part 2" startX={'0'} startY={'0'} endX={'40'} endY={'-20'} customStyle={{...partStyle2}} />
+                <AnimatedPart src="/assets/landing-part3.png" alt="Part 3" startX={'0'} startY={'0'} endX={'-40'} endY={'-20'} customStyle={{...partStyle3}} />
+                <AnimatedPart src="/assets/landing-part4.png" alt="Part 4" startX={'0'} startY={'0'} endX={'-40'} endY={'20'} customStyle={{...partStyle4}} />
+                
                 <Box style={buttonContainerStyle}>
                     <SocialIcons isMobile={isMobile} />
                 </Box>
