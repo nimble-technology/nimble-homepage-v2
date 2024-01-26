@@ -18,21 +18,6 @@ const BlogHeader = ({ title = "News & Blog" }) => {
     const handleBack = () => {
         navigate(-1);
     };
-    const calculateFontSize = (title, isMobile) => {
-        const maxFontSize = isMobile ? 20 : 30;
-        const minFontSize = 10;
-        const maxLength = isMobile ? 15 : 25;
-        const avgCharWidth = maxFontSize / 1.5;
-        const requiredWidth = title.length * avgCharWidth;
-        const availableWidth = window.innerWidth - (isMobile ? 64 : 160) - (isMobile ? headerMargin.mobile * 24 : headerMargin.desktop * 24);
-        if (requiredWidth > availableWidth || title.length > maxLength) {
-            return Math.max(minFontSize, (availableWidth / title.length));
-        } else {
-            return maxFontSize;
-        }
-    };
-
-    const adjustedFontSize = calculateFontSize(title, isMobile);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -44,7 +29,7 @@ const BlogHeader = ({ title = "News & Blog" }) => {
             } else {
                 setHeaderHeight({ mobile: '180px', desktop: '300px' });
                 setHeaderMargin({ mobile: 0, desktop: 0 });
-                setHeaderFontSize({ mobile: adjustedFontSize, desktop: adjustedFontSize });
+                setHeaderFontSize({ mobile: 20, desktop: 30 });
             }
             setScrollY(currentScrollY);
         };
@@ -54,7 +39,7 @@ const BlogHeader = ({ title = "News & Blog" }) => {
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
-    }, [adjustedFontSize, isMobile]);
+    }, [isMobile]);
 
     const headerStyle = {
         position: 'fixed',
