@@ -13,8 +13,10 @@ const NewsList = () => {
 
     useEffect(() => {
         const baseUrl = process.env.REACT_APP_BLOGS_URL;
+        const indexJsonVersion = process.env.REACT_APP_INDEX_JSON_VERSION;
+        const url = `${baseUrl}/blogs/index.json?v=${indexJsonVersion}`;
         axios
-            .get(`${baseUrl}/blogs/index.json`)
+            .get(url)
             .then(res => {
                 const indexData = res.data;
                 const filesToFetch = indexData.map(blog => ({
