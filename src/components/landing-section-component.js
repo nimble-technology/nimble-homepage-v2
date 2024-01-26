@@ -8,6 +8,9 @@ import { useMobileContext } from '../mobileContext';
 import { useLocation } from 'react-router-dom';
 import AnimatedPart from './animation-part-component';
 import RotatingPart from './rotating-animation-component';
+import SwingingSquare from './swing-animation-component';
+import BreathPart from './breath-animation-component';
+import ImageFollowMouse from './image-follow-mouse-animation-component';
 
 const LandingSection = () => {
 
@@ -17,11 +20,40 @@ const LandingSection = () => {
     const navigate = useNavigate();
     const baseUrl = process.env.REACT_APP_BLOGS_URL;
 
-    const partStyle1 = { position: 'absolute', top: '10%', left: '10%', width: '110px', height: '125px' };
-    const partStyle2 = { position: 'absolute', top: '80%', left: '10%', width: '95px', height: '107px' };
-    const partStyle3 = { position: 'absolute', top: '80%', left: '80%',width: '110px', height: '125px'  };
-    const partStyle4 = { position: 'absolute', top: '10%', left: '80%', width: '120px', height: '120px' };
-    
+    const partStyle1 = { 
+      position: 'absolute', 
+      top: '20%', 
+      left: '10%', 
+      width: isMobile ? '60px' : '110px', 
+      height: isMobile? '68px' : '120px' 
+    };
+    const partStyle2 = { 
+      position: 'absolute',
+      top: '80%', 
+      left: '15%', 
+      width: isMobile ? '45px' : '95px', 
+      height: isMobile ? '50px' : '107px' 
+    };
+    const partStyle3 = { 
+      position: 'absolute', 
+      top: '55%', 
+      left: '73%',
+      width: isMobile ? '65px' : '130px', 
+      height: isMobile ? '73px' : '145px'  
+    };
+    const partStyle4 = { 
+      position: 'absolute', 
+      top: '15%', 
+      left: '66%', 
+      width: isMobile ? '60px' : '120px', 
+      height: isMobile ? '60px' : '120px' 
+    };
+    const partStyle5 = { 
+      position: 'absolute', 
+      top: '30%', 
+      width: isMobile ? '150px' : '300px', 
+      height: isMobile ? '90px' : '180px' 
+    };
 
     const imageContainerStyle = {
         display: 'flex',
@@ -34,15 +66,6 @@ const LandingSection = () => {
         maxWidth: 800,
         width: '90%',
         height: 'auto',
-    };
-
-    const centeredImageStyle = {
-      position: 'absolute',
-      top: '60%',
-      left: '50%',
-      transform: 'translate(-50%, -50%)',
-      width: '300px',
-      height: '180px'
     };
 
     const buttonContainerStyle = {
@@ -79,7 +102,8 @@ const LandingSection = () => {
                 position: 'relative',
                 overflow: 'hidden',
                 marginTop: '35px',
-                padding: '40px 0'
+                padding: '40px 0',
+                perspective: '1000px'
             }}
         >
             <Typography
@@ -135,10 +159,11 @@ const LandingSection = () => {
             </Box>
             <Box position="relative" sx={imageContainerStyle} >
             <Box component="img" src={baseUrl + "/assets/landing-base.png"} alt="Landing" sx={imageStyle} />
-                <img src={baseUrl + "/assets/landing-part5.png"} alt="Centered Image" style={centeredImageStyle} />
-                <AnimatedPart src={baseUrl + "/assets/landing-part1.png"} alt="Part 1" startX={'0'} startY={'0'} endX={'50'} endY={'20'} customStyle={{ ...partStyle1 }}/>
+              
+                <BreathPart src={baseUrl + "/assets/landing-part5.png"} alt="Centered Image" customStyle={{...partStyle5}} />
+                <ImageFollowMouse src={baseUrl + "/assets/landing-part1.png"} alt="Part 1" customStyle={{ ...partStyle1 }}/>
                 <AnimatedPart src={baseUrl + "/assets/landing-part2.png"} alt="Part 2" startX={'0'} startY={'0'} endX={'40'} endY={'-20'} customStyle={{...partStyle2}} />
-                <AnimatedPart src={baseUrl + "/assets/landing-part3.png"} alt="Part 3" startX={'0'} startY={'0'} endX={'-40'} endY={'-20'} customStyle={{...partStyle3}} />
+                <SwingingSquare src={baseUrl + "/assets/landing-part3.png"} alt="Part 3" customStyle={{...partStyle3}} />
                 <RotatingPart src={baseUrl + "/assets/landing-part4.png"} alt="Part 4" style={{...partStyle4}} />
                 
                 <Box style={buttonContainerStyle}>
