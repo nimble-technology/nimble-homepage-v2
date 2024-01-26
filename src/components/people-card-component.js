@@ -12,28 +12,28 @@ const PeopleCard = () => {
 
     const peopleInfoList = [
         {
-            imageSrc: '/assets/avatar2.png',
+            imageSrc: '/assets/team-avatars/xin.png',
             title: 'Xin Jin',
             career: 'Founder',
             link: LINKEDIN_LINK.XIN
         }, {
-            imageSrc: '/assets/avatar1.png',
+            imageSrc: '/assets/team-avatars/Anthony.png',
             title: 'Anthony Isaacson',
             career: 'Cofounder',
-            link: LINKEDIN_LINK.ANTHONY 
+            link: LINKEDIN_LINK.ANTHONY
         }, {
-            imageSrc: '/assets/avatar3.png',
+            imageSrc: '/assets/team-avatars/Peng.png',
             title: 'Peng Jia',
             career: "Cofounder",
             link: LINKEDIN_LINK.PENG
-        }, 
-        // {
-        //     imageSrc: '/assets/avatar4.png',
-        //     title: 'Joshua',
-        //     career: "Core Engineer",
-        // }, 
+        },
         {
-            imageSrc: '/assets/avatar5.png',
+            imageSrc: '/assets/team-avatars/Joshua.png',
+            title: 'Joshua',
+            career: "Core Engineer",
+        },
+        {
+            imageSrc: '/assets/team-avatars/Shanpeng.png',
             title: 'Shanpeng Wang',
             career: "Core Engineer",
             link: LINKEDIN_LINK.SHANPENG
