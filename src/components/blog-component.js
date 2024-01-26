@@ -101,12 +101,10 @@ const Blog = () => {
                     pagination={true}
                     initialSlide={1}
                     modules={[EffectCoverflow, Pagination]}
-                    className={isMobile? "styles.swiper":"styles.swiper"}
                 >
                     {blogs.map((blog, index) => (
-
-                        <SwiperSlide className={isMobile? "styles.slide-mobile":'styles.slide'}>
-                            <BlogCardWrapper key={index}>
+                        <SwiperSlide className="styles.slide" key={index}>
+                            <BlogCardWrapper>
                                 <BlogCard title={blog.title} date={blog.createDate} fileName={blog.fileName} thumb={blog.thumb}> </BlogCard>
                             </BlogCardWrapper>
                         </SwiperSlide>
