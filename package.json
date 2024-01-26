@@ -18,6 +18,7 @@
     "react-scripts": "5.0.1",
     "react-spring": "^9.7.3",
     "swiper": "^11.0.5",
+    "styled-components": "^6.1.8",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
