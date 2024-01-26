@@ -60,7 +60,7 @@ const BlogCard = ({ title, date, fileName, thumb }) => {
                         }}>
                             {title}
                         </Typography>
-                            <img src={"/assets/arrow.png"} alt="Arrow Icon" style={{ width: isMobile ? '20px' : '24px' }} />
+                            <img src={`${baseUrl}/assets/arrow.png`} alt="Arrow Icon" style={{ width: isMobile ? '20px' : '24px' }} />
                     </Box>
 
                     <Typography 

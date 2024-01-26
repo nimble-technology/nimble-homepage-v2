@@ -9,6 +9,7 @@ const CareersCard = () => {
 
     const theme = useTheme();
     const isMobile = useMobileContext();
+    const baseUrl = process.env.REACT_APP_BLOGS_URL;
 
     const containerStyle = {
         width: '100vw',
@@ -31,7 +32,7 @@ const CareersCard = () => {
     return (
         <Box sx={{ ...containerStyle }}>
             <PageTitle title='Careers' />
-            <Box component="img" src='/assets/careers1.png' sx={{ ...imageStyle }} />
+            <Box component="img" src={baseUrl + '/assets/careers1.png'} sx={{ ...imageStyle }} />
             <Typography
                 sx={{
                     fontFamily: "'Titillium Web', sans-serif",

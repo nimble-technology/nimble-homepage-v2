@@ -14,17 +14,20 @@ const PeopleCardWrapper = ({ children }) => {
     return (
         <HoverContext.Provider value={isHovered}>
             <animated.div
-                onMouseEnter={() => 
-                    {
-                        setIsHovered(true);
-                        setHoverProps({ transform: 'scale(1.05)'});
-                    }}
-                onMouseLeave={() => 
-                    {
-                        setIsHovered(false);
-                        setHoverProps({ transform: 'scale(1)'});
-                    }}
-                style={{ 
+                onLoad={() => {
+                    setHoverProps({transform: 'scale(1)'});
+                }}
+                onMouseEnter={() =>
+                {
+                    setIsHovered(true);
+                    setHoverProps({ transform: 'scale(1.05)'});
+                }}
+                onMouseLeave={() =>
+                {
+                    setIsHovered(false);
+                    setHoverProps({ transform: 'scale(1)'});
+                }}
+                style={{
                     position: 'relative',
                     width: '260px',
                     height: isMobile ? '230px' : '360px',

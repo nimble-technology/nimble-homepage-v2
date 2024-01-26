@@ -1,17 +1,14 @@
 import React from 'react';
-import { useContext } from 'react';
 import { Typography, Box, useTheme, Button } from '@mui/material';
 import { useMobileContext } from '../mobileContext';
-import { HoverContext } from './hover-context-component';
 
 const PeopleCardItem = ({ imageSrc, title, career, link }) => {
 
     const theme = useTheme();
     const isMobile = useMobileContext();
-    const isHovered = useContext(HoverContext);
 
-    const titleFontSize = isMobile ? '16px' : isHovered ? '26px' : '24px';
-    const careerFontSize = isMobile ? '12px' : isHovered ? '16px' : '14px';
+    const titleFontSize = isMobile ? '16px' : '24px';
+    const careerFontSize = isMobile ? '12px' : '14px';
 
     return (
         <Button onClick={() => window.open(link, '_blank')} sx={{ padding: 0, width: '100%', textAlign: 'left' }}>
@@ -29,10 +26,10 @@ const PeopleCardItem = ({ imageSrc, title, career, link }) => {
                     sx={{
                         fontFamily: "'Manrope', cursive",
                         fontSize: titleFontSize,
-                        fontWeight: isHovered ? 800 : 700,
+                        fontWeight: 700,
                         letterSpacing: 0,
                         textAlign: 'center',
-                        color: isHovered ? theme.palette.primary.main : theme.palette.text.secondary,
+                        color: theme.palette.text.secondary,
                         marginTop: '20px',
                     }}>
                     {title}
@@ -41,10 +38,10 @@ const PeopleCardItem = ({ imageSrc, title, career, link }) => {
                     sx={{
                         fontFamily: "'Manrope', cursive",
                         fontSize: careerFontSize,
-                        fontWeight: isHovered ? 500 : 400,
+                        fontWeight: 400,
                         letterSpacing: 0,
                         textAlign: 'center',
-                        color: isHovered ? theme.palette.primary.main : theme.palette.text.secondary,
+                        color: theme.palette.text.secondary,
                         marginTop: '5px',
                     }}>
                     {career}<br />

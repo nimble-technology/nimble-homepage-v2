@@ -15,6 +15,7 @@ const LandingSection = () => {
     const isMobile = useMobileContext();
     const location = useLocation();
     const navigate = useNavigate();
+    const baseUrl = process.env.REACT_APP_BLOGS_URL;
 
     const partStyle1 = { position: 'absolute', top: '10%', left: '10%', width: '110px', height: '125px' };
     const partStyle2 = { position: 'absolute', top: '80%', left: '10%', width: '95px', height: '107px' };
@@ -133,12 +134,12 @@ const LandingSection = () => {
                 </PixelButton>
             </Box>
             <Box position="relative" sx={imageContainerStyle} >
-            <Box component="img" src="/assets/landing-base.png" alt="Landing" sx={imageStyle} />
-                <img src="/assets/landing-part5.png" alt="Centered Image" style={centeredImageStyle} />
-                <AnimatedPart src="/assets/landing-part1.png" alt="Part 1" startX={'0'} startY={'0'} endX={'50'} endY={'20'} customStyle={{ ...partStyle1 }}/>
-                <AnimatedPart src="/assets/landing-part2.png" alt="Part 2" startX={'0'} startY={'0'} endX={'40'} endY={'-20'} customStyle={{...partStyle2}} />
-                <AnimatedPart src="/assets/landing-part3.png" alt="Part 3" startX={'0'} startY={'0'} endX={'-40'} endY={'-20'} customStyle={{...partStyle3}} />
-                <RotatingPart src="/assets/landing-part4.png" alt="Part 4" style={{...partStyle4}} />
+            <Box component="img" src={baseUrl + "/assets/landing-base.png"} alt="Landing" sx={imageStyle} />
+                <img src={baseUrl + "/assets/landing-part5.png"} alt="Centered Image" style={centeredImageStyle} />
+                <AnimatedPart src={baseUrl + "/assets/landing-part1.png"} alt="Part 1" startX={'0'} startY={'0'} endX={'50'} endY={'20'} customStyle={{ ...partStyle1 }}/>
+                <AnimatedPart src={baseUrl + "/assets/landing-part2.png"} alt="Part 2" startX={'0'} startY={'0'} endX={'40'} endY={'-20'} customStyle={{...partStyle2}} />
+                <AnimatedPart src={baseUrl + "/assets/landing-part3.png"} alt="Part 3" startX={'0'} startY={'0'} endX={'-40'} endY={'-20'} customStyle={{...partStyle3}} />
+                <RotatingPart src={baseUrl + "/assets/landing-part4.png"} alt="Part 4" style={{...partStyle4}} />
                 
                 <Box style={buttonContainerStyle}>
                     <SocialIcons isMobile={isMobile} />

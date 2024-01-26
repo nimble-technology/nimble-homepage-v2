@@ -6,6 +6,7 @@ import { useMobileContext } from '../mobileContext';
 
 const ValueCardTop = ({ content }) => {
     const isMobile = useMobileContext();
+    const baseUrl = process.env.REACT_APP_BLOGS_URL;
 
     let useTitle = content === 'applications' ? 'Applications' : 'Values';
     let useList = [];
@@ -74,7 +75,7 @@ const ValueCardTop = ({ content }) => {
             <PageTitle title={useTitle} />
             <Box sx={{ ...itemContainerStyle }}>
                 {useList.map((valuesItem, index) => (
-                    <ValueCardItem key={index} imageSrc={valuesItem.imageSrc} title={valuesItem.title} description={valuesItem.description} />
+                    <ValueCardItem key={index} imageSrc={baseUrl + valuesItem.imageSrc} title={valuesItem.title} description={valuesItem.description} />
                 ))}
             </Box>
         </Box>

@@ -9,6 +9,7 @@ import { LINKEDIN_LINK } from '../constants';
 const PeopleCard = () => {
     const theme = useTheme();
     const isMobile = useMobileContext();
+    const baseUrl = process.env.REACT_APP_BLOGS_URL;
 
     const peopleInfoList = [
         {
@@ -114,7 +115,7 @@ const PeopleCard = () => {
             }} >
                 {peopleInfoList.map((people, index) => (
                     <PeopleCardWrapper key={index}>
-                        <PeopleCardItem key={index} imageSrc={people.imageSrc} title={people.title} career={people.career} link={people.link} />
+                        <PeopleCardItem key={index} imageSrc={baseUrl + people.imageSrc} title={people.title} career={people.career} link={people.link} />
                     </PeopleCardWrapper>
                 ))}
             </Box>
