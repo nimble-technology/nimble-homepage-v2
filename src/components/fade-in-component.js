@@ -20,6 +20,7 @@ const FadeInSection = ({ children }) => {
     };
 
     useEffect(() => {
+        onScroll();
         window.addEventListener('scroll', onScroll);
         return () => window.removeEventListener('scroll', onScroll);
     }, []);
