@@ -17,6 +17,21 @@ const BlogHeader = ({ title = "News & Blog" }) => {
     const handleBack = () => {
         navigate(-1);
     };
+    const calculateFontSize = (title, isMobile) => {
+        const maxFontSize = isMobile ? 20 : 30;
+        const minFontSize = 10;
+        const maxLength = isMobile ? 15 : 25;
+        const avgCharWidth = maxFontSize / 1.5;
+        const requiredWidth = title.length * avgCharWidth;
+        const availableWidth = window.innerWidth - (isMobile ? 64 : 160) - (isMobile ? headerMargin.mobile * 24 : headerMargin.desktop * 24);
+        if (requiredWidth > availableWidth || title.length > maxLength) {
+            return Math.max(minFontSize, (availableWidth / title.length));
+        } else {
+            return maxFontSize;
+        }
+    };
+
+    const adjustedFontSize = calculateFontSize(title, isMobile);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -38,23 +53,7 @@ const BlogHeader = ({ title = "News & Blog" }) => {
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
-    }, [isMobile]);
-
-    const calculateFontSize = (title, isMobile) => {
-        const maxFontSize = isMobile ? 20 : 30;
-        const minFontSize = 10;
-        const maxLength = isMobile ? 15 : 25;
-        const avgCharWidth = maxFontSize / 1.5;
-        const requiredWidth = title.length * avgCharWidth;
-        const availableWidth = window.innerWidth - (isMobile ? 64 : 160) - (isMobile ? headerMargin.mobile * 24 : headerMargin.desktop * 24);
-        if (requiredWidth > availableWidth || title.length > maxLength) {
-            return Math.max(minFontSize, (availableWidth / title.length));
-        } else {
-            return maxFontSize;
-        }
-    };
-
-    const adjustedFontSize = calculateFontSize(title, isMobile);
+    }, [adjustedFontSize, isMobile]);
 
     const headerStyle = {
         position: 'fixed',
@@ -86,7 +85,7 @@ const BlogHeader = ({ title = "News & Blog" }) => {
 
     const textStyle = {
         fontFamily: "'Press Start 2P', cursive",
-        fontSize:(isMobile) ? headerFontSize.mobile : headerFontSize.desktop + 'px',
+        fontSize: (isMobile) ? headerFontSize.mobile : headerFontSize.desktop + 'px',
         fontWeight: 400,
         textAlign: 'center',
         marginLeft: theme.spacing(headerMargin.mobile),
