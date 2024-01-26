@@ -31,12 +31,19 @@ const PeopleCard = () => {
             imageSrc: '/assets/team-avatars/Joshua.png',
             title: 'Joshua',
             career: "Core Engineer",
+            link: LINKEDIN_LINK.JOSHUA
         },
         {
             imageSrc: '/assets/team-avatars/Shanpeng.png',
             title: 'Shanpeng Wang',
             career: "Core Engineer",
             link: LINKEDIN_LINK.SHANPENG
+        },
+        {
+            imageSrc: '/assets/team-avatars/Henry.png',
+            title: 'Henry',
+            career: "Core Engineer",
+            link: LINKEDIN_LINK.HENRY
         }];
 
     const sideStyle = {
