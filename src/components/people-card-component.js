@@ -12,7 +12,7 @@ const PeopleCard = () => {
 
     const peopleInfoList = [
         {
-            imageSrc: '/assets/team-avatars/xin.png',
+            imageSrc: '/assets/team-avatars/Xin.png',
             title: 'Xin Jin',
             career: 'Founder',
             link: LINKEDIN_LINK.XIN
