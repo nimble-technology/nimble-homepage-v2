@@ -8,6 +8,7 @@ const EcosystemPartners = () => {
 
     const theme = useTheme();
     const isMobile = useMobileContext();
+    const baseUrl = process.env.REACT_APP_BLOGS_URL;
 
     const AppContainer = styled.div`
       width: 100vw;
@@ -152,31 +153,11 @@ const EcosystemPartners = () => {
                                                 transition: 'transform 0.2s ease-in-out',
                                             }}
                                         >
-                                            <Image src={el.img} />
+                                            <Image src={baseUrl + el.img} />
                                         </Button>
                                     </ImageGroup>
                                 ))}
                             </MarqueeGroup>
-                            {/*<MarqueeGroup>*/}
-                            {/*    {ecosystemPartnersList.map((el, index) => (*/}
-                            {/*        <ImageGroup>*/}
-                            {/*            <Button*/}
-                            {/*                key={index}*/}
-                            {/*                onClick={() => window.open(el.url, '_blank')}*/}
-                            {/*                sx={{*/}
-                            {/*                    padding: 0,*/}
-                            {/*                    minWidth: 0,*/}
-                            {/*                    '&:hover': {*/}
-                            {/*                        transform: 'scale(1.2)',*/}
-                            {/*                    },*/}
-                            {/*                    transition: 'transform 0.2s ease-in-out',*/}
-                            {/*                }}*/}
-                            {/*            >*/}
-                            {/*                <Image src={el.img} />*/}
-                            {/*            </Button>*/}
-                            {/*        </ImageGroup>*/}
-                            {/*    ))}*/}
-                            {/*</MarqueeGroup>*/}
                         </Marquee>
                     </Wrapper>
                 </AppContainer>

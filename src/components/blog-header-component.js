@@ -8,6 +8,7 @@ const BlogHeader = ({ title = "News & Blog" }) => {
     const theme = useTheme();
     const navigate = useNavigate();
     const isMobile = useMobileContext();
+    const baseUrl = process.env.REACT_APP_BLOGS_URL;
 
     const [scrollY, setScrollY] = useState(0);
     const [headerHeight, setHeaderHeight] = useState({ mobile: '180px', desktop: '300px' });
@@ -60,7 +61,7 @@ const BlogHeader = ({ title = "News & Blog" }) => {
         left: 0,
         top: '55px',
         backgroundColor: '#ffffff',
-        background: `linear-gradient(180deg, rgba(29, 249, 143, 1), rgba(29, 249, 143, 0.7)), url("/assets/blog-header.png")`,
+        background: `linear-gradient(180deg, rgba(29, 249, 143, 1), rgba(29, 249, 143, 0.7)), url("${baseUrl}/assets/blog-header.png")`,
         backgroundBlendMode: 'overlay',
         backgroundSize: 'cover',
         color: '#161818',

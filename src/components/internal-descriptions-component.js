@@ -6,6 +6,7 @@ const InternalDescriptions = () => {
 
     const theme = useTheme();
     const isMobile = useMobileContext();
+    const baseUrl = process.env.REACT_APP_BLOGS_URL;
 
     const containerStyle = {
         width: '100vw',
@@ -69,7 +70,7 @@ const InternalDescriptions = () => {
                 </Box>
             </Box>
             <Box>
-                <Box component="img" src='/assets/internal-descriptions.png' sx={{ width: isMobile ? 281 : 538, height: isMobile ? 160 : 307, }} />
+                <Box component="img" src={baseUrl + '/assets/internal-descriptions.png'} sx={{ width: isMobile ? 281 : 538, height: isMobile ? 160 : 307, }} />
             </Box>
         </Box>
     );

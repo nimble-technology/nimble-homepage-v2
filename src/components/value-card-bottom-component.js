@@ -5,6 +5,7 @@ import { useMobileContext } from '../mobileContext';
 const ValueCardBottom = () => {
     const theme = useTheme();
     const isMobile = useMobileContext();
+    const baseUrl = process.env.REACT_APP_BLOGS_URL;
 
     const containerStyle = {
         width: '100vw',
@@ -62,7 +63,7 @@ const ValueCardBottom = () => {
                 </Box>
             </Box>
             <Box >
-                <Box component="img" src='/assets/values4.png' sx={{ width: isMobile ? '296px' : '538px', height: isMobile ? '169px' : '307px' }} />
+                <Box component="img" src={baseUrl + '/assets/values4.png'} sx={{ width: isMobile ? '296px' : '538px', height: isMobile ? '169px' : '307px' }} />
             </Box>
         </Box>
     );

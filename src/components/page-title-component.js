@@ -6,6 +6,7 @@ const PageTitle = ({ title }) => {
 
     const theme = useTheme();
     const isMobile = useMobileContext();
+    const baseUrl = process.env.REACT_APP_BLOGS_URL;
 
     const titleContainerStyle = {
         display: 'flex',
@@ -18,7 +19,7 @@ const PageTitle = ({ title }) => {
     return (
         <Box>
             <Box sx={{ ...titleContainerStyle }}>
-                <Box component="img" src='/assets/bracket-left.png' sx={{ width: isMobile ? 10 : 29, height: isMobile ? 28 : 78 }} />
+                <Box component="img" src={baseUrl + '/assets/bracket-left.png'} sx={{ width: isMobile ? 10 : 29, height: isMobile ? 28 : 78 }} />
                 <Typography
                     sx={{
                         fontFamily: "'Press Start 2P', cursive",
@@ -32,7 +33,7 @@ const PageTitle = ({ title }) => {
                     }}>
                     {title}
                 </Typography>
-                <Box component="img" src='/assets/bracket-right.png' sx={{ width: isMobile ? 10 : 29, height: isMobile ? 28 : 78 }} />
+                <Box component="img" src={baseUrl + '/assets/bracket-right.png'} sx={{ width: isMobile ? 10 : 29, height: isMobile ? 28 : 78 }} />
             </Box>
         </Box>
     );
