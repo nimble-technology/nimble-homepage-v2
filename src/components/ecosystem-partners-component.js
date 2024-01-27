@@ -140,7 +140,7 @@ const EcosystemPartners = () => {
                         <Marquee>
                             <MarqueeGroup>
                                 {ecosystemPartnersList.map((el, index) => (
-                                    <ImageGroup>
+                                    <ImageGroup key={index}>
                                         <Button
                                             key={index}
                                             onClick={() => window.open(el.url, '_blank')}

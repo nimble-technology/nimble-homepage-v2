@@ -35,4 +35,11 @@ code {
 * {
   box-sizing: border-box;
   font-family: 'Titillium Web', sans-serif;
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto;
+  }
 }

@@ -18,7 +18,7 @@ const BlogCard = ({ title, date, fileName, thumb }) => {
         } else {
             urlPath = '/media/' + fileNameWithoutExtension;
         }
-        navigate(window.location.origin + urlPath);
+        navigate(urlPath);
     };
 
     return (
@@ -39,7 +39,7 @@ const BlogCard = ({ title, date, fileName, thumb }) => {
                 <Box sx={{
                     width: '100%',
                 }}>
-                    <span onClick={handleClick} sx={{ padding: 0 }}>
+                    <span sx={{ padding: 0 }}>
                         <img src={`${baseUrl}/assets/blog-images/${thumb}`} alt="Icon" style={{ width: '100%' }} />
                     </span>
                 </Box>

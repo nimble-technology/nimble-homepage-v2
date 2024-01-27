@@ -11,6 +11,7 @@ const BlogHeader = ({ title = "News & Blog" }) => {
     const baseUrl = process.env.REACT_APP_BLOGS_URL;
 
     const [scrollY, setScrollY] = useState(0);
+    const [isScrolled, setIsScrolled] = useState(false);
     const [headerHeight, setHeaderHeight] = useState({ mobile: '180px', desktop: '300px' });
     const [headerMargin, setHeaderMargin] = useState({ mobile: 0, desktop: 0 });
     const [headerFontSize, setHeaderFontSize] = useState({ mobile: 20, desktop: 30 });
@@ -23,10 +24,12 @@ const BlogHeader = ({ title = "News & Blog" }) => {
         const handleScroll = () => {
             const currentScrollY = window.scrollY;
             if (currentScrollY > (isMobile ? 50 : 100)) {
+                setIsScrolled(true);
                 setHeaderHeight({ mobile: '30px', desktop: '80px' });
                 setHeaderMargin({ mobile: 9, desktop: 20 });
-                setHeaderFontSize({ mobile: 10, desktop: 20 });
+                setHeaderFontSize({ mobile: 12, desktop: 20 });
             } else {
+                setIsScrolled(false);
                 setHeaderHeight({ mobile: '180px', desktop: '300px' });
                 setHeaderMargin({ mobile: 0, desktop: 0 });
                 setHeaderFontSize({ mobile: 20, desktop: 30 });
@@ -46,26 +49,38 @@ const BlogHeader = ({ title = "News & Blog" }) => {
         left: 0,
         top: '55px',
         backgroundColor: '#ffffff',
-        background: `linear-gradient(180deg, rgba(29, 249, 143, 1), rgba(29, 249, 143, 0.7)), url("${baseUrl}/assets/blog-header.png")`,
-        backgroundBlendMode: 'overlay',
-        backgroundSize: 'cover',
-        color: '#161818',
-        fontFamily: "'Press Start 2P', cursive",
         minHeight: (isMobile) ? headerHeight.mobile : headerHeight.desktop,
         width: '100%',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        padding: theme.spacing(2),
-        zIndex: 1
+        zIndex: 1,
+        transitionProperty: 'min-height',
+        transitionDuration: '0.2s',
     };
+
+    const headerInsideStyle = {
+        background: `linear-gradient(180deg, rgba(29, 249, 143, 1), rgba(29, 249, 143, 0.7)), url("${baseUrl}/assets/blog-header.png")`,
+        backgroundBlendMode: 'overlay',
+        backgroundSize: 'cover',
+        minHeight: (isMobile) ? headerHeight.mobile : headerHeight.desktop,
+        color: '#161818',
+        fontFamily: "'Press Start 2P', cursive",
+        width: '100%',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: theme.spacing(2),
+        transitionProperty: 'min-height font-size',
+        transitionDuration: '0.2s',
+    }
 
     const backButtonStyle = {
         fontFamily: "'Press Start 2P', cursive",
         fontSize: isMobile ? '12px' : '14px',
         color: '#161818',
         position: 'absolute',
-        top: theme.spacing(1),
+        top: isScrolled ? 'inherit' : theme.spacing(1),
         left: theme.spacing(1),
     };
 
@@ -79,8 +94,8 @@ const BlogHeader = ({ title = "News & Blog" }) => {
 
     return (
         <Box sx={headerStyle} style={{ backgroundColor: 'white' }}>
-            <Box sx={headerStyle}>
-                <Button sx={backButtonStyle} onClick={handleBack} style={{ marginBottom: '12px' }}>
+            <Box sx={headerInsideStyle}>
+                <Button sx={backButtonStyle} onClick={handleBack}>
                     {"< Back"}
                 </Button>
                 <Typography sx={textStyle}>{title}</Typography>

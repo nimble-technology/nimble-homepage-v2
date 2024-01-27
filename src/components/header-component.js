@@ -28,7 +28,7 @@ const Header = () => {
         if (value === SECTIONS.TOKENOMICS) {
             navigate("/tokenomics")
         } else if (value === SECTIONS.NEWS) {
-            navigate('/media')
+            navigate('/media/')
         } else {
             navigateAndScroll(value);
         }
@@ -67,16 +67,23 @@ const Header = () => {
                     <Box sx={{flexGrow: 1}}>
                         <Select
                             defaultValue={SECTIONS.ABOUT}
-                            onChange={(e) => handleMenuItemClick(e.target.value)}
                             sx={{
                                 height: '30px',
                                 width: '110px',
                             }}
                         >
-                            <MenuItem value= {SECTIONS.ABOUT} >{SECTIONS.ABOUT}</MenuItem>
-                            <MenuItem value= {SECTIONS.VALUES}>{SECTIONS.VALUES}</MenuItem>
-                            <MenuItem value= {SECTIONS.NEWS}>{SECTIONS.NEWS}</MenuItem>
-                            <MenuItem value= {SECTIONS.TOKENOMICS}>{SECTIONS.TOKENOMICS}</MenuItem>
+                            <MenuItem value= {SECTIONS.ABOUT} onClick={(e) => handleMenuItemClick(SECTIONS.ABOUT)}>
+                                {SECTIONS.ABOUT}
+                            </MenuItem>
+                            <MenuItem value= {SECTIONS.VALUES} onClick={(e) => handleMenuItemClick(SECTIONS.VALUES)}>
+                                {SECTIONS.VALUES}
+                            </MenuItem>
+                            <MenuItem value= {SECTIONS.NEWS} onClick={(e) => handleMenuItemClick(SECTIONS.NEWS)}>
+                                {SECTIONS.NEWS}
+                            </MenuItem>
+                            <MenuItem value= {SECTIONS.TOKENOMICS} onClick={(e) => handleMenuItemClick(SECTIONS.TOKENOMICS)}>
+                                {SECTIONS.TOKENOMICS}
+                            </MenuItem>
                         </Select>
                     </Box>
                 ) : (
