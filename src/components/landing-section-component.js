@@ -20,7 +20,7 @@ const LandingSection = () => {
     const navigate = useNavigate();
     const baseUrl = process.env.REACT_APP_BLOGS_URL;
 
-    const partStyle1 = { 
+    const partStyle1 = {
       position: 'absolute', 
       top: '20%', 
       left: '10%', 
@@ -165,7 +165,7 @@ const LandingSection = () => {
                 <AnimatedPart src={baseUrl + "/assets/landing-part2.png"} alt="Part 2" startX={'0'} startY={'0'} endX={'40'} endY={'-20'} customStyle={{...partStyle2}} />
                 <SwingingSquare src={baseUrl + "/assets/landing-part3.png"} alt="Part 3" customStyle={{...partStyle3}} />
                 <RotatingPart src={baseUrl + "/assets/landing-part4.png"} alt="Part 4" style={{...partStyle4}} />
-                
+
                 <Box style={buttonContainerStyle}>
                     <SocialIcons isMobile={isMobile} />
                 </Box>

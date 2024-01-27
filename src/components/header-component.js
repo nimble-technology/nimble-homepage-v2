@@ -26,9 +26,9 @@ const Header = () => {
 
     const handleMenuItemClick = (value) => {
         if (value === SECTIONS.TOKENOMICS) {
-            window.open("/tokenomics")
+            navigate("/tokenomics")
         } else if (value === SECTIONS.NEWS) {
-            navigate('/media')
+            navigate('/media/')
         } else {
             navigateAndScroll(value);
         }
@@ -67,16 +67,23 @@ const Header = () => {
                     <Box sx={{flexGrow: 1}}>
                         <Select
                             defaultValue={SECTIONS.ABOUT}
-                            onChange={(e) => handleMenuItemClick(e.target.value)}
                             sx={{
                                 height: '30px',
                                 width: '110px',
                             }}
                         >
-                            <MenuItem value= {SECTIONS.ABOUT} >{SECTIONS.ABOUT}</MenuItem>
-                            <MenuItem value= {SECTIONS.VALUES}>{SECTIONS.VALUES}</MenuItem>
-                            <MenuItem value= {SECTIONS.NEWS}>{SECTIONS.NEWS}</MenuItem>
-                            <MenuItem value= {SECTIONS.TOKENOMICS}>{SECTIONS.TOKENOMICS}</MenuItem>
+                            <MenuItem value= {SECTIONS.ABOUT} onClick={(e) => handleMenuItemClick(SECTIONS.ABOUT)}>
+                                {SECTIONS.ABOUT}
+                            </MenuItem>
+                            <MenuItem value= {SECTIONS.VALUES} onClick={(e) => handleMenuItemClick(SECTIONS.VALUES)}>
+                                {SECTIONS.VALUES}
+                            </MenuItem>
+                            <MenuItem value= {SECTIONS.NEWS} onClick={(e) => handleMenuItemClick(SECTIONS.NEWS)}>
+                                {SECTIONS.NEWS}
+                            </MenuItem>
+                            <MenuItem value= {SECTIONS.TOKENOMICS} onClick={(e) => handleMenuItemClick(SECTIONS.TOKENOMICS)}>
+                                {SECTIONS.TOKENOMICS}
+                            </MenuItem>
                         </Select>
                     </Box>
                 ) : (
@@ -93,11 +100,11 @@ const Header = () => {
                         <Button onClick={() => navigateAndScroll(SECTIONS.ABOUT)}>{SECTIONS.ABOUT}</Button>
                         <Button onClick={() => navigateAndScroll(SECTIONS.VALUES)}>{SECTIONS.VALUES}</Button>
                         <Button onClick={() => navigate('/media')}>{SECTIONS.NEWS}</Button>
-                        <Button onClick={() => window.open("/tokenomics", "_self")}>{SECTIONS.TOKENOMICS}</Button>
+                        <Button onClick={() => navigate("/tokenomics")}>{SECTIONS.TOKENOMICS}</Button>
                     </Box>
                 )}
                 <PixelButton
-                    onClick={() => { window.open("/vision", "_self")}}
+                    onClick={() => { navigate("/vision")}}
                     sx={{
                         backgroundColor: theme.palette.primary.main,
                         color: 'black',
