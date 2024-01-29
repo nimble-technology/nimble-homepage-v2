@@ -150,6 +150,25 @@ const EcosystemPartners = () => {
                                     </ImageGroup>
                                 ))}
                             </MarqueeGroup>
+                            <MarqueeGroup>
+                                {ecosystemPartnersList.concat(ecosystemPartnersList).map((el, index) => (
+                                    <ImageGroup key={index}>
+                                        <Button
+                                            onClick={() => window.open(el.url, '_blank')}
+                                            sx={{
+                                            padding: 0,
+                                            minWidth: 0,
+                                            '&:hover': {
+                                                transform: 'scale(1.2)',
+                                            },
+                                            transition: 'transform 0.2s ease-in-out',
+                                        }}
+                                    >
+                                            <Image src={baseUrl + el.img} />
+                                        </Button>
+                                    </ImageGroup>
+                                ))}
+                            </MarqueeGroup>
                         </Marquee>
                     </Wrapper>
                 </AppContainer>
