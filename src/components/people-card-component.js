@@ -46,12 +46,12 @@ const PeopleCard = () => {
             career: "Core Engineer",
             link: LINKEDIN_LINK.SHANPENG
         },
-        // {
-        //     imageSrc: '/assets/team-avatars/Henry.png',
-        //     title: 'Henry',
-        //     career: "Core Engineer",
-        //     link: LINKEDIN_LINK.HENRY
-        // }
+        {
+            imageSrc: '/assets/team-avatars/Young.png',
+            title: 'Young Yang',
+            career: "Core Engineer",
+            link: LINKEDIN_LINK.YOUNG
+        }
     ];
 
     const sideStyle = {
