@@ -86,7 +86,6 @@ const Blog = () => {
                 }}
             >
                 <Swiper
-                    loop={true}
                     effect={'coverflow'}
                     grabCursor={true}
                     centeredSlides={true}
