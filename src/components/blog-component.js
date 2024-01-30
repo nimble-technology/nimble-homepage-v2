@@ -99,7 +99,7 @@ const Blog = () => {
                         slideShadows: false
                     }}
                     pagination={{ clickable: true }}
-                    initialSlide={0}
+                    initialSlide={1}
                     modules={[EffectCoverflow, Pagination]}
                     className="styles.swiper"
                 >
