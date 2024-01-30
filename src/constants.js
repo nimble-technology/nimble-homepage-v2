@@ -1,3 +1,5 @@
+import FontFaceObserver from 'fontfaceobserver';
+
 export const LINKS = {
     DISCORD: 'https://discord.gg/nimble',
     NIMBLE_APP: 'https://app.nimble.technology/join?code=glZvl0w7',
@@ -34,3 +36,23 @@ export const LINKEDIN_LINK = {
     HENRY: 'https://twitter.com/Focalors2027',
     YOUNG: 'https://twitter.com/young_web3'
 };
+
+
+export const PRELOAD_IMAGES = [
+    'https://nimble-homepage-blogs.s3.ap-southeast-1.amazonaws.com/assets/landing-part5.png',
+    'https://nimble-homepage-blogs.s3.ap-southeast-1.amazonaws.com/assets/landing-part4.png',
+    'https://nimble-homepage-blogs.s3.ap-southeast-1.amazonaws.com/assets/landing-part3.png',
+    'https://nimble-homepage-blogs.s3.ap-southeast-1.amazonaws.com/assets/landing-part2.png',
+    'https://nimble-homepage-blogs.s3.ap-southeast-1.amazonaws.com/assets/landing-part1.png',
+    'https://nimble-homepage-blogs.s3.ap-southeast-1.amazonaws.com/assets/landing-base.png',
+    'https://nimble-homepage-blogs.s3.ap-southeast-1.amazonaws.com/assets/telegram.png',
+    'https://nimble-homepage-blogs.s3.ap-southeast-1.amazonaws.com/assets/twitter.png',
+    'https://nimble-homepage-blogs.s3.ap-southeast-1.amazonaws.com/assets/discord.png',
+    'https://nimble-homepage-blogs.s3.ap-southeast-1.amazonaws.com/assets/github.png',
+  ];
+  
+  export const PRELOAD_FONT = [
+    new FontFaceObserver('Press Start 2P'),
+    new FontFaceObserver('Titillium Web'),
+  ];
+  
