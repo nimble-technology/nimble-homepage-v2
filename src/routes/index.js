@@ -24,7 +24,7 @@ export const AppRoutes = () => {
     const fadeOutProps = useSpring({
         opacity: allResourcesLoaded ? 0 : 1,
         from: { opacity: 1 },
-        config: { duration: 2000 },
+        config: { duration: 1000 },
         onRest: () => {
             setShowMainContent(true);
         },
@@ -59,8 +59,8 @@ export const AppRoutes = () => {
 
     if (!allResourcesLoaded) {
         return (
-          <Box display="flex" justifyContent="center" alignItems="center" height="100vh" width="100vw">
-            <BreathPart src={baseUrl + "/assets/nimble.png"} alt="Loading" customStyle={{ width: isMobile ? '200px' : '400px', height: 'auto' }} />
+          <Box display="flex" justifyContent="center" alignItems="center" height="100vh" width="100vw" style={{ backgroundColor: '#161818' }}>
+            <BreathPart src={baseUrl + "/assets/nimble.png"} alt="Loading" customStyle={{ width: isMobile ? '100px' : '200px', height: 'auto' }} />
           </Box>
         );
       }
@@ -68,8 +68,8 @@ export const AppRoutes = () => {
     if (allResourcesLoaded && !showMainContent) {
         return (
             <animated.div style={fadeOutProps}>
-                <Box display="flex" justifyContent="center" alignItems="center" height="100vh" width="100vw">
-                    <BreathPart src={baseUrl + "/assets/nimble.png"} alt="Loading" customStyle={{ width: isMobile ? '200px' : '400px', height: 'auto' }} />
+                <Box display="flex" justifyContent="center" alignItems="center" height="100vh" width="100vw" style={{ backgroundColor: '#161818' }}>
+                    <BreathPart src={baseUrl + "/assets/nimble.png"} alt="Loading" customStyle={{ width: isMobile ? '100px' : '200px', height: 'auto' }} />
                 </Box>
             </animated.div>
         );
