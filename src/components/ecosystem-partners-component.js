@@ -48,7 +48,7 @@ const EcosystemPartners = () => {
         left: translateX(0);
       }
       to {
-        transform: translateX(-100%);
+        transform: translateX(-50%);
       }
     `;
 
@@ -60,7 +60,7 @@ const EcosystemPartners = () => {
       align-items: center;
       white-space: nowrap;
       width: ${mobileWidth};
-      animation: ${scrollX} 90s linear infinite;
+      animation: ${scrollX} 10s linear infinite;
       &:hover {
         animation-play-state: paused;
       }
@@ -87,13 +87,6 @@ const EcosystemPartners = () => {
     `;
 
     const ecosystemPartnersList = [
-        { img: '/assets/ecosystem-partners/avalanche.png', url: 'https://www.avax.network/' },
-        { img: '/assets/ecosystem-partners/polygon.png', url: 'https://polygon.technology/' },
-        { img: '/assets/ecosystem-partners/sei-network.png', url: 'https://www.sei.io/' },
-        { img: '/assets/ecosystem-partners/corner-market.png', url: 'https://www.cornermarket.co/' },
-        { img: '/assets/ecosystem-partners/hyper-oracle.png', url: 'https://www.hyperoracle.io/' },
-        { img: '/assets/ecosystem-partners/zkme.png', url: 'https://zk.me/' },
-        { img: '/assets/ecosystem-partners/nimble.png', url: 'https://twitter.com/TheNimbusApp/' },
         { img: '/assets/ecosystem-partners/avalanche.png', url: 'https://www.avax.network/' },
         { img: '/assets/ecosystem-partners/polygon.png', url: 'https://polygon.technology/' },
         { img: '/assets/ecosystem-partners/sei-network.png', url: 'https://www.sei.io/' },
@@ -139,20 +132,38 @@ const EcosystemPartners = () => {
                     <Wrapper>
                         <Marquee>
                             <MarqueeGroup>
-                                {ecosystemPartnersList.map((el, index) => (
+                                {ecosystemPartnersList.concat(ecosystemPartnersList).map((el, index) => (
                                     <ImageGroup key={index}>
                                         <Button
-                                            key={index}
                                             onClick={() => window.open(el.url, '_blank')}
                                             sx={{
-                                                padding: 0,
-                                                minWidth: 0,
-                                                '&:hover': {
-                                                    transform: 'scale(1.2)',
-                                                },
-                                                transition: 'transform 0.2s ease-in-out',
-                                            }}
-                                        >
+                                            padding: 0,
+                                            minWidth: 0,
+                                            '&:hover': {
+                                                transform: 'scale(1.2)',
+                                            },
+                                            transition: 'transform 0.2s ease-in-out',
+                                        }}
+                                    >
+                                            <Image src={baseUrl + el.img} />
+                                        </Button>
+                                    </ImageGroup>
+                                ))}
+                            </MarqueeGroup>
+                            <MarqueeGroup>
+                                {ecosystemPartnersList.concat(ecosystemPartnersList).map((el, index) => (
+                                    <ImageGroup key={index}>
+                                        <Button
+                                            onClick={() => window.open(el.url, '_blank')}
+                                            sx={{
+                                            padding: 0,
+                                            minWidth: 0,
+                                            '&:hover': {
+                                                transform: 'scale(1.2)',
+                                            },
+                                            transition: 'transform 0.2s ease-in-out',
+                                        }}
+                                    >
                                             <Image src={baseUrl + el.img} />
                                         </Button>
                                     </ImageGroup>
