@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Typography, Box, useTheme, Button } from '@mui/material';
 import { useMobileContext } from '../mobileContext';
 
 const PeopleCardItem = ({ imageSrc, title, career, link }) => {
 
+    const [isLoaded, setIsLoaded] = useState(false);
     const theme = useTheme();
     const isMobile = useMobileContext();
+    const baseUrl = process.env.REACT_APP_BLOGS_URL;
 
     const titleFontSize = isMobile ? '16px' : '24px';
     const careerFontSize = isMobile ? '12px' : '14px';
@@ -20,7 +22,13 @@ const PeopleCardItem = ({ imageSrc, title, career, link }) => {
                     alignItems: 'center',
                 }}>
                     <Box component="img" src="/assets/avatar-circle.png" sx={{ width: isMobile ? '160px' : '244px', height: isMobile ? '160px' : '245px' }} />
-                    <Box component="img" src={imageSrc} sx={{ width: isMobile ? '110px' : '167px', height: isMobile ? '110px' : '168px', position: 'absolute', borderRadius: '50%', objectFit: 'cover', }} />
+                    <Box 
+                        component="img" 
+                        src={isLoaded ? imageSrc : baseUrl + "/assets/default-avatar.png"} 
+                        onLoad={() => setIsLoaded(true)}
+                        onError={() => setIsLoaded(false)}
+                        sx={{ width: isMobile ? '110px' : '167px', height: isMobile ? '110px' : '168px', position: 'absolute', borderRadius: '50%', objectFit: 'cover', }} 
+                        />
                 </Box>
                 <Typography
                     sx={{

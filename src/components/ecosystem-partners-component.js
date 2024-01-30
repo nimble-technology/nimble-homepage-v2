@@ -3,6 +3,7 @@ import { Typography, Button, Box, useTheme, IconButton } from '@mui/material';
 import PageTitle from './page-title-component';
 import { useMobileContext } from '../mobileContext';
 import styled, { keyframes, css } from "styled-components";
+import ImageWithPlaceholder from './image-placeholder-component';
 
 const EcosystemPartners = () => {
 
@@ -85,6 +86,15 @@ const EcosystemPartners = () => {
       aspect-ratio: 16/9;
       min-height: 143px;
     `;
+    const StyledImageWithPlaceholder = styled(ImageWithPlaceholder)`
+      object-fit: contain;
+      width: 100%;
+      height: 100%;
+      border-radius: 0.5rem;
+      aspect-ratio: 16/9;
+      min-height: 143px;
+      // 你可以在这里添加任何额外的CSS样式
+`;
 
     const ecosystemPartnersList = [
         { img: '/assets/ecosystem-partners/avalanche.png', url: 'https://www.avax.network/' },
@@ -145,7 +155,10 @@ const EcosystemPartners = () => {
                                             transition: 'transform 0.2s ease-in-out',
                                         }}
                                     >
-                                            <Image src={baseUrl + el.img} />
+                                            <StyledImageWithPlaceholder 
+                                                src={baseUrl + el.img} 
+                                                placeholderSrc={baseUrl + '/assets/default-partner.png'} 
+                                            />
                                         </Button>
                                     </ImageGroup>
                                 ))}
@@ -162,9 +175,12 @@ const EcosystemPartners = () => {
                                                 transform: 'scale(1.2)',
                                             },
                                             transition: 'transform 0.2s ease-in-out',
-                                        }}
-                                    >
-                                            <Image src={baseUrl + el.img} />
+                                            }}
+                                        >
+                                          <StyledImageWithPlaceholder 
+                                              src={baseUrl + el.img} 
+                                              placeholderSrc={baseUrl + '/assets/default-partner.png'} 
+                                          />
                                         </Button>
                                     </ImageGroup>
                                 ))}
