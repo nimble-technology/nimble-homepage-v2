@@ -66,18 +66,18 @@ export const AppRoutes = () => {
             />
           );
         return (
-            <animated.div style={containerStyle}>
-              <Box
+            <Box
                 display="flex"
                 justifyContent="center"
                 alignItems="center"
                 height="100vh"
                 width="100vw"
                 style={{ backgroundColor: '#161818' }}
-              >
-                {content}
-              </Box>
-            </animated.div>
+            >
+                <animated.div style={containerStyle}>
+                    {content}
+                </animated.div>
+            </Box>
         );
     }
 

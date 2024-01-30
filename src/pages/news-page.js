@@ -22,6 +22,18 @@ const NewsPage = () => {
             display: 'block',
             margin: 'auto',
         },
+        '& h2': {
+            fontSize: '32px',
+        },
+        '& h3': {
+            fontSize: '28px',
+        },
+        '& p': {
+            fontSize: '20px',
+        },
+        '& li': {
+            fontSize: '20px',
+        },
         padding: '0 50px 50px 50px',
     };
 
