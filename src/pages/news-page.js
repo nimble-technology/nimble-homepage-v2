@@ -19,6 +19,8 @@ const NewsPage = () => {
             maxWidth: '600px',
             width: '100%',
             height: 'auto',
+            display: 'block',
+            margin: 'auto',
         },
         padding: '0 50px 50px 50px',
     };

@@ -56,24 +56,30 @@ export const AppRoutes = () => {
         });
     }, []);
 
-
-    if (!allResourcesLoaded) {
+    if (!allResourcesLoaded || (allResourcesLoaded && !showMainContent)) {
+        const containerStyle = allResourcesLoaded && !showMainContent ? fadeOutProps : {};
+        const content = (
+            <BreathPart
+              src={baseUrl + "/assets/nimble.png"}
+              alt="Loading"
+              customStyle={{ width: isMobile ? '100px' : '200px', height: 'auto' }}
+            />
+          );
         return (
-          <Box display="flex" justifyContent="center" alignItems="center" height="100vh" width="100vw" style={{ backgroundColor: '#161818' }}>
-            <BreathPart src={baseUrl + "/assets/nimble.png"} alt="Loading" customStyle={{ width: isMobile ? '100px' : '200px', height: 'auto' }} />
-          </Box>
-        );
-      }
-
-    if (allResourcesLoaded && !showMainContent) {
-        return (
-            <animated.div style={fadeOutProps}>
-                <Box display="flex" justifyContent="center" alignItems="center" height="100vh" width="100vw" style={{ backgroundColor: '#161818' }}>
-                    <BreathPart src={baseUrl + "/assets/nimble.png"} alt="Loading" customStyle={{ width: isMobile ? '100px' : '200px', height: 'auto' }} />
-                </Box>
+            <animated.div style={containerStyle}>
+              <Box
+                display="flex"
+                justifyContent="center"
+                alignItems="center"
+                height="100vh"
+                width="100vw"
+                style={{ backgroundColor: '#161818' }}
+              >
+                {content}
+              </Box>
             </animated.div>
         );
-      }
+    }
 
     if (showMainContent) {
         return (
