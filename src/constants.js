@@ -50,6 +50,8 @@ export const PRELOAD_IMAGES = [
     'https://nimble-homepage-blogs.s3.ap-southeast-1.amazonaws.com/assets/discord.png',
     'https://nimble-homepage-blogs.s3.ap-southeast-1.amazonaws.com/assets/github.png',
     'https://nimble-homepage-blogs.s3.ap-southeast-1.amazonaws.com/assets/blog-preloading-cover.png',
+    'https://nimble-homepage-blogs.s3.ap-southeast-1.amazonaws.com/assets/default-avatar.png',
+    'https://nimble-homepage-blogs.s3.ap-southeast-1.amazonaws.com/assets/default-partner.png',
   ];
   
   export const PRELOAD_FONT = [
