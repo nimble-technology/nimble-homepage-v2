@@ -1,17 +1,34 @@
 import React, { useState, useEffect } from 'react';
-import FontFaceObserver from 'fontfaceobserver';
 import Layout from "../components/layout-component.js";
+import Box from '@mui/material/Box';
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import HomePage from "../pages/home-page";
 import NewsList from "../pages/news-list";
 import NewsPage from "../pages/news-page";
+import BreathPart from '../components/breath-animation-component.js';
 import FramePage from "../pages/frame-page";
 import { PRELOAD_FONT, PRELOAD_IMAGES } from '../constants.js';
+import { useMobileContext } from '../mobileContext';
+import { useSpring, animated } from 'react-spring';
+
+
 
 export const AppRoutes = () => {
 
     const [loadedCount, setLoadedCount] = useState(0);
     const [allResourcesLoaded, setAllResourcesLoaded] = useState(false);
+    const [showMainContent, setShowMainContent] = useState(false);
+    const baseUrl = process.env.REACT_APP_BLOGS_URL;
+    const isMobile = useMobileContext();
+
+    const fadeOutProps = useSpring({
+        opacity: allResourcesLoaded ? 0 : 1,
+        from: { opacity: 1 },
+        config: { duration: 2000 },
+        onRest: () => {
+            setShowMainContent(true);
+        },
+      });
 
     useEffect(() => {
        
@@ -20,7 +37,9 @@ export const AppRoutes = () => {
             setLoadedCount(prevCount => {
                 const newCount = prevCount + 1;
                 if (newCount === totalResources) {
-                    setAllResourcesLoaded(true);
+                    setTimeout(() => {
+                        setAllResourcesLoaded(true);
+                    }, 2000);
                 }
                 return newCount;
             });
@@ -33,29 +52,46 @@ export const AppRoutes = () => {
         });
 
         PRELOAD_FONT.forEach(font => {
-            font.load().then(updateLoadedCount, updateLoadedCount);
+            font.load().then(updateLoadedCount);
         });
     }, []);
 
-    if (!allResourcesLoaded) {
-        return <div>Loading...</div>;
-    }
 
-    return (
-        <Router>
-            <Layout>
-                <Routes>
-                    <Route path="/" element={<HomePage />} />
-                    <Route path="/media" element={<NewsList />} />
-                    <Route path="/vision" element={<NewsPage />} />
-                    <Route path="/tokenomics" element={<NewsPage />} />
-                    <Route path="/media/:fileName" element={<NewsPage />} />
-                    <Route path="/litepaper" element={<FramePage />} />
-                    <Route path="/whitepaper" element={<FramePage />} />
-                    <Route path="/everything-marketplace-case-study" element={<FramePage />} />
-                    <Route path="*" element={<Navigate to="/" replace />} />
-                </Routes>
-            </Layout>
-        </Router>
-    );
+    if (!allResourcesLoaded) {
+        return (
+          <Box display="flex" justifyContent="center" alignItems="center" height="100vh" width="100vw">
+            <BreathPart src={baseUrl + "/assets/nimble.png"} alt="Loading" customStyle={{ width: isMobile ? '200px' : '400px', height: 'auto' }} />
+          </Box>
+        );
+      }
+
+    if (allResourcesLoaded && !showMainContent) {
+        return (
+            <animated.div style={fadeOutProps}>
+                <Box display="flex" justifyContent="center" alignItems="center" height="100vh" width="100vw">
+                    <BreathPart src={baseUrl + "/assets/nimble.png"} alt="Loading" customStyle={{ width: isMobile ? '200px' : '400px', height: 'auto' }} />
+                </Box>
+            </animated.div>
+        );
+      }
+
+    if (showMainContent) {
+        return (
+            <Router>
+                <Layout>
+                    <Routes>
+                        <Route path="/" element={<HomePage />} />
+                        <Route path="/media" element={<NewsList />} />
+                        <Route path="/vision" element={<NewsPage />} />
+                        <Route path="/tokenomics" element={<NewsPage />} />
+                        <Route path="/media/:fileName" element={<NewsPage />} />
+                        <Route path="/litepaper" element={<FramePage />} />
+                        <Route path="/whitepaper" element={<FramePage />} />
+                        <Route path="/everything-marketplace-case-study" element={<FramePage />} />
+                        <Route path="*" element={<Navigate to="/" replace />} />
+                    </Routes>
+                </Layout>
+            </Router>
+        );
+    }
 };

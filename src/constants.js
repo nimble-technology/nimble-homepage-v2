@@ -49,10 +49,10 @@ export const PRELOAD_IMAGES = [
     'https://nimble-homepage-blogs.s3.ap-southeast-1.amazonaws.com/assets/twitter.png',
     'https://nimble-homepage-blogs.s3.ap-southeast-1.amazonaws.com/assets/discord.png',
     'https://nimble-homepage-blogs.s3.ap-southeast-1.amazonaws.com/assets/github.png',
+    'https://nimble-homepage-blogs.s3.ap-southeast-1.amazonaws.com/assets/blog-preloading-cover.png',
   ];
   
   export const PRELOAD_FONT = [
     new FontFaceObserver('Press Start 2P'),
     new FontFaceObserver('Titillium Web'),
   ];
-  

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Typography, Box, Button } from '@mui/material';
 import { useMobileContext } from '../mobileContext';
 import {Navigate, useNavigate} from 'react-router-dom';
@@ -9,6 +9,7 @@ const BlogCard = ({ title, date, fileName, thumb }) => {
     const isMobile = useMobileContext();
     const navigate = useNavigate();
     const baseUrl = process.env.REACT_APP_BLOGS_URL;
+    const [isLoaded, setIsLoaded] = useState(false);
 
     const handleClick = () => {
         const fileNameWithoutExtension = fileName.replace(/\.json$/, "");
@@ -39,8 +40,14 @@ const BlogCard = ({ title, date, fileName, thumb }) => {
                 <Box sx={{
                     width: '100%',
                 }}>
-                    <span sx={{ padding: 0 }}>
-                        <img src={`${baseUrl}/assets/blog-images/${thumb}`} alt="Icon" style={{ width: '100%' }} />
+                    <span style={{ padding: 0 }}>
+                        <img 
+                            src={isLoaded ? `${baseUrl}/assets/blog-images/${thumb}` : `${baseUrl}/assets/blog-preloading-cover.png`} 
+                            alt="Icon" 
+                            style={{ width: '100%', height : isMobile ? '169px' : '211px' }} 
+                            onLoad={() => setIsLoaded(true)}
+                            onError={() => setIsLoaded(false)}
+                        />
                     </span>
                 </Box>
                 <Box>
