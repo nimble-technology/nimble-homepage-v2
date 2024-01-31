@@ -5,6 +5,7 @@ import { useParams, useLocation } from 'react-router-dom';
 import { marked } from 'marked';
 import { SPECIAL_BLOGS } from '../constants';
 import {useMobileContext} from "../mobileContext";
+import Latex from '../components/latex-component';
 
 const NewsPage = () => {
 
@@ -100,7 +101,9 @@ const NewsPage = () => {
                     flexWrap: 'wrap',
                     justifyContent: 'center',
                 }}>
-                <Box sx={markdownContainerStyle} dangerouslySetInnerHTML={renderMarkdown(news.content || '')} />
+                <Latex>
+                    <Box sx={markdownContainerStyle} dangerouslySetInnerHTML={renderMarkdown(news.content || '')} />
+                </Latex>
             </Box>
         </Box>
     );
