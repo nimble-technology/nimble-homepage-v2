@@ -52,9 +52,49 @@ export const PRELOAD_IMAGES = [
     'https://nimble-homepage-blogs.s3.ap-southeast-1.amazonaws.com/assets/blog-preloading-cover.png',
     'https://nimble-homepage-blogs.s3.ap-southeast-1.amazonaws.com/assets/default-avatar.png',
     'https://nimble-homepage-blogs.s3.ap-southeast-1.amazonaws.com/assets/default-partner.png',
+    'https://nimble-homepage-blogs.s3.ap-southeast-1.amazonaws.com/blogs/index.json',
   ];
   
-  export const PRELOAD_FONT = [
+export const PRELOAD_FONT = [
     new FontFaceObserver('Press Start 2P'),
     new FontFaceObserver('Titillium Web'),
-  ];
+];
+
+export const DEFAULT_BLOGS = [
+    {
+        "fileName": "",
+	    "title": "Blog is loading",
+        "createDate": "",
+        "thumb": "blog-preloading-cover.png"
+    },
+    {
+        "fileName": "",
+	    "title": "Blog is loading",
+        "createDate": "",
+        "thumb": "blog-preloading-cover.png"
+    },
+    {
+        "fileName": "",
+	    "title": "Blog is loading",
+        "createDate": "",
+        "thumb": "blog-preloading-cover.png"
+    },
+    {
+        "fileName": "",
+	    "title": "Blog is loading",
+        "createDate": "",
+        "thumb": "blog-preloading-cover.png"
+    },
+    {
+        "fileName": "",
+	    "title": "Blog is loading",
+        "createDate": "",
+        "thumb": "blog-preloading-cover.png"
+    },
+    {
+        "fileName": "",
+	    "title": "Blog is loading",
+        "createDate": "",
+        "thumb": "blog-preloading-cover.png"
+    }
+]

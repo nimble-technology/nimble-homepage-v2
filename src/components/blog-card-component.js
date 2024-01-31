@@ -4,7 +4,7 @@ import { useMobileContext } from '../mobileContext';
 import {Navigate, useNavigate} from 'react-router-dom';
 import { SPECIAL_BLOGS } from '../constants';
 
-const BlogCard = ({ title, date, fileName, thumb }) => {
+const BlogCard = ({ title, date, fileName, thumb, canClick = true }) => {
 
     const isMobile = useMobileContext();
     const navigate = useNavigate();
@@ -12,14 +12,17 @@ const BlogCard = ({ title, date, fileName, thumb }) => {
     const [isLoaded, setIsLoaded] = useState(false);
 
     const handleClick = () => {
-        const fileNameWithoutExtension = fileName.replace(/\.json$/, "");
-        let urlPath;
-        if (fileNameWithoutExtension === SPECIAL_BLOGS.TOKENOMICS || fileNameWithoutExtension === SPECIAL_BLOGS.VISION) {
-            urlPath = '/' + fileNameWithoutExtension;
-        } else {
-            urlPath = '/media/' + fileNameWithoutExtension;
+        if (canClick) {
+            const fileNameWithoutExtension = fileName.replace(/\.json$/, "");
+            let urlPath;
+            if (fileNameWithoutExtension === SPECIAL_BLOGS.TOKENOMICS || fileNameWithoutExtension === SPECIAL_BLOGS.VISION) {
+                urlPath = '/' + fileNameWithoutExtension;
+            } else {
+                urlPath = '/media/' + fileNameWithoutExtension;
+            }
+            navigate(urlPath);
         }
-        navigate(urlPath);
+       
     };
 
     return (
