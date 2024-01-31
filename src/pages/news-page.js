@@ -46,6 +46,21 @@ const NewsPage = () => {
     };
 
     useEffect(() => {
+        const pathname = window.location.pathname;
+        if (pathname === '/vision') {
+            document.title = 'Vision - Nimble Network';
+          } else if (pathname === '/tokenomics') {
+            document.title = 'Tokenomics - Nimble Network';
+          } else if (pathname.startsWith('/media/')) {
+            const fileName = pathname.split('/media/')[1];
+            const formattedFileName = fileName.split('-').map(part => part.charAt(0).toUpperCase() + part.slice(1)).join(' ');
+            document.title = `${formattedFileName} - Nimble Network`;
+          } else {
+            document.title = 'Nimble - The Composable AI Protocol';
+          }
+    }, [location.pathname]);
+
+    useEffect(() => {
 
         let jsonFileName;
 
