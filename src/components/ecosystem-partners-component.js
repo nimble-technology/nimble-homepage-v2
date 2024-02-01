@@ -53,7 +53,7 @@ const EcosystemPartners = () => {
       }
     `;
 
-    const mobileWidth = (isMobile) ? '100%' : '200%';
+    const mobileWidth = '200%';
 
     const common = css`
       flex-shrink: 0;
@@ -93,7 +93,6 @@ const EcosystemPartners = () => {
       border-radius: 0.5rem;
       aspect-ratio: 16/9;
       min-height: 143px;
-      // 你可以在这里添加任何额外的CSS样式
 `;
 
     const ecosystemPartnersList = [
@@ -104,7 +103,17 @@ const EcosystemPartners = () => {
         { img: '/assets/ecosystem-partners/hyper-oracle.png', url: 'https://www.hyperoracle.io/' },
         { img: '/assets/ecosystem-partners/zkme.png', url: 'https://zk.me/' },
         { img: '/assets/ecosystem-partners/nimble.png', url: 'https://twitter.com/TheNimbusApp/' },
-    ];
+
+        { img: '/assets/ecosystem-partners/avalanche.png', url: 'https://www.avax.network/' },
+        { img: '/assets/ecosystem-partners/polygon.png', url: 'https://polygon.technology/' },
+        { img: '/assets/ecosystem-partners/sei-network.png', url: 'https://www.sei.io/' },
+        { img: '/assets/ecosystem-partners/corner-market.png', url: 'https://www.cornermarket.co/' },
+        { img: '/assets/ecosystem-partners/hyper-oracle.png', url: 'https://www.hyperoracle.io/' },
+        { img: '/assets/ecosystem-partners/zkme.png', url: 'https://zk.me/' },
+        { img: '/assets/ecosystem-partners/nimble.png', url: 'https://twitter.com/TheNimbusApp/' },
+     ];
+
+     const marqueePartnerList = isMobile ? ecosystemPartnersList.concat(ecosystemPartnersList) : ecosystemPartnersList;
 
     const containerStyle = {
         width: '100vw',
@@ -142,7 +151,7 @@ const EcosystemPartners = () => {
                     <Wrapper>
                         <Marquee>
                             <MarqueeGroup>
-                                {ecosystemPartnersList.concat(ecosystemPartnersList).map((el, index) => (
+                                {marqueePartnerList.map((el, index) => (
                                     <ImageGroup key={index}>
                                         <Button
                                             onClick={() => window.open(el.url, '_blank')}
@@ -159,28 +168,6 @@ const EcosystemPartners = () => {
                                                 src={baseUrl + el.img} 
                                                 placeholderSrc={baseUrl + '/assets/default-partner.png'} 
                                             />
-                                        </Button>
-                                    </ImageGroup>
-                                ))}
-                            </MarqueeGroup>
-                            <MarqueeGroup>
-                                {ecosystemPartnersList.concat(ecosystemPartnersList).map((el, index) => (
-                                    <ImageGroup key={index}>
-                                        <Button
-                                            onClick={() => window.open(el.url, '_blank')}
-                                            sx={{
-                                            padding: 0,
-                                            minWidth: 0,
-                                            '&:hover': {
-                                                transform: 'scale(1.2)',
-                                            },
-                                            transition: 'transform 0.2s ease-in-out',
-                                            }}
-                                        >
-                                          <StyledImageWithPlaceholder 
-                                              src={baseUrl + el.img} 
-                                              placeholderSrc={baseUrl + '/assets/default-partner.png'} 
-                                          />
                                         </Button>
                                     </ImageGroup>
                                 ))}
