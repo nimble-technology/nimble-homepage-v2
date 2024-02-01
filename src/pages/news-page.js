@@ -10,6 +10,7 @@ import Latex from '../components/latex-component';
 const NewsPage = () => {
 
     const [news, setNews] = useState({});
+    const [isLoading, setIsLoading] = useState(true);
     const params = useParams();
     const location = useLocation();
     const baseUrl = process.env.REACT_APP_BLOGS_URL;
@@ -78,15 +79,26 @@ const NewsPage = () => {
         }
 
         const fetchUrl = `${baseUrl}/blogs/${jsonFileName}.json`;
-
-
+        setIsLoading(true);
         fetch(fetchUrl)
             .then(response => response.json())
-            .then(data => setNews(data))
+            .then(data => {
+                setNews(data);
+                setIsLoading(false); 
+            })
     }, [params.fileName, location.pathname]);
 
     const renderMarkdown = markdown => {
         return { __html: marked(markdown) };
+    };
+
+    const loadingStyle = {
+        fontSize: '24px', 
+        fontFamily: "'Press Start 2P', cursive",
+        position: 'fixed',
+        top: '50%', 
+        left: '50%', 
+        transform: 'translate(-50%, -50%)',
     };
 
     return (
@@ -98,12 +110,17 @@ const NewsPage = () => {
                     display: 'flex', 
                     gap: 2, 
                     marginTop: (isMobile) ? '250px': '400px',
+                    minHeight:'1000px',
                     flexWrap: 'wrap',
                     justifyContent: 'center',
                 }}>
-                <Latex>
-                    <Box sx={markdownContainerStyle} dangerouslySetInnerHTML={renderMarkdown(news.content || '')} />
-                </Latex>
+                {isLoading ? (
+                    <div style={loadingStyle}>Loading...</div>
+                ) : (
+                    <Latex>
+                        <Box sx={markdownContainerStyle} dangerouslySetInnerHTML={renderMarkdown(news.content || '')} />
+                    </Latex>
+                )}
             </Box>
         </Box>
     );
