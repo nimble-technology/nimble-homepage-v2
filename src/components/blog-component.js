@@ -33,19 +33,22 @@ const Blog = () => {
                 const filesToFetch = indexData.map(blog => ({
                     fileName: blog.fileName,
                     createDate: blog.createDate,
-                    thumb: blog.thumb
+                    thumb: blog.thumb,
+                    href: blog.href
                 }));
 
                 const fetchPromises = filesToFetch.map(fileData => {
                     const fileName = fileData.fileName;
                     const thumb = fileData.thumb;
+                    const href = fileData.href;
                     return axios.get(`${baseUrl}/blogs/${fileName}`)
                         .then(response => {
                             return {
                                 title: response.data.title,
                                 createDate: response.data.createDate,
                                 fileName: fileName,
-                                thumb: thumb
+                                thumb: thumb,
+                                href: href
                             };
                         });
                 });
@@ -106,7 +109,7 @@ const Blog = () => {
                     {blogs.map((blog, index) => (
                         <SwiperSlide className="styles.slide" key={index}>
                             <BlogCardWrapper>
-                                <BlogCard title={blog.title} date={blog.createDate} fileName={blog.fileName} thumb={blog.thumb}> </BlogCard>
+                                <BlogCard title={blog.title} date={blog.createDate} fileName={blog.fileName} thumb={blog.thumb} href={blog.href}> </BlogCard>
                             </BlogCardWrapper>
                         </SwiperSlide>
                     ))}

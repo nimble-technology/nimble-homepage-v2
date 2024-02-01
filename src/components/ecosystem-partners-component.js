@@ -154,6 +154,7 @@ const EcosystemPartners = () => {
                                 {marqueePartnerList.map((el, index) => (
                                     <ImageGroup key={index}>
                                         <Button
+                                            href={el.url}
                                             onClick={() => window.open(el.url, '_blank')}
                                             sx={{
                                             padding: 0,

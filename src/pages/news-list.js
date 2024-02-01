@@ -45,7 +45,7 @@ const NewsList = () => {
                 }}>
                 {blogs.map((blog, index) => (
                     <BlogCardWrapper>
-                        <BlogCard title={blog.title} date={blog.createDate} fileName={blog.fileName} thumb={blog.thumb} canClick={isLoaded} ></BlogCard>
+                        <BlogCard title={blog.title} date={blog.createDate} fileName={blog.fileName} thumb={blog.thumb} href={blog.href} canClick={isLoaded} ></BlogCard>
                     </BlogCardWrapper>
                 ))}
             </Box>

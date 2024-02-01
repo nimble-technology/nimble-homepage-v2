@@ -4,7 +4,7 @@ import { useMobileContext } from '../mobileContext';
 import {Navigate, useNavigate} from 'react-router-dom';
 import { SPECIAL_BLOGS } from '../constants';
 
-const BlogCard = ({ title, date, fileName, thumb, canClick = true }) => {
+const BlogCard = ({ title, date, fileName, thumb, href, canClick = true }) => {
 
     const isMobile = useMobileContext();
     const navigate = useNavigate();
@@ -26,7 +26,9 @@ const BlogCard = ({ title, date, fileName, thumb, canClick = true }) => {
     };
 
     return (
-        <Button onClick={handleClick} 
+        <Button 
+            onClick={handleClick} 
+            href={href}
             sx={{ 
                 padding: 0, 
                 textAlign: 'left',
