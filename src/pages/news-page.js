@@ -17,6 +17,26 @@ const NewsPage = () => {
     const isMobile = useMobileContext();
 
     const markdownContainerStyle = {
+
+        '& table': {
+            width: '100%',
+            maxWidth: '800px',
+            marginLeft: 'auto',
+            marginRight: 'auto', 
+            borderCollapse: 'collapse',
+            marginBottom: '1em',
+            fontSize: '20px',
+            fontFamily: "'Titillium Web', sans-serif",
+        },
+        '& th, & td': {
+            border: '1px solid #ddd',
+            padding: '8px',
+            textAlign: 'left',
+        },
+        '& th': {
+            backgroundColor: '#f2f2f2',
+        },
+      
         img: {
             maxWidth: '600px',
             width: '100%',
