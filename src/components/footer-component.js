@@ -10,7 +10,7 @@ const Footer = () => {
 
     const footerStyle = {
         backgroundColor: '#f8f8f8',
-        width: '100%',
+        width: '100vw',
         height: '150px',
         color: theme.palette.text.primary,
         display: 'flex',

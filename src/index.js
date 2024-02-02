@@ -14,18 +14,28 @@ const customTheme = createTheme(theme);
 const rootElement = document.getElementById('root');
 const root = createRoot(rootElement);
 
+const App = () => {
+  useEffect(() => {
+    document.body.style.backgroundColor = '#FFFFFF';
+  }, []);
+
+  return (
+    <div className="App">
+      <ThemeProvider theme={customTheme}>
+        <MobileProvider>
+          <AppRoutes />
+        </MobileProvider>
+      </ThemeProvider>
+    </div>
+  );
+};
+
 setTimeout(() => {
     prefetchBlogs();
 }, 50);
 
 root.render(
-  <div className="App">
-    <ThemeProvider theme={customTheme}>
-      <MobileProvider>
-        <AppRoutes />
-      </MobileProvider>
-    </ThemeProvider>
-  </div>
+  <App />
 );
 
 registerServiceWorker();
