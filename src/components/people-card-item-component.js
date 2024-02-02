@@ -13,7 +13,7 @@ const PeopleCardItem = ({ imageSrc, title, career, link }) => {
     const careerFontSize = isMobile ? '12px' : '14px';
 
     return (
-        <Button onClick={() => window.open(link, '_blank')} sx={{ padding: 0, width: '100%', textAlign: 'left' }}>
+        <Button href={link} onClick={(event) => {event.preventDefault(); window.open(link, '_blank')}} sx={{ padding: 0, width: '100%', textAlign: 'left' }}>
             <Box>
                 <Box sx={{
                     position: 'relative',

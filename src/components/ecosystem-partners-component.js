@@ -155,7 +155,7 @@ const EcosystemPartners = () => {
                                     <ImageGroup key={index}>
                                         <Button
                                             href={el.url}
-                                            onClick={() => window.open(el.url, '_blank')}
+                                            onClick={(event) => {event.preventDefault(); window.open(el.url, '_blank')}}
                                             sx={{
                                             padding: 0,
                                             minWidth: 0,

@@ -11,7 +11,8 @@ const BlogCard = ({ title, date, fileName, thumb, href, canClick = true }) => {
     const baseUrl = process.env.REACT_APP_BLOGS_URL;
     const [isLoaded, setIsLoaded] = useState(false);
 
-    const handleClick = () => {
+    const handleClick = (event) => {
+        event.preventDefault();
         if (canClick) {
             const fileNameWithoutExtension = fileName.replace(/\.json$/, "");
             let urlPath;

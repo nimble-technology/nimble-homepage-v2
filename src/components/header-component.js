@@ -14,8 +14,8 @@ const Header = () => {
     const theme = useTheme();
     const isMobile = useMobileContext();
 
-    const navigateAndScroll = (sectionId, targetPath = '/') => {
-
+    const navigateAndScroll = (event, sectionId, targetPath = '/') => {
+        event.preventDefault();
         if (location.pathname !== targetPath) {
             navigate(targetPath, { state: { scrollToSection: sectionId } });
         } else {
@@ -24,7 +24,8 @@ const Header = () => {
         }
     };
 
-    const handleMenuItemClick = (value) => {
+    const handleMenuItemClick = (event, value) => {
+        event.preventDefault();
         if (value === SECTIONS.TOKENOMICS) {
             navigate("/tokenomics")
         } else if (value === SECTIONS.NEWS) {
@@ -72,16 +73,16 @@ const Header = () => {
                                 width: '110px',
                             }}
                         >
-                            <MenuItem value= {SECTIONS.ABOUT} onClick={(e) => handleMenuItemClick(SECTIONS.ABOUT)}>
+                            <MenuItem value= {SECTIONS.ABOUT} component="a" href={"/"} target="_blank" onClick={ (event) => handleMenuItemClick(event, SECTIONS.ABOUT)}>
                                 {SECTIONS.ABOUT}
                             </MenuItem>
-                            <MenuItem value= {SECTIONS.VALUES} onClick={(e) => handleMenuItemClick(SECTIONS.VALUES)}>
+                            <MenuItem value= {SECTIONS.VALUES} component="a" href={"/"} target="_blank" onClick={(event) => handleMenuItemClick(event, SECTIONS.VALUES)}>
                                 {SECTIONS.VALUES}
                             </MenuItem>
-                            <MenuItem value= {SECTIONS.NEWS} onClick={(e) => handleMenuItemClick(SECTIONS.NEWS)}>
+                            <MenuItem value= {SECTIONS.NEWS} component="a" href={"/media"} target="_blank" onClick={(event) => handleMenuItemClick(event, SECTIONS.NEWS)}>
                                 {SECTIONS.NEWS}
                             </MenuItem>
-                            <MenuItem value= {SECTIONS.TOKENOMICS} onClick={(e) => handleMenuItemClick(SECTIONS.TOKENOMICS)}>
+                            <MenuItem value= {SECTIONS.TOKENOMICS} component="a" href={"/tokenomics"} target="_blank" onClick={(event) => handleMenuItemClick(event, SECTIONS.TOKENOMICS)}>
                                 {SECTIONS.TOKENOMICS}
                             </MenuItem>
                         </Select>
@@ -97,14 +98,15 @@ const Header = () => {
                             }
                         }}
                     >
-                        <Button onClick={() => navigateAndScroll(SECTIONS.ABOUT)}>{SECTIONS.ABOUT}</Button>
-                        <Button onClick={() => navigateAndScroll(SECTIONS.VALUES)}>{SECTIONS.VALUES}</Button>
-                        <Button onClick={() => navigate('/media')}>{SECTIONS.NEWS}</Button>
-                        <Button onClick={() => navigate("/tokenomics")}>{SECTIONS.TOKENOMICS}</Button>
+                        <Button component="a" href={"/"} target="_blank" onClick={(event) => navigateAndScroll(event, SECTIONS.ABOUT)}>{SECTIONS.ABOUT}</Button>
+                        <Button component="a" href={"/"} target="_blank" onClick={(event) => navigateAndScroll(event, SECTIONS.VALUES)}>{SECTIONS.VALUES}</Button>
+                        <Button component="a" href={"/media"} target="_blank" onClick={(event) => {event.preventDefault(); navigate('/media')}}>{SECTIONS.NEWS}</Button>
+                        <Button component="a" href={"/tokenomics"} target="_blank" onClick={(event) => {event.preventDefault(); navigate('/tokenomics')}}>{SECTIONS.TOKENOMICS}</Button>
                     </Box>
                 )}
                 <PixelButton
-                    onClick={() => { navigate("/vision")}}
+                    href={"/vision"}
+                    onClick={(event) => {event.preventDefault(); navigate('/vision')}}
                     sx={{
                         backgroundColor: theme.palette.primary.main,
                         color: 'black',

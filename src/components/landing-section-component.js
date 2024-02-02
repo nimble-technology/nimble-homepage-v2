@@ -133,7 +133,8 @@ const LandingSection = () => {
         </Typography>
         <Box sx={{ display: 'flex', gap: 2, marginTop: isMobile ? '50px' : '20px' }}>
             <PixelButton
-                onClick={() => { navigate(LINKS.WHITEPAPER); }}
+                href={"/whitepaper"}
+                onClick={(event) => {event.preventDefault(); navigate(LINKS.WHITEPAPER); }}
                 sx={{
                     backgroundColor: 'black',
                     color: 'white',
@@ -146,7 +147,8 @@ const LandingSection = () => {
                 Whitepaper
             </PixelButton>
             <PixelButton
-                onClick={() => { navigate(LINKS.LITEPAPER); }}
+                href={"/litepaper"}
+                onClick={(event) => {event.preventDefault(); navigate(LINKS.LITEPAPER); }}
                 sx={{
                     backgroundColor: 'rgba(0, 0, 0, 0.1)',
                     color: 'black',

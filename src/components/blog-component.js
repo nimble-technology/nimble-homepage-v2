@@ -89,6 +89,7 @@ const Blog = () => {
                 }}
             >
                 <Swiper
+                    loop={true}
                     effect={'coverflow'}
                     grabCursor={true}
                     centeredSlides={true}
@@ -102,7 +103,7 @@ const Blog = () => {
                         slideShadows: false
                     }}
                     pagination={{ clickable: true }}
-                    initialSlide={1}
+                    initialSlide={0}
                     modules={[EffectCoverflow, Pagination]}
                     className="styles.swiper"
                 >

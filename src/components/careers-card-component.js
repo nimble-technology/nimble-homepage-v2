@@ -48,7 +48,8 @@ const CareersCard = () => {
 
             </Typography>
             <PixelButton
-                onClick={() => { window.open(LINKS.CAREERS, '_blank'); }}
+                href={LINKS.CAREERS}
+                onClick={(event) => { event.preventDefault(); window.open(LINKS.CAREERS, '_blank'); }}
                 sx={{
                     backgroundColor: 'black !important',
                     color: 'white',
