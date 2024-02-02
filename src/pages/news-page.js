@@ -107,7 +107,7 @@ const NewsPage = () => {
 
     return (
 
-        <Box sx={{width: '100%', marginTop: '55px', maxWidth: '1200px'}}>
+        <Box sx={{width: '100%', marginTop: '55px'}}>
             <BlogHeader title={news.title} />
             <Box 
                 sx={{ 
@@ -121,9 +121,12 @@ const NewsPage = () => {
                 {isLoading ? (
                     <div style={loadingStyle}>Loading...</div>
                 ) : (
-                    <Latex>
-                        <Box sx={markdownContainerStyle} dangerouslySetInnerHTML={renderMarkdown(news.content || '')} />
-                    </Latex>
+                    <Box sx={{width: '100%'}}>
+                        <Latex>
+                            <Box sx={markdownContainerStyle} dangerouslySetInnerHTML={renderMarkdown(news.content || '')} />
+                        </Latex>
+                    </Box>
+                    
                 )}
             </Box>
         </Box>
