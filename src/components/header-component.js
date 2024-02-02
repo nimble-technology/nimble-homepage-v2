@@ -31,7 +31,7 @@ const Header = () => {
         } else if (value === SECTIONS.NEWS) {
             navigate('/media/')
         } else {
-            navigateAndScroll(value);
+            navigateAndScroll(event, value);
         }
     };
 
