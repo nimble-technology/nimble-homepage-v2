@@ -51,9 +51,13 @@ const NewsPage = () => {
         const pathname = window.location.pathname;
         if (pathname === '/vision') {
             document.title = 'Vision - Nimble Network';
-          } else if (pathname === '/tokenomics') {
+        } else if (pathname === '/tokenomics') {
             document.title = 'Tokenomics - Nimble Network';
-          } else if (pathname.startsWith('/media/')) {
+        } else if (pathname === '/media/multi-task-learning') {
+            document.title = 'Multi-Task Learning - Nimble Network';
+        } else if (pathname === '/media/ai-matching-and-dispatching') {
+            document.title = 'AI Matching and Dispatching - Nimble Network';
+        }else if (pathname.startsWith('/media/')) {
             const fileName = pathname.split('/media/')[1];
             const formattedFileName = fileName.split('-').map(part => part.charAt(0).toUpperCase() + part.slice(1)).join(' ');
             document.title = `${formattedFileName} - Nimble Network`;
