@@ -26,16 +26,16 @@ function SocialIcons({isMobile}) {
 
     return (
         <Box width='100%' sx={{ display: 'flex', flexWrap: 'nowrap' }}> 
-            <IconButton sx={iconButtonStyle} onClick={() => openLinkInNewTab(LINKS.TELEGRAM)}>
+            <IconButton href={LINKS.TELEGRAM} sx={iconButtonStyle} onClick={(event) => {event.preventDefault(); openLinkInNewTab(LINKS.TELEGRAM)}}>
                 <img src={baseUrl + "/assets/telegram.png"} alt="Telegram" style={iconStyle} />
             </IconButton>
-            <IconButton sx={iconButtonStyle} onClick={() => openLinkInNewTab(LINKS.TWITTER)}>
+            <IconButton href={LINKS.TWITTER} sx={iconButtonStyle} onClick={(event) => { event.preventDefault(); openLinkInNewTab(LINKS.TWITTER)}}>
                 <img src={baseUrl + "/assets/twitter.png"} alt="Twitter" style={iconStyle} />
             </IconButton>
-            <IconButton sx={iconButtonStyle} onClick={() => openLinkInNewTab(LINKS.DISCORD)}>
+            <IconButton href={LINKS.DISCORD} sx={iconButtonStyle} onClick={(event) => { event.preventDefault(); openLinkInNewTab(LINKS.DISCORD)}}>
                 <img src={baseUrl + "/assets/discord.png"} alt="Discord" style={iconStyle} />
             </IconButton>
-            <IconButton sx={iconButtonStyle} onClick={() => openLinkInNewTab(LINKS.GITHUB)}>
+            <IconButton href={LINKS.GITHUB} sx={iconButtonStyle} onClick={(event) => { event.preventDefault(); openLinkInNewTab(LINKS.GITHUB)}}>
                 <img src={baseUrl + "/assets/github.png"} alt="GitHub" style={iconStyle} />
             </IconButton>
         </Box>

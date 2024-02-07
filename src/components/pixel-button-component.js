@@ -2,7 +2,7 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 
-const PixelButton = ({ children, onClick, sx, width, height }) => {
+const PixelButton = ({ children, href, onClick, sx, width, height }) => {
 
     const heightValue = parseFloat(height);
     const sideHeight = `${heightValue * 0.7}px`;
@@ -30,6 +30,7 @@ const PixelButton = ({ children, onClick, sx, width, height }) => {
 
       return (
         <Button 
+            href={href}
             onClick={onClick} 
         >
             <Box sx={{

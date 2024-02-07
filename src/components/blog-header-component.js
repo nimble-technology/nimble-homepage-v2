@@ -14,7 +14,7 @@ const BlogHeader = ({ title = "News & Blog" }) => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [headerHeight, setHeaderHeight] = useState({ mobile: '180px', desktop: '300px' });
     const [headerMargin, setHeaderMargin] = useState({ mobile: 0, desktop: 0 });
-    const [headerFontSize, setHeaderFontSize] = useState({ mobile: 20, desktop: 30 });
+    const [headerFontSize, setHeaderFontSize] = useState({ mobile: 15, desktop: 30 });
 
     const handleBack = () => {
         navigate(-1);
@@ -26,13 +26,11 @@ const BlogHeader = ({ title = "News & Blog" }) => {
             if (currentScrollY > (isMobile ? 50 : 100)) {
                 setIsScrolled(true);
                 setHeaderHeight({ mobile: '30px', desktop: '80px' });
-                setHeaderMargin({ mobile: 9, desktop: 20 });
-                setHeaderFontSize({ mobile: 12, desktop: 20 });
+                setHeaderMargin({ mobile: 0, desktop: 20 });
             } else {
                 setIsScrolled(false);
                 setHeaderHeight({ mobile: '180px', desktop: '300px' });
                 setHeaderMargin({ mobile: 0, desktop: 0 });
-                setHeaderFontSize({ mobile: 20, desktop: 30 });
             }
             setScrollY(currentScrollY);
         };
@@ -77,11 +75,12 @@ const BlogHeader = ({ title = "News & Blog" }) => {
 
     const backButtonStyle = {
         fontFamily: "'Press Start 2P', cursive",
-        fontSize: isMobile ? '12px' : '14px',
+        fontSize: isMobile ? '10px' : '14px',
         color: '#161818',
         position: 'absolute',
+        minWidth: '0px',
         top: isScrolled ? 'inherit' : theme.spacing(1),
-        left: theme.spacing(1),
+        left: isMobile ? 0 : theme.spacing(1),
     };
 
     const textStyle = {
@@ -91,12 +90,14 @@ const BlogHeader = ({ title = "News & Blog" }) => {
         textAlign: 'center',
         marginLeft: theme.spacing(headerMargin.mobile),
     };
+    const backButtonLabel = isMobile ? '<' : '< Back';
 
     return (
         <Box sx={headerStyle} style={{ backgroundColor: 'white' }}>
-            <Box sx={headerInsideStyle}>
+            <Box sx={headerInsideStyle} style={{ display: 'flex', alignItems: 'center' }}>
                 <Button sx={backButtonStyle} onClick={handleBack}>
-                    {"< Back"}
+                    
+                    {backButtonLabel}
                 </Button>
                 <Typography sx={textStyle}>{title}</Typography>
             </Box>

@@ -1,28 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Typography, Box, Button } from '@mui/material';
 import { useMobileContext } from '../mobileContext';
 import {Navigate, useNavigate} from 'react-router-dom';
 import { SPECIAL_BLOGS } from '../constants';
 
-const BlogCard = ({ title, date, fileName, thumb }) => {
+const BlogCard = ({ title, date, fileName, thumb, href, canClick = true }) => {
 
     const isMobile = useMobileContext();
     const navigate = useNavigate();
     const baseUrl = process.env.REACT_APP_BLOGS_URL;
+    const [isLoaded, setIsLoaded] = useState(false);
 
-    const handleClick = () => {
-        const fileNameWithoutExtension = fileName.replace(/\.json$/, "");
-        let urlPath;
-        if (fileNameWithoutExtension === SPECIAL_BLOGS.TOKENOMICS || fileNameWithoutExtension === SPECIAL_BLOGS.VISION) {
-            urlPath = '/' + fileNameWithoutExtension;
-        } else {
-            urlPath = '/media/' + fileNameWithoutExtension;
+    const handleClick = (event) => {
+        event.preventDefault();
+        if (canClick) {
+            const fileNameWithoutExtension = fileName.replace(/\.json$/, "");
+            let urlPath;
+            if (fileNameWithoutExtension === SPECIAL_BLOGS.TOKENOMICS || fileNameWithoutExtension === SPECIAL_BLOGS.VISION) {
+                urlPath = '/' + fileNameWithoutExtension;
+            } else {
+                urlPath = '/media/' + fileNameWithoutExtension;
+            }
+            navigate(urlPath);
         }
-        navigate(urlPath);
+       
     };
 
     return (
-        <Button onClick={handleClick} 
+        <Button 
+            onClick={handleClick} 
+            href={href}
             sx={{ 
                 padding: 0, 
                 textAlign: 'left',
@@ -39,8 +46,14 @@ const BlogCard = ({ title, date, fileName, thumb }) => {
                 <Box sx={{
                     width: '100%',
                 }}>
-                    <span sx={{ padding: 0 }}>
-                        <img src={`${baseUrl}/assets/blog-images/${thumb}`} alt="Icon" style={{ width: '100%' }} />
+                    <span style={{ padding: 0 }}>
+                        <img 
+                            src={isLoaded ? `${baseUrl}/assets/blog-images/${thumb}` : `${baseUrl}/assets/blog-preloading-cover.png`} 
+                            alt="Icon" 
+                            style={{ width: '100%', height : isMobile ? '169px' : '211px' }} 
+                            onLoad={() => setIsLoaded(true)}
+                            onError={() => setIsLoaded(false)}
+                        />
                     </span>
                 </Box>
                 <Box>

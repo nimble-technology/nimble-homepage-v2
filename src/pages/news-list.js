@@ -5,12 +5,18 @@ import axios from "axios";
 import BlogCard from '../components/blog-card-component';
 import { useMobileContext } from '../mobileContext';
 import BlogCardWrapper from '../components/blog-card-wrapper-component';
+import { DEFAULT_BLOGS } from '../constants';
 
 const NewsList = () => {
 
-    const [blogs, setBlogs] = useState([]);
+    const [blogs, setBlogs] = useState(DEFAULT_BLOGS);
+    const [isLoaded, setIsLoaded] = useState(false);
 
     const isMobile = useMobileContext();
+
+    useEffect(() => {
+        document.title = 'Media - Nimble Network';
+    }, []);
 
     useEffect(() => {
         const baseUrl = process.env.REACT_APP_BLOGS_URL;
@@ -20,32 +26,8 @@ const NewsList = () => {
             .get(url)
             .then(res => {
                 const indexData = res.data;
-                const filesToFetch = indexData.map(blog => ({
-                    fileName: blog.fileName,
-                    createDate: blog.createDate,
-                    thumb: blog.thumb
-                }));
-
-                const fetchPromises = filesToFetch.map(fileData => {
-                    const fileName = fileData.fileName;
-                    const thumb = fileData.thumb;
-                    
-                    return axios.get(`${baseUrl}/blogs/${fileName}`)
-                        .then(response => {
-                            return {
-                                title: response.data.title,
-                                createDate: response.data.createDate,
-                                fileName: fileName,
-                                thumb: thumb
-                            };
-                        });
-                });
-
-                Promise.all(fetchPromises)
-                    .then(blogDataArray => {
-                        setBlogs(blogDataArray);
-                    })
-                    .catch(error => console.error('Error fetching JSON files:', error));
+                setBlogs(indexData);
+                setIsLoaded(true);
             })
             .catch(error => console.error('Error fetching blog index:', error));
     }, []);
@@ -63,7 +45,7 @@ const NewsList = () => {
                 }}>
                 {blogs.map((blog, index) => (
                     <BlogCardWrapper>
-                        <BlogCard title={blog.title} date={blog.createDate} fileName={blog.fileName} thumb={blog.thumb}></BlogCard>
+                        <BlogCard title={blog.title} date={blog.createDate} fileName={blog.fileName} thumb={blog.thumb} href={blog.href} canClick={isLoaded} ></BlogCard>
                     </BlogCardWrapper>
                 ))}
             </Box>

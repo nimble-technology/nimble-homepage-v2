@@ -3,6 +3,7 @@ import { Typography, Button, Box, useTheme, IconButton } from '@mui/material';
 import PageTitle from './page-title-component';
 import { useMobileContext } from '../mobileContext';
 import styled, { keyframes, css } from "styled-components";
+import ImageWithPlaceholder from './image-placeholder-component';
 
 const EcosystemPartners = () => {
 
@@ -52,7 +53,7 @@ const EcosystemPartners = () => {
       }
     `;
 
-    const mobileWidth = (isMobile) ? '100%' : '200%';
+    const mobileWidth = '200%';
 
     const common = css`
       flex-shrink: 0;
@@ -85,6 +86,14 @@ const EcosystemPartners = () => {
       aspect-ratio: 16/9;
       min-height: 143px;
     `;
+    const StyledImageWithPlaceholder = styled(ImageWithPlaceholder)`
+      object-fit: contain;
+      width: 100%;
+      height: 100%;
+      border-radius: 0.5rem;
+      aspect-ratio: 16/9;
+      min-height: 143px;
+`;
 
     const ecosystemPartnersList = [
         { img: '/assets/ecosystem-partners/avalanche.png', url: 'https://www.avax.network/' },
@@ -94,7 +103,17 @@ const EcosystemPartners = () => {
         { img: '/assets/ecosystem-partners/hyper-oracle.png', url: 'https://www.hyperoracle.io/' },
         { img: '/assets/ecosystem-partners/zkme.png', url: 'https://zk.me/' },
         { img: '/assets/ecosystem-partners/nimble.png', url: 'https://twitter.com/TheNimbusApp/' },
-    ];
+
+        { img: '/assets/ecosystem-partners/avalanche.png', url: 'https://www.avax.network/' },
+        { img: '/assets/ecosystem-partners/polygon.png', url: 'https://polygon.technology/' },
+        { img: '/assets/ecosystem-partners/sei-network.png', url: 'https://www.sei.io/' },
+        { img: '/assets/ecosystem-partners/corner-market.png', url: 'https://www.cornermarket.co/' },
+        { img: '/assets/ecosystem-partners/hyper-oracle.png', url: 'https://www.hyperoracle.io/' },
+        { img: '/assets/ecosystem-partners/zkme.png', url: 'https://zk.me/' },
+        { img: '/assets/ecosystem-partners/nimble.png', url: 'https://twitter.com/TheNimbusApp/' },
+     ];
+
+     const marqueePartnerList = isMobile ? ecosystemPartnersList.concat(ecosystemPartnersList) : ecosystemPartnersList;
 
     const containerStyle = {
         width: '100vw',
@@ -132,10 +151,11 @@ const EcosystemPartners = () => {
                     <Wrapper>
                         <Marquee>
                             <MarqueeGroup>
-                                {ecosystemPartnersList.concat(ecosystemPartnersList).map((el, index) => (
+                                {marqueePartnerList.map((el, index) => (
                                     <ImageGroup key={index}>
                                         <Button
-                                            onClick={() => window.open(el.url, '_blank')}
+                                            href={el.url}
+                                            onClick={(event) => {event.preventDefault(); window.open(el.url, '_blank')}}
                                             sx={{
                                             padding: 0,
                                             minWidth: 0,
@@ -145,26 +165,10 @@ const EcosystemPartners = () => {
                                             transition: 'transform 0.2s ease-in-out',
                                         }}
                                     >
-                                            <Image src={baseUrl + el.img} />
-                                        </Button>
-                                    </ImageGroup>
-                                ))}
-                            </MarqueeGroup>
-                            <MarqueeGroup>
-                                {ecosystemPartnersList.concat(ecosystemPartnersList).map((el, index) => (
-                                    <ImageGroup key={index}>
-                                        <Button
-                                            onClick={() => window.open(el.url, '_blank')}
-                                            sx={{
-                                            padding: 0,
-                                            minWidth: 0,
-                                            '&:hover': {
-                                                transform: 'scale(1.2)',
-                                            },
-                                            transition: 'transform 0.2s ease-in-out',
-                                        }}
-                                    >
-                                            <Image src={baseUrl + el.img} />
+                                            <StyledImageWithPlaceholder 
+                                                src={baseUrl + el.img} 
+                                                placeholderSrc={baseUrl + '/assets/default-partner.png'} 
+                                            />
                                         </Button>
                                     </ImageGroup>
                                 ))}

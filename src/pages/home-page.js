@@ -12,6 +12,11 @@ import { SECTIONS } from '../constants';
 import FadeInSection from '../components/fade-in-component';
 
 const HomePage = () => {
+    
+
+    useEffect(() => {
+        document.title = 'Nimble - The Composable AI Protocol';
+    }, []);
 
     return (
         <Box>
