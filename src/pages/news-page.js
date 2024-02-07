@@ -137,6 +137,9 @@ const NewsPage = () => {
                     minHeight:'1000px',
                     flexWrap: 'wrap',
                     justifyContent: 'center',
+                    maxWidth: '1200px',
+                    marginLeft: 'auto',
+                    marginRight: 'auto'
                 }}>
                 {isLoading ? (
                     <div style={loadingStyle}>Loading...</div>
