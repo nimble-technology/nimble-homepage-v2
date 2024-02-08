@@ -106,6 +106,7 @@ const Blog = () => {
                     initialSlide={0}
                     modules={[EffectCoverflow, Pagination]}
                     className="styles.swiper"
+                    style={{maxWidth: '1300px'}}
                 >
                     {blogs.map((blog, index) => (
                         <SwiperSlide className="styles.slide" key={index}>
