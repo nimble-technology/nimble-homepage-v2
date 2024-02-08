@@ -45,7 +45,10 @@ const HomePage = () => {
                 </Box>
             </FadeInSection>
             <FadeInSection>
-                <Box id={SECTIONS.PEOPLE}>
+                <Box id={SECTIONS.PEOPLE} sx={{
+                    display: 'flex',
+                    justifyContent: 'center'
+                }}>
                     <PeopleCard />
                 </Box>
             </FadeInSection>

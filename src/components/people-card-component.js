@@ -35,18 +35,6 @@ const PeopleCard = () => {
             link: LINKEDIN_LINK.HENRY
         },
         {
-            imageSrc: '/assets/team-avatars/Joshua.png',
-            title: 'Joshua Chen',
-            career: "Core Engineer",
-            link: LINKEDIN_LINK.JOSHUA
-        },
-        {
-            imageSrc: '/assets/team-avatars/Shanpeng.png',
-            title: 'Shanpeng Wang',
-            career: "Core Engineer",
-            link: LINKEDIN_LINK.SHANPENG
-        },
-        {
             imageSrc: '/assets/team-avatars/Young.png',
             title: 'Young Yang',
             career: "Core Engineer",
@@ -56,6 +44,7 @@ const PeopleCard = () => {
 
     const sideStyle = {
         width: '100vw',
+        maxWidth: '1200px',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
