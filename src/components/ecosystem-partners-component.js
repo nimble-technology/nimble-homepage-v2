@@ -101,9 +101,9 @@ const EcosystemPartners = () => {
         { img: '/assets/ecosystem-partners/sei-network.png', url: 'https://www.sei.io/' },
         { img: '/assets/ecosystem-partners/corner-market.png', url: 'https://www.cornermarket.co/' },
         { img: '/assets/ecosystem-partners/hyper-oracle.png', url: 'https://www.hyperoracle.io/' },
+        { img: '/assets/ecosystem-partners/binance.png', url: 'https://labs.binance.com' },
         { img: '/assets/ecosystem-partners/zkme.png', url: 'https://zk.me/' },
         { img: '/assets/ecosystem-partners/nimble.png', url: 'https://twitter.com/TheNimbusApp/' },
-
         { img: '/assets/ecosystem-partners/avalanche.png', url: 'https://www.avax.network/' },
         { img: '/assets/ecosystem-partners/polygon.png', url: 'https://polygon.technology/' },
         { img: '/assets/ecosystem-partners/sei-network.png', url: 'https://www.sei.io/' },
