@@ -129,7 +129,7 @@ const LandingSection = () => {
                 color: 'rgba(0, 0, 0, 0.5)',
             }}
         >
-            Nimble is building the first-ever decentralized AI framework.
+            Turn GPU Mining Cycles to Large AI Models.
         </Typography>
         <Box sx={{ display: 'flex', gap: 2, marginTop: isMobile ? '50px' : '20px' }}>
             <PixelButton
