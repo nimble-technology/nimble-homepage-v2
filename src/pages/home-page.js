@@ -15,7 +15,7 @@ const HomePage = () => {
     
 
     useEffect(() => {
-        document.title = 'Nimble - The Composable AI Protocol';
+        document.title = 'Nimble - The Modular AI Network';
     }, []);
 
     return (
