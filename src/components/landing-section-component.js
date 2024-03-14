@@ -117,7 +117,7 @@ const LandingSection = () => {
                 color: theme.palette.text.secondary,
                 marginTop: '60px'
             }}>
-            The Composable AI Protocol
+            The Modular AI Network
         </Typography>
         <Typography
             sx={{

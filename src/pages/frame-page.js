@@ -25,7 +25,7 @@ const FramePage = () => {
         } else if (pathname === '/everything-marketplace-case-study') {
           document.title = 'Marketplace Case Study - Nimble Network';
         } else {
-          document.title = 'Nimble - The Composable AI Protocol';
+          document.title = 'Nimble - The Modular AI Network';
         }
       }, [location.pathname]);
 
