@@ -58,7 +58,7 @@ const ValueCardBottom = () => {
                             textAlign: isMobile ? 'center' : 'left',
                             color: theme.palette.text.secondary,
                         }}>
-                        We're creating the atomic building blocks for the Composable AI Protocol that can be extended into complex IP, creator, advertisement, personalization, and chatbot applications across any medium.
+                        We're creating the atomic building blocks for the Modular AI Network that can be extended into complex IP, creator, advertisement, personalization, and chatbot applications across any medium.
                     </Typography>
                 </Box>
             </Box>

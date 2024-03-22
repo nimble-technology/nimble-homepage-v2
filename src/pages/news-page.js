@@ -82,7 +82,7 @@ const NewsPage = () => {
             const formattedFileName = fileName.split('-').map(part => part.charAt(0).toUpperCase() + part.slice(1)).join(' ');
             document.title = `${formattedFileName} - Nimble Network`;
           } else {
-            document.title = 'Nimble - The Composable AI Protocol';
+            document.title = 'Nimble - The Modular AI Network';
           }
     }, [location.pathname]);
 
